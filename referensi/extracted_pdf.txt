@@ -1,0 +1,3516 @@
+--- Page 1 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+65 
+ 
+ 
+Analisis Perbandingan Metode SAW, WP, dan TOPSIS  
+Untuk Optimasi Sistem Pendukung Keputusan  
+Proses Seleksi Beasiswa Lazizmu 
+ 
+Ike Yunia Pasa1, Nur Wachid Adi Prasetya2*, Ratih Hafsarah Maharrani2 
+1Program Studi Teknologi Informasi, Universitas Muhammadiyah Purworejo, Purworejo 54111, Indonesia 
+2Jurusan Teknik Informatika, Politeknik Negeri Cilacap, Cilacap 53212, Indonesia 
+ikeypasa@umpwr.ac.id, nwap.pnc@pnc.ac.id, ratih.hafsarah@pnc.ac.id 
+ 
+ 
+Abstrak 
+Sistem pendukung keputusan seleksi beasiswa yang berjalan saat ini di Universitas Muhammadiyah 
+Purworejo (UMP)menerapkan metode Simple Additive Weighting (SAW). Berdasarkan pengujian si s-
+tem, tingkat akurasi sistem sebesar  80%. Hasil ini dirasa kurang efisien, sehingga perlu ditingkatkan, 
+agar hasil keputusan pemilihan seleksi beasiswa Lazizmu lebih optimal. Tujuan p enelitian ini yaitu 
+membandingkan beberapa metode, antara lain Simple Additive Weighting  (SAW), Weighted Product 
+(WP), dan Technique For Others Reference by Similarity to Ideal Solution  (TOPSIS), untuk mene n-
+tukan metode yang paling relevan dari tiga metode tersebut, melalui pengujian sensitivitas. Hasil pen-
+gujian sensitivitas terhadap 3 metode tersebut menunjukkan nilai sensitivitas dari metode SAW adalah 
+-0,009 % , metode WP adalah 0,003 %, dan metode TOPSIS adalah 0,085 %. Sehingga, metode 
+TOPSIS merupakan metode yang paling optimal untuk diterapkan pada sistem pendukung keputusan 
+seleksi beasiswa Lazizmu di Universitas Muhammadiyah Purworejo (UMP) , karena tingkat sensitiv i-
+tasnya yang lebih tinggi dari metode lainnya.  
+Kata kunci: Sistem Pendukung Keputusan, SAW, WP, TOPSIS, Uji Sensitivitas 
+ 
+Abstract 
+The current scholarship selection decision support system at Universitas Muhammadiyah Purworejo 
+(UMP) applies the Simple Additive Weighting (SAW) method. Based on system testing, the system a c-
+curacy rate is 80%. This result is felt to be lacking, so it needs to be improved, so that the decision to 
+select the Lazizmu scholarship selection is more optimal. The purpose of this study is to compare se v-
+eral methods, including Simple Additive Weighting (SAW), Weighted Product (WP), and Technique 
+For Others Reference by Similarity to Ideal Solution (TOPSIS), to determine the most relevant of the 
+three methods, through sensitivity testing. The results of the sensitivity test for the 3 methods showed 
+that the sensitivity value of the SAW method was -0.009%, the WP method was 0.003%, and the 
+TOPSIS method was 0.085%. Thus, th e TOPSIS method is the most optimal method to be applied to 
+the Lazizmu scholarship selection decision support system at Muhammadiyah University Purworejo 
+(UMP), because of its higher sensitivity level than other methods. 
+Keywords: Decision Support System, SAW, WP, TOPSIS, Sensitivity Test 
+ 
+1. PENDAHULUAN 
+1.1 Latar Belakang 
+Berdasarkan Surat Keputusan Rektor Universitas 
+Muhammadiyah Purworejo Nomor 
+069/KEP/II.3.AU/F/2020 mengenai Peraturan 
+Beasiswa Mahasiswa Universitas 
+Muhammadiyah Purworejo  (UMP), universitas 
+diwajibkan untuk melaksanakan proses 
+penyeleksian beasiswa Lazizmu bagi mahasiswa 
+UMP. Proses seleksi harus dapat menghasilkan 
+prioritas mahasiswa berdasarkan kriteria yang di 
+miliki.  
+Adanya sebuah sistem pendukung keputusan di 
+UMP membantu dalam proses seleksi  beasiswa 
+Lazizmu, dan dapat membantu keputusan terkait 
+penentuan mahasiswa yang berhak mendapatkan 
+beasiswa. Pengertian s istem pendukung 
+keputusan sendiri merupakan sebuah sistem ber-
+
+--- Page 2 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+66 
+basis komputer  yang mampu memberikan 
+dukungan dalam  pengambilan keputusan pihak 
+manajer pada problematika yang  terstruktur, 
+tidak terstruktur atau semi terstruktur (Magrisa 
+et al., 2018). Sistem pendukung keputusan dapat 
+memberikan bantuan kepada pihak manajer da-
+lam proses  pengambilan keputusan yang d i-
+harapkan dapat memperbaiki kualitas keputusan 
+yang diambil , akan tetapi  tidak sampai 
+menggantikan keputusan tersebut (Septilia et al., 
+2020).  
+Pada sebuah  sistem pendukung keputusan , 
+metode pengambilan keputusan  harus 
+diterapkan, yang bertujuan  meningkatkan 
+kualitas keputusan yang dihasilkan. Metode ter-
+sebut adalah  metode Multi-Attribute Decision 
+Making (MADM), yaitu metode keputusan da-
+lam proses pemilihan/penetapan  sekumpulan 
+alternatif berdasarkan sekumpulan kriteria, 
+dengan peluang yang sama (Ridho et al., 2021) . 
+Metode Technique For  Others Reference by 
+Similarity to Ideal Solution  (TOPSIS), Analytic 
+Hierarchy Process  (AHP), Weighted Product  
+(WP), dan Simple Additive Weighting  (SAW) 
+adalah beberapa contoh metode yang sering 
+digunakan pada sebuah sistem pendukung kep u-
+tusan. 
+Sistem pendukung keputusan seleksi beasiswa di 
+UMP menerapkan metode SAW. Pada pener a-
+pan metode tersebut, sistem pendukung kep u-
+tusan memiliki beberapa kriteria yang telah 
+ditentukan. Berdasarkan pengujian sistem yang 
+telah dibangun di UMP, menunjukkan tingkat 
+akurasi sistem sebesar 80% (Pasa et al., 2022) . 
+Hasil ini dirasa kurang, sehing ga perlu ditin g-
+katkan, agar keputusan pemilihan seleksi 
+beasiswa Lazizmu lebih optimal. 
+ 
+1.2 Tujuan Penelitian 
+Tujuan p enelitian ini yaitu membandingkan be-
+berapa metode MADM, antara lain metode 
+SAW, WP, dan TOPSIS, dalam penerapannya 
+pada sistem pendukung keputusan penyeleksian 
+beasiswa Lazizmu di UMP. Tujuan pe r-
+bandingan ini adalah untuk menentukan metode 
+yang paling optimal dari tiga metode tersebut , 
+melalui uji sensitivitas  terhadap ketiga metode 
+tersebut. 
+Pemilihan tiga metode yang telah ditentukan, 
+yaitu SAW, WP, dan TOPSIS, adalah karena ke-
+tiga metode tersebut sering diterapkan pada s e-
+buah sistem pendukung keputusan  (Pasa et al., 
+2022) (Diana & Seprina, 2019) . 
+ 
+2. METODE 
+Penelitian ini menggunakan metode sesuai 
+Gambar 1 berikut.  
+ 
+Gambar 1 Metode penelitian 
+ 
+2.1  Tinjauan Pustaka 
+2.1.1 Simple Additive Weighting (SAW) 
+Metode SAW adalah metode dengan mencari 
+jumlah terbobot dengan melakukan pe-rating-an 
+kriteria, yang dilakukan pada tiap-tiap alternatif  
+terhadap atribut yang tersedia (Qiyamullailiy et 
+al., 2020). Langkah-langkah perhitungan dengan 
+penerapan metode SAW adalah (Penta et al., 
+2019) (Sari et al., 2021):  
+1. Memastikan alternatif  
+2. Memastikan kriteria acuan (Ci), serta memas-
+tikan kriteria bernilai biaya (cost) dan kriteria 
+bernilai keuntungan (benefit) 
+3. Mengkonversi nilai alternatif yang ada ke 
+nilai rating kecocokan tiap kriteria 
+4. Menghitung bobot tingkat kepentingan  (W), 
+di mana W = [W1, W2, W3, … Wj] 
+
+
+--- Page 3 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+67 
+5. Membuat matriks keputusan X yang berasal 
+dari tabel rating kecocokan pada tiap-tiap 
+kriteria pada tiap-tiap kriteria 
+6. Melakukan proses  normalisasi matriks 
+keputusan X, menggunakan rumus: 
+    
+{  
+     
+                         
+        
+   
+           
+ …….( 1 ) 
+Keterangan:  
+rij  : nilai rating kriteria ternormalisasi 
+Xij : nilai atribut dari masing-masing kriteria 
+max(Xij) : nilai maksimal dari krite ria W 
+masing-masing alternatif 
+min(Xij) : nilai minimal dari kriteria W 
+masing-masing alternatif 
+7. Membuat matriks ternormalisasi (R), ber-
+dasarkan hasil rating kinerja ternormalisasi, 
+menggunakan rumus: 
+    [
+           
+           
+] …..………. ( 2 ) 
+Keterangan: 
+R  : matriks ternormalisasi R 
+rij  : nilai rating kriteria ternormalisasi 
+8. Menghitung hasil akhir (V), dengan 
+menjumlahkan hasil perkalian antara matriks 
+ternormalisasi R dan bobot tingkat 
+kepentingan W, menggunakan rumus: 
+    ∑      
+ 
+   
+ …..………. ( 3 ) 
+Keterangan: 
+Vi  : rangking masing-masing alternatif 
+Wj : bobot masing-masing kriteria 
+rij  : nilai rating kriteria ternormalisasi 
+9. Mengurutkan hasil (Vi) dari tertinggi sampai 
+terendah.  
+ 
+2.1.2  Weighted Product (WP) 
+Weighted Product (WP) merupakan metode 
+yang dihasilkan dari perkalian antara nilai 
+atribut, di mana atribut tersebut sebelumnya t e-
+lah dipangkatkan dengan bobot -bobotnya 
+(Murtina et al., 2022) (Laila & RMS, 2019). 
+Langkah dari penentuan Weighted Product ada-
+lah (Diana & Seprina, 2019)  (Laila & RMS, 
+2019) (Murtina et al., 2022) (Fransiska, 2023):  
+1. Menentukan alternatif  
+2. Memastikan kriteria, sekaligus menentukan 
+kriteria tersebut bernilai keuntungan ( benefit) 
+atau bernilai pengeluaran (cost)  
+3. Memastikan bobot tiap -tiap kriteria (W), 
+kemudian melakukan normalisasi terhadap 
+bobot tersebut, menggunakan rumus: 
+    
+  
+∑   
+ …..……….( 4 ) 
+ Keterangan: 
+ Wj : bobot dari setiap kriteria 
+ 
+Hasil normalisasi bobot harus memenuhi 
+syarat yaitu jumlah normalisasi bobot seluruh 
+kriteria adalah 1. 
+4. Menghitung nilai vektor (S)  tiap alternatif , 
+dengan memangkatkan nilai atribut alternatif 
+pada setiap kriteria dengan bobot dari kriteria 
+yang sama, kemudian mengalikan semuanya, 
+dengan menggunakan rumus: 
+    ∏    
+  
+ 
+   
+ …..……….( 5 ) 
+ Keterangan: 
+ Si : nilai vektor pada alternatif tertentu 
+ Xij : nilai kriteria 
+Wj : bobot dari setiap kriteria , di mana jika 
+kriteria bernilai keuntungan, maka bobot be r-
+nilai positif, sedangkan jika kriteria bernilai 
+biaya, maka bobot bernilai negatif 
+5. Menghitung nilai vektor (V)  tiap alternatif  
+(preferensi alternatif), dengan membagi nilai 
+vektor S tiap alternatif dengan jumlah seluruh 
+nilai vektor S, menggunakan rumus: 
+      
+∏ (  )
+   
+   
+ …..……….( 6 ) 
+ Keterangan: 
+ Vi : preferensi alternatif 
+ X : nilai kriteria 
+ Wj : bobot masing-masing kriteria 
+6. Mengurutkan nilai vektor (V) seluruh alte r-
+natif, dari nilai tertinggi ke terendah 
+ 
+ 
+2.1.3  Technique For Others Reference by 
+Similarity to Ideal Solution (TOPSIS) 
+Technique For Others Reference by Similarity to 
+Ideal Solution  atau TOPSIS adalah salah satu 
+
+--- Page 4 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+68 
+metode MADM di mana  alternatif terbaik 
+haruslah mempunyai jarak terpendek dari solusi 
+ideal positif, sekaligus mempunyai jarak 
+terpanjang dari solusi  ideal  negatif (Widiyawati 
+et al., 2022).  
+Adapun langkah -langkah penentuan deng an 
+metode TOPSIS adalah sebagai berikut 
+(Widiyawati et al., 2022)  (Fauzi et al., 2020)  
+(Jayawardani & Maryam, 2022): 
+1. Menentukan alternatif 
+2. Menentukan kriteria dan bobot  
+3. Membuat matriks keputusan ternormalisasi  
+(R), menggunakan rumus: 
+     
+   
+√∑    
+  
+   
+ …..………. ( 7 ) 
+ Keterangan: 
+rij : elemen dari  matriks keputusan yang  
+ternormalisasi R 
+ xij : elemen dari matriks keputusan X 
+4. Menentukan matriks keputusan   
+ternormalisasi terbobot, menggunakan rumus: 
+           …..………. ( 8 ) 
+Keterangan: 
+yij : elemen dari matriks keputusan   
+ternormalisasi terbobot 
+Wi : bobot masing-masing kriteria 
+rij : elemen dari  matriks keputusan yang  
+ternormalisasi R 
+5. Menentukan matriks solusi ideal positif dan 
+solusi ideal negatif , dengan melihat nilai 
+matriks ternormalisasi berbobot, antara lain: 
+      
+    
+    
+         …..………. ( 9 ) 
+dan 
+      
+    
+    
+         …..……. ( 10 ) 
+ Keterangan: 
+ A+ : matriks solusi ideal positif 
+A-: matriks solusi ideal negatif 
+ 
+ di mana: 
+  
+   {    (   )                           
+   (   )                      
+ dan  
+  
+   {   (   )                          
+   (   )                      
+6. Menghitung jarak antara nilai setiap alternatif 
+dengan matriks solusi ideal positif dan 
+matriks solusi ideal negatif , menggunakan 
+rumus: 
+  
+  √∑   
+         
+ 
+   
+ …..……. ( 11 ) 
+dan 
+  
+  √∑         
+   
+ 
+   
+ …..……. ( 12 ) 
+ Keterangan: 
+D+ : nilai jarak alternatif dengan matriks 
+solusi ideal positif 
+D- : nilai jarak alternatif dengan matriks 
+solusi ideal negatif 
+7. Menentukan nilai preferensi tiap -tiap 
+alternatif (V), menggunakan rumus: 
+      
+ 
+  
+     
+  …..……. ( 13 ) 
+Keterangan: 
+Vi : nilai preferensi tiap-tiap alternatif 
+8. Mengurutkan nilai preferensi seluruh alte r-
+natif, dari nilai tertinggi ke terendah. 
+ 
+2.1.4  Uji Sensitivitas 
+Pengujian sensitivitas merupakan pengujian 
+untuk mengetahui tingkat kesensitivitasan 
+metode pada sebuah kasus. Pengujian ini 
+dilakukan dalam rangka membandingkan 
+beberapa metode , sehingga dapat diketahui 
+tingkat sensitivitas metode -metode tersebut. 
+Apabila perubahan rangking pada sebuah 
+metode semakin sensitif, maka metode tersebut 
+yang akan dipilih daripada metode lainnya 
+(Fauzi et al., 2020).  
+
+--- Page 5 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+69 
+Langkah-langkah dari penerapan uji sensitivitas 
+adalah sebagai berikut (Fauzi et al., 2020)  
+(Jayawardani & Maryam, 2022): 
+1. Menentukan semua bobot atribut, di mana Wj 
+= 1, dengan j = 1,2,3,..., n (jumlah atribut) 
+2. Mengubah bobot atribut tertentu dengan jarak 
+nilai 1-2, sedangkan bobot lainnya sama 
+3. Menormalisasi bobot kriteria sehingga 
+menjadi 1 
+4. Menerapkan hasil normalisasi bobot kriteria 
+pada langkah 3 pada metode yang 
+dibandingkan 
+5. Menghitung prosentase perubahan rangking 
+yang terjadi pada metode -metode tersebut, 
+dengan membandingkannya terhadap kondisi 
+awal ketika bobot belum diubah/sama.  
+ 
+2.2  Pengumpulan Data 
+Data penelitian ini terdiri dari beberapa data, yai-
+tu data alternatif dan data kriteria. Data alternatif 
+diperoleh dari  hasil seleksi beasiswa Lazizmu di 
+UMP Tahun Akademik 2021/2022, berdasarkan 
+Surat Keputusan Rektor Universitas 
+Muhammadiyah Purworejo  Nomor 
+616/KEP/II.3.AU/F/2021 (Pasa et al., 2022) . 
+Adapun hasil seleksi sesuai Tabel 2 berikut. 
+Tabel 1. Daftar Mahasiswa Beasiswa Lazizmu 
+UMP 
+No Inisial Nama Kode Alternatif 
+1 AM A01 
+2 SM A02 
+3 SL A03 
+4 SA A04 
+5 TY A05 
+6 NA A06 
+7 SW A07 
+8 VA A08 
+9 AF A09 
+10 AS A10 
+11 SZ A11 
+12 AK A12 
+13 AP A13 
+14 AA A14 
+15 TF A15 
+16 MR A16 
+17 DP A17 
+18 RD A18 
+19 DN A19 
+20 RM A20 
+ 
+Sedangkan data kriteria diperoleh dari proses 
+wawancara oleh pihak kemahasiswaan, dan be r-
+dasarkan Surat Keputusan Rektor Universitas 
+Muhammadiyah Purworejo Nomor 
+069/KEP/II.3.AU/F/2020 tentang Peraturan 
+Beasiswa Mahasiswa Universitas 
+Muhammadiyah Purworejo  (Pasa et al., 2022) . 
+Data kriteria yang diperoleh seperti pada Tabel 3 
+berikut. 
+Tabel 2. Kriteria, atribut dan nilai atribut 
+No Kriteria Atribut Nilai 
+1 K1 Hasil Proses 
+Wawancara 
+>95 5 
+81 - 95 4 
+66 - 80 3 
+50 - 65 2 
+<50 1 
+2 K2 Indeks Prestasi 
+Kumulatif 
+(IPK) 
+> 3,75 5 
+3,51 - 3,75 4 
+3,26 - 3,50 3 
+3,00 - 3,25 2 
+<3 1 
+3 K3 Status 
+Kepemilikan 
+KIP 
+Ada 5 
+Tidak 1 
+4 K4 Status 
+Kepemilikan 
+KKS 
+Ada 5 
+Tidak 1 
+5 K5 Penghasilan 
+Orangtua 
+(Ayah) 
+> 1.500.000 5 
+1000.000 - 
+1.499.000 
+4 
+500.000 - 
+999.000 
+3 
+< 500.0000 2 
+0 1 
+6 K6 Penghasilan 
+Orangtua (Ibu) 
+> 1.500.000 5 
+1000.000 - 
+1.499.000 
+4 
+500.000 - 
+999.000 
+3 
+< 500.0000 2 
+0 1 
+7 K7 Status 
+Kepemilikan 
+Rumah 
+Sendiri 4 
+Sewa Tahunan 3 
+Sewa Bulanan 2 
+Menumpang 1 
+8 K8 Besaran Daya 
+Listrik 
+>1300 W 4 
+1300 W 3 
+900 W 2 
+450 W 1 
+9 K9 Besaran Luas 
+Tanah 
+>200 5 
+100-200 4 
+50-99 3 
+25-50 2 
+<25 1 
+10 K10 Jenis Sumber 
+Air 
+Air PAM 3 
+Air Sumur 2 
+Air Sungai 1 
+ 
+3. HASIL DAN PEMBAHASAN 
+3.1  Penentuan Alternatif 
+Data a lternatif pada penelitian ini dari daftar 
+mahasiswa yang mengikuti seleksi beasiswa 
+Lazizmu, berdasarkan Surat Keputusan Rektor 
+Universitas Muhammadiyah Purworejo (UMP ). 
+Adapun data alternatif sesuai pada Tabel 2. 
+ 
+
+--- Page 6 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+70 
+3.2  Penentuan Kriteria 
+Data kriteria didapatkan sesuai  SK rektor UMP, 
+seperti pada Tabel 3. yang telah disebutkan  
+(Pasa et al., 2022) . Data kriteria dibagi menjadi 
+kriteria keuntungan  (benefit), atau biaya  (cost), 
+seperti pada Tabel 3. 
+Table 3. Pembagian Kriteria  
+No Kriteria Nilai kriteria 
+1 K1 Hasil Proses Wawancara Keuntungan 
+2 K2 Indeks Prestasi Kumulatif 
+(IPK) 
+Keuntungan 
+3 K3 Status Kepemilikan KIP Keuntungan 
+4 K4 Status Kepemilikan KKS Keuntungan 
+5 K5 Penghasilan Orang Tua 
+(Ayah) 
+Biaya 
+6 K6 Penghasilan Orang Tua 
+(Ibu) 
+Biaya 
+7 K7 Status Kepemilikan 
+Rumah 
+Biaya 
+8 K8 Besaran Daya Listrik Biaya 
+9 K9 Besaran Luas Tanah Biaya 
+10 K10 Jenis Sumber Air Biaya 
+Adapun nilai atribut pada tiap alternatif di setiap 
+kriteria adalah sebagai berikut: 
+Tabel 4. Nilai atribut 
+ K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 
+A01 4 3 5 5 1 1 4 1 4 2 
+A02 4 3 1 1 3 1 1 1 1 2 
+A03 4 4 5 5 3 1 1 1 4 1 
+A04 4 2 1 1 2 1 4 1 4 2 
+A05 4 3 5 5 3 2 4 1 1 2 
+A06 4 4 1 1 5 1 4 1 4 2 
+A07 4 3 1 1 1 1 4 1 2 2 
+A08 3 3 5 5 5 1 3 1 3 3 
+A09 4 3 1 5 3 1 4 1 4 2 
+A10 4 3 1 1 2 1 1 1 4 2 
+A11 4 2 1 1 2 1 4 1 1 2 
+A12 4 2 5 5 3 3 4 1 1 2 
+A13 4 2 1 1 3 1 4 1 3 2 
+A14 4 5 5 5 1 2 4 1 5 2 
+A15 4 3 1 1 3 3 4 1 3 2 
+A16 4 4 1 1 5 1 1 1 3 3 
+A17 4 5 1 1 1 3 4 2 3 2 
+A18 4 4 1 1 3 1 4 2 4 2 
+A19 4 3 1 1 5 1 4 1 1 2 
+A20 4 4 1 1 3 4 4 1 5 2 
+ 
+3.3  Menentukan Bobot dan Normalisasi 
+Bobot 
+3.3.1 Menentukan Bobot  
+Bobot yang digunakan pada 10 kriteria secara 
+berurutan adalah W = [5,3,2,2,2,2,1,1,1,1]. B o-
+bot ini berlaku pada semua metode yang 
+dibandingkan, yaitu SAW, WP, dan TOPSIS. 
+3.3.2 Normalisasi Bobot  
+Bobot yang ditentukan kemudian dinormalisasi 
+dalam penerapan metode W P, dengan 
+menggunakan rumus (4) . Misalkan untuk bobot 
+kriteria K1, maka perhitungannya adalah: 
+     
+        
+Adapun hasil normalisasi seperti Tabel 5. ber i-
+kut. 
+Tabel 5. Normalisasi bobot pada WP 
+Kriteria Bobot Bobot ternormalisasi 
+K1 5 0,25 
+K2 3 0,15 
+K3 2 0,1 
+K4 2 0,1 
+K5 2 0,1 
+K6 2 0,1 
+K7 1 0,05 
+K8 1 0,05 
+K9 1 0,05 
+K10 1 0,05 
+Total bobot 20 1 
+ 
+3.4  Membuat Matriks Keputusan  Nor-
+malisasi Pada SAW 
+Matriks keputusan disusun menggunakan rumus 
+(1), dengan permisalan perhitungan  untuk alter-
+natif A01 pada kriteria K1 dan K7.  
+Untuk kriteria K1 (bernilai keuntungan), sebagai 
+berikut: 
+        
+           
+    
+Untuk kriteria K 7 (bernilai biaya) , sebagai ber i-
+kut: 
+              
+   
+  
+       
+Hasil perhitungan matriks keputusan pada tiap-
+tiap alternatif A01-A20 adalah sebagai berikut: 
+Table 6. Matriks Keputusan Kriteria 1-5 
+  K1 K2 K3 K4 K5 
+A01 1 0,6 1 1 1 
+A02 1 0,6 0,2 0,2 0,33333 
+A03 1 0,8 1 1 0,33333 
+A04 1 0,4 0,2 0,2 0,5 
+A05 1 0,6 1 1 0,33333 
+A06 1 0,8 0,2 0,2 0,2 
+A07 1 0,6 0,2 0,2 1 
+A08 0,75 0,6 1 1 0,2 
+A09 1 0,6 0,2 1 0,33333 
+A10 1 0,6 0,2 0,2 0,5 
+A11 1 0,4 0,2 0,2 0,5 
+A12 1 0,4 1 1 0,33333 
+A13 1 0,4 0,2 0,2 0,33333 
+A14 1 1 1 1 1 
+A15 1 0,6 0,2 0,2 0,33333 
+A16 1 0,8 0,2 0,2 0,2 
+A17 1 1 0,2 0,2 1 
+A18 1 0,8 0,2 0,2 0,33333 
+A19 1 0,6 0,2 0,2 0,2 
+A20 1 0,8 0,2 0,2 0,33333 
+
+--- Page 7 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+71 
+Table 7. Matriks Keputusan Kriteria 6-10 
+ 
+K6 K7 K8 K9 K10 
+A01 1 0,25 1 0,25 0,5 
+A02 1 1 1 1 0,5 
+A03 1 1 1 0,25 1 
+A04 1 0,25 1 0,25 0,5 
+A05 0,5 0,25 1 1 0,5 
+A06 1 0,25 1 0,25 0,5 
+A07 1 0,25 1 0,5 0,5 
+A08 1 0,33333 1 0,33333 0,33333 
+A09 1 0,25 1 0,25 0,5 
+A10 1 1 1 0,25 0,5 
+A11 1 0,25 1 1 0,5 
+A12 0,33333 0,25 1 1 0,5 
+A13 1 0,25 1 0,33333 0,5 
+A14 0,5 0,25 1 0,2 0,5 
+A15 0,33333 0,25 1 0,33333 0,5 
+A16 1 1 1 0,33333 0,33333 
+A17 0,33333 0,25 0,5 0,33333 0,5 
+A18 1 0,25 0,5 0,25 0,5 
+A19 1 0,25 1 1 0,5 
+A20 0,25 0,25 1 0,2 0,5 
+ 
+3.5 Menghitung Nilai Akhir Pada SAW 
+Perhitungan n ilai akhir (V) dilakukan untuk 
+menghasilkan nilai  acuan perangkingan alte r-
+natif. Perhitungan nilai akhir menggunakan ru-
+mus (3), dengan contoh perhitungan sebagai 
+berikut: 
+    1x5) + (0,6 x3) + ( 1x2) + ( 1x2) + ( 1x2) + 
+(1x2) + (0, 25x1) + ( 1x1) + (0, 25x1) + 
+(0,5x1) = 16,80 
+Hasil dari perhitungan nilai akhir  pada SA W 
+adalah sebagai berikut: 
+Tabel 8. Hasil Akhir SAW 
+Alternatif V 
+A01 16,80 
+A02 13,77 
+A03 17,32 
+A04 12,00 
+A05 15,22 
+A06 12,60 
+A07 13,85 
+A08 13,95 
+A09 13,87 
+A10 13,35 
+A11 12,75 
+A12 14,28 
+A13 11,75 
+A14 16,95 
+A15 11,02 
+A16 13,27 
+A17 13,05 
+A18 12,37 
+A19 12,75 
+A20 11,32 
+ 
+ 
+ 
+3.6  Menghitung Nilai Vektor (S) Pada 
+WP 
+Perhitungan nilai vektor (S) pada metode WP 
+dilakukan menggunakan rumus (5) . Contoh 
+perhitungan untuk alternatif A01  (S1) adalah se-
+bagai berikut: 
+S1 = (40,25) * (30,15) * (50,1) * (50,1) * (1-0,1) * (1-0,1) * 
+(4-0,05) * (1-0,05) * (4-0,05) * (2-0,05)  
+= 1,93 
+Adapun hasil perhitungan nilai vektor (S) pada 
+semua alternatif seperti Tabel 9. 
+Tabel 9. Hasil Perhitungan Nilai Vektor (S) 
+  K
+1 
+K
+2 
+K
+3 
+K
+4 
+K
+5 
+K
+6 
+K
+7 
+K
+8 
+K
+9 
+K
+10 S 
+A
+01 
+1,
+41 
+1,
+18 
+1,
+17 
+1,
+17 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+0,
+97 
+1,9
+3 
+A
+02 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+00 
+0,
+90 
+1,
+00 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+97 
+1,4
+4 
+A
+03 
+1,
+41 
+1,
+23 
+1,
+17 
+1,
+17 
+0,
+90 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+2,0
+1 
+A
+04 
+1,
+41 
+1,
+11 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+0,
+97 
+1,2
+3 
+A
+05 
+1,
+41 
+1,
+18 
+1,
+17 
+1,
+17 
+0,
+90 
+0,
+93 
+0,
+93 
+1,
+00 
+1,
+00 
+0,
+97 
+1,7
+3 
+A
+06 
+1,
+41 
+1,
+23 
+1,
+00 
+1,
+00 
+0,
+85 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+0,
+97 
+1,2
+5 
+A
+07 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+97 
+0,
+97 
+1,4
+5 
+A
+08 
+1,
+32 
+1,
+18 
+1,
+17 
+1,
+17 
+0,
+85 
+1,
+00 
+0,
+95 
+1,
+00 
+0,
+95 
+0,
+95 
+1,5
+5 
+A
+09 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+17 
+0,
+90 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+0,
+97 
+1,4
+8 
+A
+10 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+93 
+0,
+97 
+1,4
+0 
+A
+11 
+1,
+41 
+1,
+11 
+1,
+00 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+93 
+1,
+00 
+1,
+00 
+0,
+97 
+1,3
+2 
+A
+12 
+1,
+41 
+1,
+11 
+1,
+17 
+1,
+17 
+0,
+90 
+0,
+90 
+0,
+93 
+1,
+00 
+1,
+00 
+0,
+97 
+1,5
+7 
+A
+13 
+1,
+41 
+1,
+11 
+1,
+00 
+1,
+00 
+0,
+90 
+1,
+00 
+0,
+93 
+1,
+00 
+0,
+95 
+0,
+97 
+1,2
+0 
+A
+14 
+1,
+41 
+1,
+27 
+1,
+17 
+1,
+17 
+1,
+00 
+0,
+93 
+0,
+93 
+1,
+00 
+0,
+92 
+0,
+97 
+1,9
+3 
+A
+15 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+00 
+0,
+90 
+0,
+90 
+0,
+93 
+1,
+00 
+0,
+95 
+0,
+97 
+1,1
+4 
+A
+16 
+1,
+41 
+1,
+23 
+1,
+00 
+1,
+00 
+0,
+85 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+95 
+0,
+95 
+1,3
+3 
+A
+17 
+1,
+41 
+1,
+27 
+1,
+00 
+1,
+00 
+1,
+00 
+0,
+90 
+0,
+93 
+0,
+97 
+0,
+95 
+0,
+97 
+1,3
+3 
+A
+18 
+1,
+41 
+1,
+23 
+1,
+00 
+1,
+00 
+0,
+90 
+1,
+00 
+0,
+93 
+0,
+97 
+0,
+93 
+0,
+97 
+1,2
+7 
+A
+19 
+1,
+41 
+1,
+18 
+1,
+00 
+1,
+00 
+0,
+85 
+1,
+00 
+0,
+93 
+1,
+00 
+1,
+00 
+0,
+97 
+1,2
+8 
+A
+20 
+1,
+41 
+1,
+23 
+1,
+00 
+1,
+00 
+0,
+90 
+0,
+87 
+0,
+93 
+1,
+00 
+0,
+92 
+0,
+97 
+1,1
+3 
+Total Nilai Vektor (S) 28,
+96 
+ 
+3.7  Menghitung Nilai Vektor ( V) Pada 
+WP 
+Nilai vektor (V) merupakan nilai preferensi a l-
+ternatif, yang digunakan sebagai acuan peran g-
+kingan pengurutan alternatif. Perhitungan nilai 
+vektor (V) menggunakan rumus (6), dengan con-
+toh perhitungan sebagai berikut: 
+        
+             
+
+--- Page 8 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+72 
+Hasil dari penentuan nilai vektor (V) pada 
+metode WP adalah pada Tabel 10. 
+Tabel 10. Hasil Nilai Vektor (V) WP 
+Alternatif V 
+A01 0,066806 
+A02 0,049833 
+A03 0,069343 
+A04 0,042512 
+A05 0,059856 
+A06 0,04304 
+A07 0,050127 
+A08 0,05338 
+A09 0,050958 
+A10 0,04842 
+A11 0,045563 
+A12 0,054086 
+A13 0,041414 
+A14 0,06655 
+A15 0,039432 
+A16 0,045858 
+A17 0,045897 
+A18 0,043752 
+A19 0,04418 
+A20 0,038994 
+ 
+3.8  Membuat Matriks Keputusan Te r-
+normalisasi (R) Pada TOPSIS 
+Rumus (7) digunakan untuk membuat matriks 
+keputusan ternormalisasi (R). Contoh perh i-
+tungan nilai elemen matriks keputusan terno r-
+malisasi pada alternatif A01 adalah sebagai ber i-
+kut: 
+      
+√
+              
+               
+               
+     
+      
+Tabel 11. menunjukkan matriks keputusan te r-
+normalisasi (R).  
+Tabel 11. Matriks Keputusan Ternormalisasi 
+  K1 K2 K3 K4 K5 K6 K7 K8 K9 K1
+0 
+A0
+1 
+0,2
+3 
+0,2
+0 
+0,3
+9 
+0,3
+6 
+0,0
+7 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+2 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,0
+7 
+0,2
+1 
+0,1
+2 
+0,0
+6 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A0
+3 
+0,2
+3 
+0,2
+7 
+0,3
+9 
+0,3
+6 
+0,2
+1 
+0,1
+2 
+0,0
+6 
+0,2
+0 
+0,2
+7 
+0,1
+1 
+A0
+4 
+0,2
+3 
+0,1
+3 
+0,0
+8 
+0,0
+7 
+0,1
+4 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+5 
+0,2
+3 
+0,2
+0 
+0,3
+9 
+0,3
+6 
+0,2
+1 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A0
+6 
+0,2
+3 
+0,2
+7 
+0,0
+8 
+0,0
+7 
+0,3
+6 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+7 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,0
+7 
+0,0
+7 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,1
+4 
+0,2
+1 
+A0
+8 
+0,1
+7 
+0,2
+0 
+0,3
+9 
+0,3
+6 
+0,3
+6 
+0,1
+2 
+0,1
+9 
+0,2
+0 
+0,2
+0 
+0,3
+2 
+A0
+9 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,3
+6 
+0,2
+1 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A1
+0 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,0
+7 
+0,1
+4 
+0,1
+2 
+0,0
+6 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A1
+1 
+0,2
+3 
+0,1
+3 
+0,0
+8 
+0,0
+7 
+0,1
+4 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A1
+2 
+0,2
+3 
+0,1
+3 
+0,3
+9 
+0,3
+6 
+0,2
+1 
+0,3
+7 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A1
+3 
+0,2
+3 
+0,1
+3 
+0,0
+8 
+0,0
+7 
+0,2
+1 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,2
+0 
+0,2
+1 
+A1
+4 
+0,2
+3 
+0,3
+3 
+0,3
+9 
+0,3
+6 
+0,0
+7 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,3
+4 
+0,2
+1 
+A1
+5 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,0
+7 
+0,2
+1 
+0,3
+7 
+0,2
+5 
+0,2
+0 
+0,2
+0 
+0,2
+1 
+A1
+6 
+0,2
+3 
+0,2
+7 
+0,0
+8 
+0,0
+7 
+0,3
+6 
+0,1
+2 
+0,0
+6 
+0,2
+0 
+0,2
+0 
+0,3
+2 
+A1
+7 
+0,2
+3 
+0,3
+3 
+0,0
+8 
+0,0
+7 
+0,0
+7 
+0,3
+7 
+0,2
+5 
+0,3
+9 
+0,2
+0 
+0,2
+1 
+A1
+8 
+0,2
+3 
+0,2
+7 
+0,0
+8 
+0,0
+7 
+0,2
+1 
+0,1
+2 
+0,2
+5 
+0,3
+9 
+0,2
+7 
+0,2
+1 
+A1
+9 
+0,2
+3 
+0,2
+0 
+0,0
+8 
+0,0
+7 
+0,3
+6 
+0,1
+2 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A2
+0 
+0,2
+3 
+0,2
+7 
+0,0
+8 
+0,0
+7 
+0,2
+1 
+0,5
+0 
+0,2
+5 
+0,2
+0 
+0,3
+4 
+0,2
+1 
+ 
+3.9 Menentukan Matriks Keputusan   
+Ternormalisasi Terbobot 
+Matriks keputusan ternormalisasi terbobot 
+dibentuk dengan mengalikan elemen dari 
+matriks keputusan ternormalisasi dengan bobot 
+kriteria yang telah ditentukan, menggunakan 
+rumus (8). Salah satu contoh perhitungan nya 
+adalah sebagai berikut: 
+                          
+Hasil dari penentuan matriks keputusan 
+ternormalisasi terbobot terdapat pada Tabel 12. 
+Tabel 12. Matriks Keputusan Ternormalisai 
+Terbobot 
+  K1 K2 K3 K4 K5 K6 K7 K8 K9 K1
+0 
+A0
+1 
+1,1
+3 
+0,6
+0 
+0,7
+8 
+0,7
+3 
+0,1
+4 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+2 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,1
+5 
+0,4
+3 
+0,2
+5 
+0,0
+6 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A0
+3 
+1,1
+3 
+0,8
+0 
+0,7
+8 
+0,7
+3 
+0,4
+3 
+0,2
+5 
+0,0
+6 
+0,2
+0 
+0,2
+7 
+0,1
+1 
+A0
+4 
+1,1
+3 
+0,4
+0 
+0,1
+6 
+0,1
+5 
+0,2
+8 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+5 
+1,1
+3 
+0,6
+0 
+0,7
+8 
+0,7
+3 
+0,4
+3 
+0,5
+0 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A0
+6 
+1,1
+3 
+0,8
+0 
+0,1
+6 
+0,1
+5 
+0,7
+1 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A0
+7 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,1
+5 
+0,1
+4 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,1
+4 
+0,2
+1 
+A0
+8 
+0,8
+5 
+0,6
+0 
+0,7
+8 
+0,7
+3 
+0,7
+1 
+0,2
+5 
+0,1
+9 
+0,2
+0 
+0,2
+0 
+0,3
+2 
+A0
+9 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,7
+3 
+0,4
+3 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A1
+0 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,1
+5 
+0,2
+8 
+0,2
+5 
+0,0
+6 
+0,2
+0 
+0,2
+7 
+0,2
+1 
+A1
+1 
+1,1
+3 
+0,4
+0 
+0,1
+6 
+0,1
+5 
+0,2
+8 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A1
+2 
+1,1
+3 
+0,4
+0 
+0,7
+8 
+0,7
+3 
+0,4
+3 
+0,7
+4 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+A1
+3 
+1,1
+3 
+0,4
+0 
+0,1
+6 
+0,1
+5 
+0,4
+3 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,2
+0 
+0,2
+1 
+A1
+4 
+1,1
+3 
+1,0
+0 
+0,7
+8 
+0,7
+3 
+0,1
+4 
+0,5
+0 
+0,2
+5 
+0,2
+0 
+0,3
+4 
+0,2
+1 
+A1
+5 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,1
+5 
+0,4
+3 
+0,7
+4 
+0,2
+5 
+0,2
+0 
+0,2
+0 
+0,2
+1 
+A1
+6 
+1,1
+3 
+0,8
+0 
+0,1
+6 
+0,1
+5 
+0,7
+1 
+0,2
+5 
+0,0
+6 
+0,2
+0 
+0,2
+0 
+0,3
+2 
+A1
+7 
+1,1
+3 
+1,0
+0 
+0,1
+6 
+0,1
+5 
+0,1
+4 
+0,7
+4 
+0,2
+5 
+0,3
+9 
+0,2
+0 
+0,2
+1 
+A1
+8 
+1,1
+3 
+0,8
+0 
+0,1
+6 
+0,1
+5 
+0,4
+3 
+0,2
+5 
+0,2
+5 
+0,3
+9 
+0,2
+7 
+0,2
+1 
+A1
+9 
+1,1
+3 
+0,6
+0 
+0,1
+6 
+0,1
+5 
+0,7
+1 
+0,2
+5 
+0,2
+5 
+0,2
+0 
+0,0
+7 
+0,2
+1 
+
+--- Page 9 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+73 
+A2
+0 
+1,1
+3 
+0,8
+0 
+0,1
+6 
+0,1
+5 
+0,4
+3 
+0,9
+9 
+0,2
+5 
+0,2
+0 
+0,3
+4 
+0,2
+1 
+ 
+3.10 Menentukan Matriks Solusi Ideal 
+Positif Dan Solusi Ideal Negatif  Pa-
+da TOPSIS 
+Matriks solusi ideal positif dan solusi ideal 
+negatif ditentukan dengan melihat nilai kriteria, 
+apakah kriteria tersebut merupakan keuntungan 
+atau biaya. Berdasarkan Tabel 12. Matriks 
+Keputusan Ternormalisai Terbobot , dapat dite n-
+tukan matriks untuk solusi ideal positif dan 
+solusi ideal negatif, sebagai berikut: 
+Tabel 13. Matriks Solusi Ideal Positif Dan Solusi 
+Ideal Negatif 
+Alternatif Nilai alternatif A+ A- 
+K1 Keuntungan 1,13 0,85 
+K2 Keuntungan 1,00 0,40 
+K3 Keuntungan 0,78 0,16 
+K4 Keuntungan 0,73 0,15 
+K5 Biaya 0,14 0,71 
+K6 Biaya 0,25 0,99 
+K7 Biaya 0,06 0,25 
+K8 Biaya 0,20 0,39 
+K9 Biaya 0,07 0,34 
+K10 Biaya 0,11 0,32 
+ 
+3.11 Menghitung Jarak Antara Nilai S e-
+tiap Alternatif Dengan Matriks S o-
+lusi Ideal  Pada TOPSIS 
+Perhitungan jarak antara nilai alternatif dengan 
+nilai solusi ideal positif menggunakan rumus 
+(11), dan solusi ideal negatif menggunakan 
+rumus (12). Contoh perhitungan untuk 
+menentukan jarak nilai alternatif  A01 dengan 
+solusi ideal positif adalah sebagai berikut: 
+  
+   
+√
+                                   
+                          
+                          
+                          
+                          
+ 
+  
+   0,497 
+Adapun hasil perhitungan jarak antara nilai 
+alternatif dengan nilai solusi ideal positif 
+terdapat pada Tabel 14, sedangkan jarak antara 
+nilai alternatif dengan nilai solusi ideal negatif 
+terdapat pada Tabel 15. 
+ 
+Tabel 14. Tabel Jarak Alternatif Dengan Solusi 
+Ideal Positif 
+  K
+1 
+K
+2 
+K
+3 
+K
+4 
+K
+5 
+K
+6 
+K
+7 
+K
+8 
+K
+9 
+K
+10 
+D
++ 
+A
+01 
+0,
+00 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+04 
+0,
+01 
+0,
+50 
+A
+02 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+01 
+0,
+99 
+A
+03 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+40 
+A
+04 
+0,
+00 
+0,
+36 
+0,
+39 
+0,
+34 
+0,
+02 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+04 
+0,
+01 
+1,
+09 
+A
+05 
+0,
+00 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+06 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+01 
+0,
+59 
+A
+06 
+0,
+00 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+32 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+04 
+0,
+01 
+1,
+09 
+A
+07 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+00 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+01 
+0,
+97 
+A
+08 
+0,
+08 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+32 
+0,
+00 
+0,
+02 
+0,
+00 
+0,
+02 
+0,
+05 
+0,
+80 
+A
+09 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+00 
+0,
+08 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+04 
+0,
+01 
+0,
+85 
+A
+10 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+02 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+04 
+0,
+01 
+0,
+98 
+A
+11 
+0,
+00 
+0,
+36 
+0,
+39 
+0,
+34 
+0,
+02 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+01 
+1,
+07 
+A
+12 
+0,
+00 
+0,
+36 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+25 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+01 
+0,
+86 
+A
+13 
+0,
+00 
+0,
+36 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+02 
+0,
+01 
+1,
+11 
+A
+14 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+06 
+0,
+04 
+0,
+00 
+0,
+07 
+0,
+01 
+0,
+43 
+A
+15 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+25 
+0,
+04 
+0,
+00 
+0,
+02 
+0,
+01 
+1,
+13 
+A
+16 
+0,
+00 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+32 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+02 
+0,
+05 
+1,
+08 
+A
+17 
+0,
+00 
+0,
+00 
+0,
+39 
+0,
+34 
+0,
+00 
+0,
+25 
+0,
+04 
+0,
+04 
+0,
+02 
+0,
+01 
+1,
+04 
+A
+18 
+0,
+00 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+00 
+0,
+04 
+0,
+04 
+0,
+04 
+0,
+01 
+0,
+99 
+A
+19 
+0,
+00 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+32 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+01 
+1,
+12 
+A
+20 
+0,
+00 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+55 
+0,
+04 
+0,
+00 
+0,
+07 
+0,
+01 
+1,
+24 
+ 
+Tabel 15. Tabel Jarak Alternatif Dengan Solusi 
+Ideal Negatif 
+  K
+1 
+K
+2 
+K
+3 
+K
+4 
+K
+5 
+K
+6 
+K
+7 
+K
+8 
+K
+9 
+K
+10 D- 
+A
+01 
+0,
+08 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+32 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+1,
+34 
+A
+02 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+55 
+0,
+04 
+0,
+04 
+0,
+07 
+0,
+01 
+0,
+96 
+A
+03 
+0,
+08 
+0,
+16 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+55 
+0,
+04 
+0,
+04 
+0,
+00 
+0,
+05 
+1,
+31 
+A
+04 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+18 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+0,
+93 
+A
+05 
+0,
+08 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+25 
+0,
+00 
+0,
+04 
+0,
+07 
+0,
+01 
+1,
+14 
+A
+06 
+0,
+08 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+0,
+92 
+A
+07 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+32 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+04 
+0,
+01 
+1,
+04 
+A
+08 
+0,
+00 
+0,
+04 
+0,
+39 
+0,
+34 
+0,
+00 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+02 
+0,
+00 
+1,
+18 
+A
+09 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+34 
+0,
+08 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+1,
+07 
+A
+10 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+18 
+0,
+55 
+0,
+04 
+0,
+04 
+0,
+00 
+0,
+01 
+0,
+97 
+A
+11 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+18 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+07 
+0,
+01 
+0,
+97 
+A
+12 
+0,
+08 
+0,
+00 
+0,
+39 
+0,
+34 
+0,
+08 
+0,
+06 
+0,
+00 
+0,
+04 
+0,
+07 
+0,
+01 
+1,
+04 
+A
+13 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+02 
+0,
+01 
+0,
+89 
+A
+14 
+0,
+08 
+0,
+36 
+0,
+39 
+0,
+34 
+0,
+32 
+0,
+25 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+1,
+34 
+A
+15 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+06 
+0,
+00 
+0,
+04 
+0,
+02 
+0,
+01 
+0,
+58 
+A
+16 
+0,
+08 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+55 
+0,
+04 
+0,
+04 
+0,
+02 
+0,
+00 
+0,
+94 
+
+--- Page 10 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+74 
+A
+17 
+0,
+08 
+0,
+36 
+0,
+00 
+0,
+00 
+0,
+32 
+0,
+06 
+0,
+00 
+0,
+00 
+0,
+02 
+0,
+01 
+0,
+92 
+A
+18 
+0,
+08 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+55 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+01 
+0,
+94 
+A
+19 
+0,
+08 
+0,
+04 
+0,
+00 
+0,
+00 
+0,
+00 
+0,
+55 
+0,
+00 
+0,
+04 
+0,
+07 
+0,
+01 
+0,
+89 
+A
+20 
+0,
+08 
+0,
+16 
+0,
+00 
+0,
+00 
+0,
+08 
+0,
+00 
+0,
+00 
+0,
+04 
+0,
+00 
+0,
+01 
+0,
+61 
+ 
+3.12 Menentukan Nilai Preferensi Tiap -
+Tiap Alternatif (V) Pada TOPSIS 
+Nilai preferensi pada metode TOPSIS ditentukan 
+dengan mengimplementasikan rumus (13) pada 
+hasil perhitungan jarak alternatif pada solusi ide-
+al positif dan solusi ideal negatif. Contoh proses 
+perhitungan pada alternatif A01 adalah sebagai 
+berikut: 
+        
+               
+Tabel 16. menunjukkan nilai preferensi tiap a l-
+ternatif (V) pada metode TOPSIS. 
+Tabel 16.  Nilai Preferensi Tiap Alternatif 
+Alternatif V 
+A01 0,728656 
+A02 0,491060 
+A03 0,765337 
+A04 0,460397 
+A05 0,659030 
+A06 0,458221 
+A07 0,518355 
+A08 0,594643 
+A09 0,558432 
+A10 0,497844 
+A11 0,474355 
+A12 0,548282 
+A13 0,443418 
+A14 0,757800 
+A15 0,336822 
+A16 0,466242 
+A17 0,470457 
+A18 0,488074 
+A19 0,442941 
+A20 0,329795 
+ 
+3.13 Mengurutkan Nilai Preferensi S e-
+luruh Alternatif Pada Semua 
+Metode 
+Berdasarkan hasil nilai preferensi atau nilai akhir 
+pada tiap-tiap metode, dan dengan mengurutkan 
+nilai preferensi dari terbesar ke terkecil, maka 
+didapat urutan alternatif sebagai berikut: 
+Tabel 17. Pengurutan Alternatif Tiap Metode 
+Alternatif SAW WP TOPSIS 
+V Rank V Rank V Rank 
+A01 16,80 3 0,067 2 0,73 3 
+A02 13,77 9 0,050 9 0,49 10 
+A03 17,32 1 0,069 1 0,77 1 
+A04 12,00 17 0,043 17 0,46 15 
+A05 15,22 4 0,060 4 0,66 4 
+A06 12,60 15 0,043 16 0,46 16 
+A07 13,85 8 0,050 8 0,52 8 
+A08 13,95 6 0,053 6 0,59 5 
+A09 13,87 7 0,051 7 0,56 6 
+A10 13,35 10 0,048 10 0,50 9 
+A11 12,75 13 0,046 13 0,47 12 
+A12 14,28 5 0,054 5 0,55 7 
+A13 11,75 18 0,041 18 0,44 17 
+A14 16,95 2 0,067 3 0,76 2 
+A15 11,02 20 0,039 19 0,34 19 
+A16 13,27 11 0,046 12 0,47 14 
+A17 13,05 12 0,046 11 0,47 13 
+A18 12,37 16 0,044 15 0,49 11 
+A19 12,75 14 0,044 14 0,44 18 
+A20 11,32 19 0,039 20 0,33 20 
+ 
+3.14  Pengujian Sensitivitas 
+Setelah semua nilai preferensi alternatif pada 
+tiap metode dihitung dan diurutkan, maka 
+langkah berikutnya adalah menguji tiap metode 
+dengan pengujian sensitivitas, untuk mengetahui 
+seberapa sensitif urutan nilai preferensi alternatif 
+akan berubah jika bobot diubah.  
+Pada penelitian ini, skenario pengu jian sensitivi-
+tas dilakukan dengan mengubah bobot salah satu 
+kriteria, dengan ditambah 0,5 dan 1, sedangkan 
+bobot kriteria lainnya tetap. Hal ini berlaku ber-
+giliran, sampai semua kriteria mendapatkan sc e-
+nario tersebut. 
+Adapun hasil dari pengujian sensitivitas terhadap 
+3 metode, yaitu SAW, WP, dan TOPSIS adalah 
+sebagai berikut. 
+Tabel 18. Hasil Pengujian Sensitivitas SAW, 
+WP, dan TOPSIS 
+Kriteria SAW WP TOPSIS 
+Kriteria 1 + (0,5) 0,327 -0,050 0,087 
+Kriteria 1 + (1) 0,639 -0,097 0,180 
+Kriteria 2 + (0,5) -0,161 -0,013 -0,121 
+Kriteria 2 + (1) -0,313 -0,026 0,546 
+Kriteria 3 + (0,5) 0,327 0,119 1,056 
+Kriteria 3 + (1) 0,639 0,233 2,158 
+Kriteria 4 + (0,5) 0,327 0,328 2,844 
+Kriteria 4 + (1) 0,639 0,204 1,918 
+Kriteria 5 + (0,5) -1,299 -0,089 0,128 
+Kriteria 5 + (1) -1,107 -0,058 1,074 
+Kriteria 6 + (0,5) 0,327 -0,003 1,455 
+Kriteria 6 + (1) 0,639 -0,007 2,888 
+Kriteria 7 + (0,5) 0,327 0,130 0,227 
+Kriteria 7 + (1) 0,327 -0,042 0,245 
+Kriteria 8 + (0,5) 0,327 -0,042 0,245 
+Kriteria 8 + (1) 0,639 -0,082 0,575 
+Kriteria 9 + (0,5) -1,502 -0,125 -2,555 
+Kriteria 9 + (1) -2,933 -0,243 -5,419 
+Kriteria 10 + (0,5) 0,327 0,063 0,292 
+Kriteria 10 + (1) 0,639 0,124 0,682 
+Jumlah (%) -0,009 0,003 0,085 
+ 
+Berdasarkan Tabel 18. di atas, maka nilai sens i-
+tivitas dari metode SAW adalah -0,009 %. Nilai 
+sensitivitas dari metode WP adalah 0,003 %, dan 
+
+--- Page 11 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+75 
+nilai sensitivitas dari metode TOPSIS adalah 
+0,085 %. 
+ 
+4. KESIMPULAN 
+Hasil p engujian sensitivitas terhadap 3 metode, 
+yaitu SAW, WP, dan TOPSIS  menunjukkan 
+tingkat sensitivitas tertinggi didapat oleh metode 
+TOPSIS dengan nilai 0,085 %. Dengan 
+demikian, metode TOPSIS merupakan metode 
+yang paling optimal untuk diterapkan pada si s-
+tem pendukung keputusan seleksi beasi swa Laz-
+izmu di Universitas Muhammadiyah Purworejo 
+(UMP), karena tingkat sensitivitasnya yang lebih 
+tinggi dari metode lainnya,  yaitu SAW dan WP. 
+ 
+REKOMENDASI 
+Pada penelitian selanjutnya, sistem pendukung 
+keputusan yang telah diimplementasikan dapat 
+diukur tingkat usabilitasnya, sehingga dapat 
+diketahui kebermanfaatan dan kebergunaannya 
+terhadap pengguna sistem. 
+ 
+DAFTAR PUSTAKA 
+Diana, D., &  Seprina, I. (2019). Sistem 
+Pendukung Keputusan untuk Menentukan 
+Penerima Bantuan Sosial Menerapkan 
+Weighted Product Method (WPM). Jurnal 
+Edukasi Dan Penelitian Informatika 
+(JEPIN), 5(3), 370. 
+https://doi.org/10.26418/jp.v5i3.34971 
+Fauzi, A. A., Zahro’, H.  Z., & Prasetya, R. P. 
+(2020). ANALISIS PERBANDINGAN 
+METODE TOPSIS DAN SAW DALAM  
+PENENTUAN PRIORITAS PERBAIKAN 
+JALAN  DI KABUPATEN REMBANG. 
+JATI (Jurnal Mahasiswa Teknik 
+Informatika), 4(2), 29 –36. 
+https://doi.org/10.36040/JATI.V4I2.2676 
+Fransiska, D. (202 3). Sistem Pendukung 
+Keputusan Menentukan E -Commerce 
+Terbaik Menggunakan Metode Weighted 
+Product. PROSISKO: Jurnal 
+Pengembangan Riset Dan Observasi 
+Sistem Komputer , 10(1), 41 –48. 
+https://doi.org/10.30656/PROSISKO.V10I
+1.5957 
+Jayawardani, W. R. K., & Maryam,  M. (2022). 
+Sistem Pendukung Keputusan Seleksi 
+Penerima Program Keluarga Harapan 
+dengan Implementasi Metode SAW dan 
+Pembobotan ROC. Emitor: Jurnal Teknik 
+Elektro, 22(2), 99 –109. 
+https://doi.org/10.23917/EMITOR.V22I2.1
+8411 
+Laila, F., & RMS, A. S. (2019). Pe nentuan 
+Supplier Bahan Baku Restaurant XO Suki 
+Menggunakan Metode Weighted Product. 
+JURNAL TEKNOLOGI DAN ILMU 
+KOMPUTER PRIMA (JUTIKOMP) , 2(1), 
+272–275. 
+https://doi.org/10.34012/jutikomp.v2i1.412 
+Magrisa, T., Wardhani, K. D. K., & Saf, M. R. 
+A. (2018). Impl ementasi Metode SMART 
+pada Sistem Pendukung Keputusan 
+Pemilihan Kegiatan Ekstrakurikuler untuk 
+Siswa SMA. Informatika Mulawarman : 
+Jurnal Ilmiah Ilmu Komputer , 13(1), 49 –
+55. 
+https://doi.org/10.30872/JIM.V13I1.648 
+Murtina, H., Hidayatun, N., & Susafa’ati, S . 
+(2022). IMPLEMENTASI MULTI 
+ATTRIBUTE DECISION MAKING 
+MENGGUNAKAN METODE 
+WEIGHTED PRODUCT  DALAM 
+PEMILIHAN SUPERVISOR. Jurnal 
+Teknoinfo, 16(2), 435 –442. 
+https://ejurnal.teknokrat.ac.id/index.php/tek
+noinfo/article/view/2006 
+Pasa, I. Y., Prasetya, N. W. A., & Maharrani, R. 
+H. (2022). Penerapan Metode SAW Pada 
+Penentuan Penerima Beasiswa Lazizmu. 
+INTEK : Jurnal Informatika Dan Teknologi 
+Informasi, 5(1), 81 –89. 
+https://doi.org/10.37729/INTEK.V5I1.1971 
+Penta, M. F., Siahaan, F. B ., & Sukamana, S. H. 
+(2019). Sistem Pendukung Keputusan 
+Pemilihan Karyawan Terbaik 
+Menggunakan Metode SAW pada PT. 
+Kujang Sakti Anugrah. JSAI (Journal 
+Scientific and Applied Informatics) , 2(3). 
+https://doi.org/10.36085/jsai.v2i3.410 
+Qiyamullailiy, A., Nand asari, S., & Amrozi, Y. 
+(2020). PERBANDINGAN 
+PENGGUNAAN METODE SAW DAN 
+AHP UNTUK SISTEM PENDUKUNG 
+KEPUTUSAN PENERIMAAN 
+KARYAWAN BARU. Teknika: 
+Engineering and Sains Journal , 4(1), 7. 
+https://doi.org/10.51804/tesj.v4i1.487.7-12 
+Ridho, M. R., Hairani, H., Latif, K. A., & 
+Hammad, R. (2021). Kombinasi Metode 
+AHP dan TOPSIS untuk Rekomendasi 
+Penerima Beasiswa SMK Berbasis Sistem 
+
+--- Page 12 ---
+Jurnal  INTEK Vol. 6 Nomor 1 Mei 2023  p-ISSN 2620–4843 
+  e-ISSN 2620–4924 
+ 
+ 
+76 
+Pendukung Keputusan. Jurnal Tekno 
+Kompak, 15(1), 26 –39. 
+https://doi.org/10.33365/JTK.V15I1.905 
+Sari, W. E. , B, M., & Rani, S. (2021). 
+Perbandingan Metode SAW dan Topsis 
+pada Sistem Pendukung Keputusan Seleksi 
+Penerima Beasiswa. Jurnal Sisfokom 
+(Sistem Informasi Dan Komputer) , 10(1), 
+52–58. 
+https://doi.org/10.32736/sisfokom.v10i1.10
+27 
+Septilia, H. A., Parjito, P., & Styawati, S. 
+(2020). SISTEM PENDUKUNG 
+KEPUTUSAN PEMBERIAN DANA 
+BANTUAN MENGGUNAKAN 
+METODE AHP. Jurnal Teknologi Dan 
+Sistem Informasi , 1(2), 34 –41. 
+https://doi.org/10.33365/JTSI.V1I2.369 
+Widiyawati, D., Dedih, D., & Wahyudi, W. 
+(2022). Implementasi Me tode Maut Dan 
+Saw Dalam Pemilihan Tempat Wisata Di 
+Kabupaten Karawang. Jurnal Interkom: 
+Jurnal Publikasi Ilmiah Bidang Teknologi 
+Informasi Dan Komunikasi , 17(2), 71 –80. 
+https://doi.org/10.35969/INTERKOM.V17I
+2.231 
+ 

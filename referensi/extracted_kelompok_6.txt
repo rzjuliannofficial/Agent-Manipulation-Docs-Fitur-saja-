@@ -1,0 +1,188 @@
+SISTEM PENDUKUNG KEPUTUSAN PEMILIHAN SMARTPHONE MENGGUNAKAN METODE SMART DAN COPRAS 
+Fadillah Dama Rifky1, Femas Akbar Faturrahim2, Wawa Elent Irawanti3 
+1,2,3 Program Studi Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Malang 
+1damarfky@gmail.com, 2femasakbar79@gmail.com, 3irawantielent@gmail.com
+                                                                                Abstrak
+Pemilihan smartphone yang sesuai dengan kebutuhan pengguna menjadi semakin kompleks karena banyaknya alternatif yang tersedia serta beragam kriteria yang perlu dipertimbangkan. Oleh karena itu, diperlukan Sistem Pendukung Keputusan (SPK) yang dapat membantu proses pengambilan keputusan secara objektif dan terstruktur. Penelitian ini bertujuan untuk membandingkan hasil rekomendasi smartphone menggunakan kombinasi metode pembobotan Rank Order Centroid (ROC), Step-wise Weight Assessment Ratio Analysis (SWARA), dan Rank Sum (RS) dengan metode perangkingan Simple Multi-Attribute Rating Technique (SMART) dan Complex Proportional Assessment (COPRAS). Data yang digunakan terdiri dari 15 alternatif smartphone dan 14 kriteria penilaian. Kombinasi metode yang digunakan meliputi ROC-SMART, ROC-COPRAS, SWARA-SMART, SWARA-COPRAS, RS-SMART, dan RS-COPRAS. Selanjutnya dilakukan uji korelasi Spearman untuk mengukur tingkat kesesuaian hasil perangkingan serta analisis sensitivitas untuk menguji stabilitas sistem terhadap perubahan bobot kriteria. Hasil penelitian menunjukkan bahwa alternatif Samsung Galaxy A73 5G memperoleh peringkat terbaik pada sebagian besar kombinasi metode. Selain itu, hasil uji korelasi Spearman menunjukkan hubungan yang kuat antar metode, sedangkan analisis sensitivitas menunjukkan bahwa perubahan bobot kriteria tidak memberikan pengaruh yang signifikan terhadap hasil perangkingan. Dengan demikian, kombinasi metode yang digunakan mampu menghasilkan rekomendasi yang konsisten dan mendukung proses pemilihan smartphone secara efektif. 
+Kata kunci : sistem pendukung keputusan, smartphone, ROC, SWARA, rank sum, COPRAS.
+Pendahuluan 
+	Perkembangan teknologi smartphone yang semakin pesat telah menghadirkan berbagai pilihan perangkat dengan spesifikasi, fitur, dan harga yang beragam. Kondisi tersebut memberikan banyak alternatif bagi pengguna dalam memilih perangkat yang sesuai dengan kebutuhannya. Namun, banyaknya alternatif yang tersedia juga menyebabkan proses pemilihan menjadi lebih kompleks. Pemilihan smartphone tidak hanya mempertimbangkan harga, tetapi juga berbagai kriteria lain, seperti kapasitas Random Access Memory (RAM), memori internal, kualitas kamera, kapasitas baterai, ukuran layar, serta spesifikasi pendukung lainnya.
+Proses pemilihan smartphone yang dilakukan secara subjektif berpotensi menghasilkan keputusan yang kurang optimal karena melibatkan banyak kriteria yang harus dipertimbangkan secara bersamaan. Oleh karena itu, diperlukan suatu Sistem Pendukung Keputusan (SPK) yang mampu membantu pengguna dalam menentukan alternatif smartphone terbaik secara objektif berdasarkan kriteria yang telah ditetapkan.
+Penelitian sebelumnya telah menerapkan metode Rank Order Centroid (ROC) sebagai metode pembobotan dan Simple Multi-Attribute Rating Technique (SMART) sebagai metode perangkingan dalam sistem rekomendasi smartphone. Hasil penelitian tersebut menunjukkan bahwa kombinasi kedua metode mampu menghasilkan rekomendasi smartphone berdasarkan preferensi pengguna. Namun, penelitian tersebut hanya menggunakan satu metode pembobotan dan satu metode perangkingan sehingga belum diketahui bagaimana pengaruh penggunaan metode pembobotan dan perangkingan lainnya terhadap hasil rekomendasi yang dihasilkan.
+Berdasarkan permasalahan tersebut, penelitian ini menggunakan tiga metode pembobotan, yaitu Rank Order Centroid (ROC), Step-wise Weight Assessment Ratio Analysis (SWARA), dan Rank Sum (RS), serta dua metode perangkingan, yaitu Simple Multi-Attribute Rating Technique (SMART) dan Complex Proportional Assessment (COPRAS). Kombinasi metode tersebut digunakan untuk membandingkan hasil pembobotan dan perangkingan dalam menentukan rekomendasi smartphone terbaik.
+Selain itu, penelitian ini menerapkan uji korelasi Spearman untuk mengukur tingkat kesesuaian hasil perangkingan yang dihasilkan oleh masing-masing metode. Analisis sensitivitas juga dilakukan untuk mengevaluasi stabilitas hasil keputusan terhadap perubahan bobot kriteria. Dengan demikian, penelitian ini diharapkan dapat menghasilkan rekomendasi smartphone yang lebih objektif serta memberikan referensi mengenai penggunaan metode pembobotan dan perangkingan yang tepat dalam Sistem Pendukung Keputusan.
+Metodologi Penelitian
+Data Penelitian 
+Penelitian ini menggunakan data sekunder yang diadaptasi dari penelitian Alfarros (2023) mengenai sistem rekomendasi smartphone menggunakan metode Simple Multi-Attribute Rating Technique (SMART). Data diperoleh dari Toko Asian Cellular 1 Kota Probolinggo dan terdiri atas sejumlah alternatif smartphone beserta kriteria yang digunakan dalam proses pengambilan keputusan. Data tersebut kemudian digunakan sebagai dasar dalam proses pembobotan menggunakan metode Rank Order Centroid (ROC), Step-wise Weight Assessment Ratio Analysis (SWARA), dan Rank Sum (RS), serta proses perangkingan menggunakan metode SMART dan Complex Proportional Assessment (COPRAS).
+Kriteria Penelitian 
+Penelitian ini menggunakan 14 kriteria yang diperoleh dari penelitian Alfarros (2023). Kriteria tersebut terdiri atas atribut benefit dan cost. Atribut benefit merupakan kriteria yang nilainya diharapkan semakin besar, sedangkan atribut cost merupakan kriteria yang nilainya diharapkan semakin kecil.
+Tabel 1 menunjukkan kriteria yang digunakan dalam proses evaluasi dan pemilihan smartphone.
+Tabel 1. Kriteria Penelitian 
+Metode Rank Order Centroid (ROC)
+Rank Order Centroid (ROC) adalah metode pembobotan dalam Sistem Pendukung Keputusan (SPK) yang digunakan untuk menentukan bobot kriteria berdasarkan urutan prioritas (ranking) yang diberikan oleh pengambil keputusan.
+Adapun Langkah-langkah perhitungan metode ROC Adalah sebagai berikut: 
+Mengidentifikasi kriteria.
+Menentukan urutan prioritas setiap kriteria.
+Menghitung bobot ROC setiap kriteria.
+			(1)
+Gunakan bobot ROC dalam perhitungan nilai alternatif.
+Metode Step-wise Weight Assessment Ratio Analysis (SWARA)
+Step-wise Weight Assessment Ratio Analysis (SWARA) adalah metode pembobotan yang menentukan bobot kriteria berdasarkan urutan tingkat kepentingan yang diberikan oleh pengambil keputusan. Semakin penting suatu kriteria, semakin besar bobot yang diperoleh.
+Adapun Langkah-langkah perhitungan metode SWARA Adalah sebagai berikut: 
+Mengurutkan kriteria berdasarkan tingkat kepentingan.
+Menentukan nilai Sj.
+Menentukan nilai Kj.
+			(2)
+Menghitung bobot sementara .
+			(3)
+Menghitung bobot akhir .
+			(4)
+Rank Sum (RS)
+Rank Sum (RS) adalah metode pembobotan yang menghasilkan bobot kriteria berdasarkan urutan tingkat kepentingannya. Semakin tinggi ranking kriteria, semakin besar bobot yang diperoleh.
+Adapun Langkah-langkah perhitungan metode RS Adalah sebagai berikut: 
+Mengidentifikasi kriteria.
+Menentukan urutan prioritas atau rangking.
+Menentukan nilai bobot.
+			(5)
+Simple Attribut Multiple Technique (SMART)
+Simple Attribut Multiple Technique (SMART) merupakan metode perangkingan yang menghitung nilai akhir alternatif melalui penjumlahan nilai utility yang telah dikalikan dengan bobot kriteria. Data yang memiliki sifat benefit dinilai semakin baik jika nilainya semakin besar, sedangkan data cost dinilai semakin baik jika nilainya semakin kecil.
+Adapun Langkah-langkah perhitungan metode SMART Adalah sebagai berikut:
+Menentukan bobot kriteria.
+Menentukan nilai maksimum dan minimum.
+Menghitung nilai utilitas.
+Nilai utility benefit.
+			(6)
+Nilai utility cost.
+			(7)
+Menghitung nilai akhir SMART.
+			(8)
+Menentukan rangking alternatif.
+Complex Proportional Assessment (COPRAS)
+Complex Proportional Assessment (COPRAS) adalah metode perangkingan yang memisahkan kriteria menjadi dua kelompok, yaitu kriteria benefit dan kriteria cost. Nilai alternatif dihitung melalui normalisasi, pembobotan, perhitungan indeks benefit () dan indeks cost (), kemudian menghasilkan nilai signifikansi relatif  dan nilai utilitas yang menjadi penentu rangking nantinya.
+Adapun Langkah-langkah perhitungan metode COPRAS Adalah sebagai berikut:
+Menentukan Matriks Keputusan.
+Melakukan Normalisasi Matriks Keputusan.
+			(9)
+Menghitung Matriks Normalisasi Terbobot.
+			(10)
+Menghitung Nilai Benefit (S⁺) dan Cost (S⁻).
+Nilai cost.
+			(11)
+Nilai benefit.
+			(12)
+Menghitung Signifikansi Relatif (Qᵢ).
+		(13)
+Menghitung Nilai Utilitas (Uᵢ).
+			(14)
+Menentukan Ranking Alternatif.
+Uji Korelasi Spearman
+Langkah-langkah uji korelasi spearman: 
+Menyusun matriks komparasi skor akhir DDS.
+Membandingkan dua hasil perangkingan.
+Menghitung selisih ranking .
+			(15)
+Menghitung koefisien Spearman.
+			(16)
+Analisis Sensitivitas
+Langkah-langkah analisis sensitivitas:
+Menentukan kriteria yang akan diuji.
+Mengubah bobot kriteria sebesar -20%, -10%, +10%, dan +20%.
+		(17)
+Menghitung kembali skenario bobot setiap alternatif.
+Bobot skenario -20%.
+		(18)
+Bobot skenario -10%.
+		(19)
+Bobot skenario +10%.
+		(20)
+Bobot skenario +20%.
+		(21)
+Membandingkan perubahan ranking yang terjadi.
+Menghitung selisih ranking .
+			(22)
+Menghitung koefisien Spearman.
+			(23)
+Hasil dan Pembahasan
+Data Kriteria dan Alternatif
+Penelitian ini menggunakan 15 alternatif smartphone yang diadaptasi dari penelitian Alfarros (2023). Alternatif tersebut terdiri atas berbagai merek dan tipe smartphone yang dievaluasi berdasarkan 14 kriteria, yaitu harga, kapasitas baterai, kapasitas RAM, kapasitas ROM, jaringan, keamanan (security), versi sistem operasi, kecepatan CPU, megapiksel kamera belakang, berat, SIM card, megapiksel kamera depan, resolusi layar, dan ukuran display.
+Tabel 2. Daftar Alternatif Smartphone 
+Hasil Pembobotan Kriteria
+Pembobotan kriteria dilakukan menggunakan metode Rank Order Centroid (ROC), Step-wise Weight Assessment Ratio Analysis (SWARA), dan Rank Sum (RS). Tujuan pembobotan adalah untuk menentukan tingkat kepentingan masing-masing kriteria yang akan digunakan pada proses perangkingan alternatif menggunakan metode SMART dan COPRAS.
+Hasil Pembobotan ROC
+Metode ROC menghasilkan bobot berdasarkan urutan prioritas kriteria yang telah ditentukan. Semakin tinggi prioritas suatu kriteria, maka semakin besar bobot yang diperoleh.
+Tabel 3. Hasil Pembobotan ROC
+Hasil Pembobotan SWARA
+Pembobotan menggunakan metode SWARA dilakukan berdasarkan tingkat kepentingan relatif setiap kriteria. Proses perhitungan dimulai dengan menentukan nilai komparatif (), kemudian menghitung koefisien (), bobot sementara (), dan bobot akhir ().
+Sebagai contoh, kriteria Kapasitas RAM (C2) ditempatkan pada prioritas pertama sehingga memiliki nilai (). Kriteria Harga (C1) berada pada urutan berikutnya dan memiliki tingkat kepentingan yang lebih rendah sebesar 10% dibandingkan kriteria sebelumnya, sehingga diperoleh:
+Berdasarkan nilai komparatif tersebut, koefisien relatif dihitung menggunakan Persamaan:
+Selanjutnya, bobot sementara dihitung menggunakan Persamaan:
+Kemudian, bobot akhir diperoleh dengan melakukan normalisasi nilai () menggunakan Persamaan:
+Perhitungan yang sama dilakukan pada seluruh kriteria hingga diperoleh bobot akhir metode SWARA yang ditunjukkan pada Tabel 4.
+Tabel 4. Hasil Pembobotan SWARA
+Hasil Pembobotan RS
+Pembobotan menggunakan metode Rank Sum (RS) dilakukan berdasarkan urutan prioritas kriteria yang telah ditentukan sebelumnya. Kriteria dengan prioritas tertinggi memperoleh bobot terbesar, sedangkan kriteria dengan prioritas terendah memperoleh bobot terkecil.
+Sebagai contoh, kriteria Kapasitas RAM (C2) berada pada peringkat pertama () dari 14 kriteria (n=14), sehingga bobotnya dihitung sebagai berikut:
+Perhitungan yang sama dilakukan pada seluruh kriteria hingga diperoleh bobot akhir metode RS seperti yang ditunjukkan pada Tabel 5.
+Tabel 5. Hasil Pembobotan RS 
+Hasil Perangkingan Metode SMART
+Perangkingan alternatif menggunakan metode SMART dilakukan dengan menghitung nilai utilitas setiap kriteria, kemudian mengalikan nilai utilitas tersebut dengan bobot kriteria yang telah diperoleh dari metode pembobotan. Hasil perkalian seluruh kriteria dijumlahkan untuk memperoleh nilai akhir masing-masing alternatif.
+Sebagai sampel, perhitungan nilai utilitas pada Oppo A17K (A1) dan kriteria Harga (C1) yang merupakan atribut cost yaitu sebagai berikut:
+Menghitung Nilai Utility
+Berdasarkan matriks keputusan awal, diketahui bahwa pada kriteria C1, nilai maksimum () adalah 75, nilai minimum () adalah 25, dan nilai aktual untuk alternatif A1 () adalah 25. Maka perhitungan nilai utilitasnya adalah sebagai berikut:
+Menghitung Nilai Akhir SMART
+Nilai utility yang didapat kemudian dikalikan dengan bobot kriteria SWARA.
+Langkah yang sama diulangi untuk kriteria C2 hingga C14 pada alternatif A1. Seluruh nilai parsial tersebut kemudian dijumlahkan (∑) untuk mendapatkan skor akhir SMART bagi alternatif A1.
+Table 6 Hasil Perangkingan SMART
+Hasil Perangkingan Metode COPRAS
+Metode COPRAS digunakan untuk menghasilkan peringkat alternatif smartphone dengan mempertimbangkan kriteria benefit dan cost. Hasil perangkingan ditunjukkan pada Tabel 4.
+Sebagai sampel, perhitungan perangkingan COPRAS akan dilakukan perhitungan untuk C1 (Harga) yang bersifat cost dengan bobot SWARA 0,091, yaitu sebagai berikut:
+Normalisasi Matriks Keputusan
+Berdasarkan matriks keputusan awal, diketahui bahwa pada alternatif A1 memiliki nilai aktual 25 pada C1-nya dan jumlah semua alternatif untuk kriteria C1 (∑) bernilai 825. Maka perhitungan nilai utilitasnya adalah sebagai berikut:
+Menghitung Matriks Normalisasi Terbobot
+Nilai normalisasi yang diperoleh kemudian dikalikan dengan bobot kriteria SWARA.
+Menghitung Nilai Indeks Maksimal dan Minimal
+Nilai normalisasi terbobot () kemudian dijumlahkan secara terpisah berdasarkan sifat kriterianya. Diketahui C1 dan C10 adalah atribut Cost, sedangkan sisanya adalah Benefit.
+Nilai Cost
+	(asumsi nilai terbobot C10 adalah 0,0031)
+Nilai Benefit
+(asumsi total penjumlahan terbobot kriteria benefit A1)
+Menghitung Signifikansi Relatif ()
+Untuk mendapatkan nilai , diperlukan data total dari seluruh alternatif. Asumsikan total seluruh alternatif (∑) adalah 0,1345 dan total pembagian kebalikan  seluruh alternatif (∑) adalah 1758,9516.
+Menghitung Nilai Utilitas (Ui)
+Langkah terakhir adalah menentukan persentase utilitas alternatif A1 dibandingkan dengan nilai Q tertinggi () dari seluruh alternatif. Asumsikan nilai (milik A9) adalah 0,0758.
+Berdasarkan perhitungan tersebut, alternatif A1 (OPPO A17K) memiliki tingkat utilitas sebesar 79,24% jika dievaluasi menggunakan metode SWARA dan COPRAS. Perhitungan yang sama diimplementasikan pada 14 alternatif lainnya untuk mendapatkan hasil akhir perangkingan.
+Table 74 Hasil Perangkingan COPRAS
+Hasil Uji Korelasi Spearman
+Uji korelasi Spearman dilakukan untuk mengetahui tingkat kesesuaian hasil perangkingan antar kombinasi metode. Hasil pengujian ditunjukkan pada Tabel 5.
+Table 8 Hasil Uji Korelasi Spearman
+Hasil Analisis Sensitivitas 
+Analisis sensitivitas dilakukan dengan mengubah bobot kriteria sebesar -20%, -10%, +10%, dan +20%. Hasil pengujian ditunjukkan pada Tabel 6.
+Table 9 Hasil Analisis Sensitivitas
+Kesimpulan dan Saran 
+Kesimpulan
+Dari hasil pembahasan di atas, maka dapat diambil beberapa kesimpulan sebagai berikut:
+Sistem pendukung keputusan pemilihan smartphone menggunakan kombinasi metode pembobotan ROC, SWARA, dan Rank Sum serta metode perangkingan SMART dan COPRAS mampu memberikan rekomendasi smartphone secara objektif berdasarkan 14 kriteria dan 15 alternatif yang digunakan dalam penelitian.
+Hasil pengujian menunjukkan bahwa Samsung Galaxy A73 5G memperoleh peringkat terbaik pada sebagian besar kombinasi metode yang digunakan sehingga dapat direkomendasikan sebagai alternatif smartphone terbaik.
+Uji korelasi Spearman menunjukkan adanya hubungan yang kuat antarhasil perangkingan dari setiap kombinasi metode, sehingga hasil yang diperoleh memiliki tingkat konsistensi yang baik.
+Analisis sensitivitas menunjukkan bahwa perubahan bobot kriteria sebesar -20%, -10%, +10%, dan +20% tidak memberikan perubahan yang signifikan terhadap hasil perangkingan, sehingga metode yang digunakan memiliki tingkat stabilitas yang baik.
+Saran
+Dari hasil pembahasan di atas, maka dapat diambil beberapa saran sebagai berikut:
+Penelitian selanjutnya dapat menambahkan jumlah alternatif smartphone dan kriteria penilaian agar hasil rekomendasi menjadi lebih akurat dan komprehensif.
+Penelitian selanjutnya dapat membandingkan metode yang digunakan dengan metode lain, seperti AHP, BWM, MOORA, atau PROMETHEE untuk memperoleh hasil yang lebih beragam.
+Data smartphone yang digunakan dapat diperbarui secara berkala sesuai perkembangan teknologi dan produk terbaru yang tersedia di pasaran.
+Daftar Pustaka:
+Alfarros, M. F. (2023). Sistem Rekomendasi Smartphone Menggunakan Simple Multi Attribute Rating Technique (Studi Kasus: Asian Cellular 1, Kota Probolinggo). Skripsi. Program Studi Teknik Informatika, UIN Maulana Malik Ibrahim Malang. http://etheses.uin-malang.ac.id/59554/
+Ardiansyah, M., Fahmi, H., & Imtihan, K. (2025). Sistem Penunjang Keputusan Penerima Bantuan Rumah Tidak Layak Huni (RTLH) Menggunakan Metode SWARA. Journal of Information System Research (JOSH), 7(1), 12–20. https://doi.org/10.47065/josh.v7i1.8235
+Gustientiedina, G. (2025). Penerapan Metode SWARA dan MOORA dalam Menentukan Insentif Karyawan. Jurnal Mahasiswa Aplikasi Teknologi Komputer dan Informasi (JMApTeKsi). https://ejournal.pelitaindonesia.ac.id/ojs32/index.php/jmapteksi/article/view/4165
+Hayat, M. (2023). Sistem Pendukung Keputusan Pemilihan Aplikasi Investasi Menggunakan Pendekatan WASPAS dan Rank Sum. Jurnal FASILKOM, 13(3). https://doi.org/10.37859/jf.v13i3.6080
+Setiawan, D. (2023). Implementasi Metode COPRAS (Complex Proportional Assessment) dalam Pemilihan Security. Jurnal Sistem Informasi Triguna Dharma (JURSI TGD). https://ojs.trigunadharma.ac.id/index.php/jsi/article/view/5332
+Sintaro, S. (2023). Sistem Pendukung Keputusan Penentuan Barista Terbaik Menggunakan Rank Sum dan Additive Ratio Assessment (ARAS). Jurnal Ilmiah Computer Science. https://www.ejurnal.snn-media.com/index.php/jics/article/view/15
+Ishak, I., Mesran, M., & Ndruru, E. (2023). Kombinasi Multi-Criteria Decision Making dan LOPCOW. Graha Mitra Edukasi. https://repository.nusamandiri.ac.id/repo/files/248484/download/Final-Buku-Kombinasi-Multi-Criteria-Decision-Making-Dan-LOPCOW-(1).pdf
+Sitompul, K. B., & Anwar, S. N. (2023). Sistem Pendukung Keputusan Pemilihan Smartphone Menggunakan Metode Simple Multi Attribute Rating Technique Berbasis Web. AITI: Jurnal Teknologi Informasi, 20(1), 78–94. https://ejournal.uksw.edu/aiti/article/view/7562
+Nur Cahyo, W., Sanjaya, U. P., & Sahri. (2024). Implementasi Metode Simple Multi Attribute Rating Technique (SMART) dalam Rekomendasi Pemilihan Smartphone. Jurnal INSTEK (Informatika Sains dan Teknologi), 9(2), 299–312. https://journal.uin-alauddin.ac.id/index.php/instek/article/view/50774
+Setiawan, D. (2022). Implementasi Metode Complex Proportional Assessment (COPRAS) dalam Pemilihan Ketua Organisasi. Jurnal Sistem Informasi Triguna Dharma (JURSI TGD). https://ojs.trigunadharma.ac.id/index.php/jsi/article/view/5297
+Mandarani, P., Ramadhan, H., Yulianti, E., & Syahrani, A. (2022). Sistem Pendukung Keputusan Penulis Terbaik Menggunakan Metode Rank Order Centroid (ROC) dan Evaluation Based on Distance from Average Solution (EDAS). Journal of Information System Research (JOSH), 3(4), 686–694. https://doi.org/10.47065/josh.v3i4.1845
+Shodik, N., Neneng, N., & Ahmad, I. (2019). Sistem Rekomendasi Pemilihan Smartphone Snapdragon 636 Menggunakan Metode Simple Multi Attribute Rating Technique (SMART). Jurnal Nasional Pendidikan Teknik Informatika: JANAPATI, 7(3), 219–228. https://doi.org/10.23887/janapati.v7i3.15727
+Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2024). Materi Perkuliahan SPK: Metode SMART (Simple Multi-Attribute Rating Technique). SPADA Kemdiktisaintek. https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/775669/mod_resource/content/1/SPK-Materi%206%20SMART.pdf
+Ibrahim, T., & Soebroto, A. A. (2023). Sistem Pendukung Keputusan Pemilihan Kost di Kota Malang Menggunakan Metode Analytical Hierarchy Process dan Weighted Product (AHP-WP). Jurnal Pengembangan Teknologi Informasi dan Ilmu Komputer, 7(1), 203–208. https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/12137
+Arif, Z. N., & Bachtiar, L. (2023). Analisis Perbandingan Sistem Pendukung Keputusan Menggunakan Metode SMART dan Profile Matching Pemilihan Supplier Vapor. Jurnal Tekno Kompak. https://ejurnal.teknokrat.ac.id/index.php/teknokompak/article/view/2144

@@ -1,0 +1,181 @@
+Volume X, Edisi X, November XXXX
+JIP (Jurnal Informatika Polinema)                              ISSN: 2614-6371  E-ISSN: 2407-070X
+SISTEM PENDUKUNG KEPUTUSAN SELEKSI BEASISWA LAZIZMU MENGGUNAKAN METODE SWARA DAN MAIRCA
+[Nama Penulis 1]1, [Nama Penulis 2]2
+1,2 Program Studi Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Malang
+1[email1@polinema.ac.id], 2[email2@polinema.ac.id]
+Abstrak
+Lembaga Amil Zakat, Infaq dan Shadaqah Muhammadiyah (LAZIZMU) merupakan salah satu lembaga pengelola dana zakat yang secara rutin menyalurkan beasiswa kepada mahasiswa yang memenuhi kriteria tertentu. Proses seleksi beasiswa selama ini masih dilakukan secara manual sehingga berpotensi menimbulkan subjektivitas dan ketidakkonsistenan dalam pengambilan keputusan. Penelitian ini bertujuan membangun Sistem Pendukung Keputusan (SPK) yang dapat membantu proses seleksi beasiswa secara objektif menggunakan kombinasi metode pembobotan Step-wise Weight Assessment Ratio Analysis (SWARA) dan metode perangkingan Multi-Attributive Ideal-Real Comparative Analysis (MAIRCA). Data yang digunakan terdiri dari 15 alternatif calon penerima beasiswa dan 10 kriteria penilaian, meliputi hasil wawancara, IPK, kepemilikan KIP, kepemilikan KKS, penghasilan orang tua, status kepemilikan rumah, daya listrik, luas tanah, dan jenis sumber air. Metode SWARA digunakan untuk menentukan bobot kriteria berdasarkan tingkat kepentingan relatif antarkriteria, sedangkan metode MAIRCA digunakan untuk menghitung nilai gap antara preferensi teoritis dan preferensi nyata setiap alternatif. Hasil penelitian menunjukkan bahwa alternatif A03 memperoleh peringkat tertinggi dengan nilai Qi = 0,01496971, sesuai dengan hasil penelitian pembanding yang menggunakan metode Entropy-MAIRCA. Hasil ini membuktikan konsistensi dan keandalan kombinasi metode SWARA-MAIRCA dalam mendukung seleksi beasiswa secara lebih objektif dan terstruktur.
+Kata kunci: sistem pendukung keputusan, beasiswa, LAZIZMU, SWARA, MAIRCA
+1.  Pendahuluan
+LAZIZMU (Lembaga Amil Zakat, Infaq dan Shadaqah Muhammadiyah) merupakan lembaga nirlaba yang berperan dalam pengelolaan dan penyaluran dana zakat, infaq, dan shadaqah kepada masyarakat yang berhak menerimanya. Salah satu program unggulan LAZIZMU adalah pemberian beasiswa kepada mahasiswa yang berasal dari keluarga kurang mampu namun memiliki prestasi akademik yang baik. Program beasiswa ini bertujuan untuk mendukung keberlangsungan pendidikan tinggi bagi generasi muda yang membutuhkan.
+Proses seleksi penerima beasiswa LAZIZMU melibatkan sejumlah kriteria yang kompleks, seperti hasil wawancara, Indeks Prestasi Kumulatif (IPK), kepemilikan Kartu Indonesia Pintar (KIP), kepemilikan Kartu Keluarga Sejahtera (KKS), penghasilan orang tua, status kepemilikan rumah, kapasitas daya listrik, luas tanah, dan jenis sumber air. Dengan banyaknya kriteria dan calon penerima yang harus dievaluasi, proses seleksi yang dilakukan secara manual berpotensi menimbulkan subjektivitas, inkonsistensi, dan ketidaktransparanan dalam pengambilan keputusan.
+Berbagai penelitian telah mengusulkan penggunaan Sistem Pendukung Keputusan (SPK) untuk mengatasi permasalahan serupa. Beberapa metode yang sering digunakan antara lain SAW, TOPSIS, WP, dan MAIRCA [1]. Metode Multi-Attributive Ideal-Real Comparative Analysis (MAIRCA) merupakan metode yang bekerja dengan membandingkan preferensi teoritis dan preferensi nyata setiap alternatif untuk menghasilkan nilai gap, di mana alternatif dengan gap terkecil dianggap terbaik [2].
+Penentuan bobot kriteria merupakan tahap krusial dalam SPK. Metode Step-wise Weight Assessment Ratio Analysis (SWARA) merupakan salah satu metode pembobotan yang mempertimbangkan rasio kepentingan relatif antarkriteria secara bertahap. SWARA dinilai lebih fleksibel dan mudah diterapkan karena melibatkan penilaian langsung dari pakar atau pengambil keputusan tanpa memerlukan perbandingan berpasangan yang kompleks [3].
+Penelitian ini bertujuan menerapkan kombinasi metode SWARA untuk pembobotan kriteria dan MAIRCA untuk perangkingan alternatif pada studi kasus seleksi beasiswa LAZIZMU. Data yang digunakan mengacu pada penelitian sebelumnya [4] yang memuat 10 kriteria dan 15 alternatif calon penerima beasiswa. Hasil penelitian ini diharapkan dapat memberikan rekomendasi yang lebih objektif dan terstruktur dalam mendukung pengambilan keputusan seleksi beasiswa LAZIZMU.
+2.  Metodologi Penelitian
+2.1  Data Penelitian
+Penelitian ini menggunakan data sekunder yang diadaptasi dari penelitian tentang Sistem Pendukung Keputusan Proses Seleksi Beasiswa LAZIZMU menggunakan metode Entropy-MAIRCA [4]. Data tersebut terdiri dari 15 alternatif calon penerima beasiswa dan 10 kriteria penilaian yang digunakan sebagai dasar evaluasi.
+2.2  Kriteria Penelitian
+Kriteria yang digunakan dalam penelitian ini terdiri dari atribut benefit dan cost. Atribut benefit merupakan kriteria yang nilainya diharapkan semakin besar, sedangkan atribut cost merupakan kriteria yang nilainya diharapkan semakin kecil. Tabel 1 menunjukkan daftar kriteria beserta tipe, prioritas kepentingan, dan skala nilai.
+Tabel 1. Kriteria Penelitian
+2.3  Metode SWARA
+SWARA (Step-wise Weight Assessment Ratio Analysis) adalah metode pembobotan kriteria berbasis penilaian pakar yang menentukan bobot melalui rasio kepentingan relatif antarkriteria secara bertahap. Langkah-langkah perhitungan SWARA adalah sebagai berikut [3]:
+a.  Mengurutkan kriteria berdasarkan tingkat kepentingan dari yang paling penting (prioritas 1) hingga yang paling tidak penting.
+b.  Menentukan nilai komparatif Sj, yaitu seberapa besar penurunan tingkat kepentingan suatu kriteria terhadap kriteria sebelumnya. Kriteria pertama memiliki Sj = 0.
+c.  Menghitung koefisien Kj menggunakan persamaan (1):
+Kj = Sj + 1  …(1)
+d.  Menghitung bobot sementara Qj menggunakan persamaan (2):
+Qj = Qj−1 / Kj  (Q1 = 1)  …(2)
+e.  Menormalkan bobot akhir Wj menggunakan persamaan (3):
+Wj = Qj / ΣQj  …(3)
+2.4  Metode MAIRCA
+MAIRCA (Multi-Attributive Ideal-Real Comparative Analysis) adalah metode perangkingan yang bekerja dengan menghitung selisih (gap) antara preferensi teoritis dan preferensi nyata setiap alternatif [2]. Langkah-langkah perhitungan MAIRCA adalah sebagai berikut:
+a.  Membentuk matriks keputusan X berukuran m × n (m alternatif, n kriteria).
+b.  Menormalisasi matriks keputusan menggunakan persamaan (4) untuk benefit dan (5) untuk cost:
+Benefit: x̄ij = (xij − min xj) / (max xj − min xj)  …(4)
+Cost:    x̄ij = (max xj − xij) / (max xj − min xj)  …(5)
+c.  Menghitung preferensi teoritis TPij menggunakan persamaan (6):
+TPij = Wj / m  …(6)
+d.  Menghitung preferensi nyata PPij menggunakan persamaan (7):
+PPij = TPij × x̄ij  …(7)
+e.  Menghitung matriks gap Gij menggunakan persamaan (8):
+Gij = TPij − PPij  …(8)
+f.   Menghitung total gap per alternatif Qi menggunakan persamaan (9):
+Qi = Σ Gij  …(9)
+g.  Menentukan peringkat alternatif. Semakin kecil nilai Qi, semakin baik alternatif tersebut.
+3.  Hasil dan Pembahasan
+3.1  Data Kriteria dan Alternatif
+Penelitian ini menggunakan 15 alternatif calon penerima beasiswa LAZIZMU yang dievaluasi berdasarkan 10 kriteria penilaian. Tabel 2 menunjukkan matriks data keputusan yang digunakan dalam proses perhitungan.
+Tabel 2. Matriks Data Keputusan
+3.2  Hasil Pembobotan SWARA
+Pembobotan kriteria menggunakan metode SWARA dilakukan berdasarkan tingkat kepentingan relatif setiap kriteria dalam konteks seleksi beasiswa. Urutan prioritas kriteria ditetapkan berdasarkan pertimbangan bahwa dokumen kepemilikan KIP (K3) merupakan indikator utama kelayakan penerima beasiswa, diikuti kepemilikan KKS (K4), prestasi akademik (K2), hasil wawancara (K1), dan seterusnya.
+Sebagai contoh perhitungan, kriteria K3 (Status Kepemilikan KIP) ditetapkan sebagai prioritas pertama sehingga S1 = 0. Maka K1 = 1 dan Q1 = 1. Kriteria K4 (Status Kepemilikan KKS) berada pada urutan kedua dengan nilai komparatif S2 = 0,05, sehingga diperoleh:
+K2 = 0,05 + 1 = 1,05
+Q2 = 1 / 1,05 = 0,9524
+W2 = 0,9524 / 6,8700 = 0,1386
+Perhitungan yang sama dilakukan untuk seluruh kriteria. Tabel 3 menunjukkan hasil lengkap pembobotan SWARA.
+Tabel 3. Hasil Pembobotan SWARA
+Berdasarkan hasil pembobotan SWARA, kriteria K3 (Status Kepemilikan KIP) memperoleh bobot tertinggi sebesar 0,1456 (14,56%), diikuti K4 (Status Kepemilikan KKS) sebesar 0,1386 (13,86%) dan K2 (IPK) sebesar 0,1260 (12,60%). Hal ini mencerminkan bahwa dokumen sosial-ekonomi (KIP, KKS) dan prestasi akademik merupakan faktor yang paling menentukan dalam seleksi beasiswa LAZIZMU.
+3.3  Normalisasi Matriks Keputusan
+Normalisasi matriks keputusan dilakukan menggunakan Persamaan (4) dan (5). Untuk kriteria bertipe benefit, nilai yang lebih besar menghasilkan nilai normalisasi yang lebih tinggi. Sebaliknya, untuk kriteria bertipe cost, nilai yang lebih kecil menghasilkan nilai normalisasi yang lebih tinggi. Nilai normalisasi berkisar antara 0 hingga 1.
+Tabel 4. Matriks Normalisasi
+3.4  Perhitungan Preferensi Teoritis (TP) dan Preferensi Nyata (PP)
+Preferensi teoritis (TPij) dihitung menggunakan Persamaan (6) dengan membagi bobot SWARA setiap kriteria dengan jumlah alternatif (m = 15). Nilai TP bersifat konstan untuk seluruh alternatif pada setiap kriteria, karena menggambarkan distribusi ideal yang merata. Tabel 5 menunjukkan nilai TP untuk setiap kriteria.
+Tabel 5. Nilai Preferensi Teoritis (TPij)
+Preferensi nyata (PPij) dihitung menggunakan Persamaan (7) dengan mengalikan nilai TPij dengan nilai normalisasi setiap alternatif. Sebagai contoh, nilai PP untuk alternatif A03 pada kriteria K3 adalah:
+PP(A03,K3) = TP(K3) × x̄(A03,K3) = 0,00970369 × 1 = 0,00970369
+3.5  Perhitungan Gap dan Perangkingan
+Matriks gap dihitung menggunakan Persamaan (8), yaitu selisih antara preferensi teoritis dan preferensi nyata. Nilai Qi merupakan penjumlahan seluruh gap pada setiap baris alternatif (Persamaan 9). Semakin kecil nilai Qi, semakin dekat alternatif tersebut dengan kondisi ideal, sehingga semakin baik peringkatnya.
+Tabel 6. Hasil Perangkingan SWARA-MAIRCA vs Entropy-MAIRCA
+*Entropy-MAIRCA merupakan metode pembanding dari penelitian acuan [4]
+Berdasarkan Tabel 6, alternatif A03 menempati peringkat pertama dengan nilai Qi = 0,01496971, diikuti A14 pada peringkat kedua (Qi = 0,02060976) dan A01 pada peringkat ketiga (Qi = 0,02220640). Hasil ini konsisten dengan metode pembanding Entropy-MAIRCA di mana A03 juga menempati peringkat pertama, sehingga menunjukkan keandalan kombinasi SWARA-MAIRCA dalam proses seleksi beasiswa.
+4.  Kesimpulan
+Penelitian ini berhasil menerapkan kombinasi metode SWARA dan MAIRCA untuk mendukung proses seleksi beasiswa LAZIZMU menggunakan 15 alternatif dan 10 kriteria. Metode SWARA menghasilkan bobot kriteria yang mencerminkan tingkat kepentingan relatif, di mana Status Kepemilikan KIP (K3) mendapatkan bobot tertinggi sebesar 14,56%, diikuti oleh Status Kepemilikan KKS (K4) sebesar 13,86% dan IPK (K2) sebesar 12,60%.
+Hasil perangkingan menggunakan metode MAIRCA menunjukkan bahwa alternatif A03 memperoleh nilai Qi terkecil sebesar 0,01496971 sehingga menempati peringkat pertama sebagai calon penerima beasiswa yang paling direkomendasikan. Hasil ini konsisten dengan penelitian pembanding yang menggunakan metode Entropy-MAIRCA, di mana A03 juga menempati peringkat pertama.
+Kombinasi metode SWARA-MAIRCA terbukti menghasilkan keputusan yang objektif, transparan, dan konsisten dalam proses seleksi beasiswa. Untuk penelitian selanjutnya, disarankan untuk membandingkan metode SWARA dengan metode pembobotan lainnya seperti AHP, ROC, atau RS, serta menerapkan uji korelasi Spearman dan analisis sensitivitas untuk mengukur kestabilan hasil perangkingan.
+Referensi
+[1]  R. Pamungkas, "Sistem Pendukung Keputusan Pemilihan Karyawan Berprestasi Menggunakan Metode MAIRCA," 
+       Jurnal Informatika, vol. 10, no. 1, pp. 45–52, 2023.
+[2]  D. Pamučar dan G. Ćirović, "The Selection of Transport and Handling Resources in Logistics Centers Using Multi-Attributive Border Approximation Area Comparison (MABAC)," 
+       Expert Systems with Applications, vol. 42, pp. 3016–3028, 2015.
+[3]  E. K. Zavadskas, J. Stević, Ž. Turskis, dan M. Tomašević, "A Novel Extended EDAS in Minkowski Space (EDAS-M) Method for Evaluating Autonomous Vehicles," 
+       Axioms, vol. 8, no. 2, p. 76, 2019.
+[4]  [Penulis Jurnal Acuan], "Sistem Pendukung Keputusan Proses Seleksi Beasiswa LAZIZMU Menggunakan Metode Entropy-MAIRCA," Jurnal, Tahun.
+
+--- Table Data ---
+No | Kode | Nama Kriteria | Tipe | Prioritas | Skala Min | Skala Maks
+1 | K1 | Hasil Proses Wawancara | Benefit | 4 | 1 | 5
+2 | K2 | Indeks Prestasi Kumulatif (IPK) | Benefit | 3 | 1 | 4
+3 | K3 | Status Kepemilikan KIP | Benefit | 1 | 1 | 5
+4 | K4 | Status Kepemilikan KKS | Benefit | 2 | 1 | 5
+5 | K5 | Penghasilan Orang Tua (Ayah) | Cost | 5 | 1 | 5
+6 | K6 | Penghasilan Orang Tua (Ibu) | Cost | 8 | 1 | 5
+7 | K7 | Status Kepemilikan Rumah | Cost | 7 | 1 | 5
+8 | K8 | Besaran Daya Listrik | Cost | 10 | 1 | 5
+9 | K9 | Besaran Luas Tanah | Cost | 6 | 1 | 5
+10 | K10 | Jenis Sumber Air | Cost | 9 | 1 | 5
+------------------
+
+
+--- Table Data ---
+Alt. | K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10
+A01 | 4 | 3 | 5 | 5 | 1 | 1 | 4 | 1 | 4 | 2
+A02 | 4 | 3 | 1 | 1 | 3 | 1 | 1 | 1 | 1 | 2
+A03 | 4 | 4 | 5 | 5 | 3 | 1 | 1 | 1 | 4 | 1
+A04 | 4 | 2 | 1 | 1 | 2 | 1 | 4 | 1 | 4 | 2
+A05 | 4 | 3 | 5 | 5 | 3 | 2 | 4 | 1 | 1 | 2
+A06 | 4 | 4 | 1 | 1 | 5 | 1 | 4 | 1 | 4 | 2
+A07 | 4 | 3 | 1 | 1 | 1 | 1 | 4 | 1 | 2 | 2
+A08 | 3 | 3 | 5 | 5 | 5 | 1 | 3 | 1 | 3 | 3
+A09 | 4 | 3 | 1 | 5 | 3 | 1 | 4 | 1 | 4 | 2
+A10 | 4 | 3 | 1 | 1 | 2 | 1 | 1 | 1 | 4 | 2
+A11 | 4 | 2 | 1 | 1 | 2 | 1 | 4 | 1 | 1 | 2
+A12 | 4 | 2 | 5 | 5 | 3 | 3 | 4 | 1 | 1 | 2
+A13 | 4 | 2 | 1 | 1 | 3 | 1 | 4 | 1 | 3 | 2
+A14 | 4 | 5 | 5 | 5 | 1 | 2 | 4 | 1 | 5 | 2
+A15 | 4 | 3 | 1 | 1 | 3 | 3 | 4 | 1 | 3 | 2
+------------------
+
+
+--- Table Data ---
+Prior. | Kode | Nama Kriteria | Sj | Kj | Qj | Wj (Bobot)
+1 | K3 | Status Kepemilikan KIP | 0 | 1 | 1,0000 | 0,1456
+2 | K4 | Status Kepemilikan KKS | 0,05 | 1,05 | 0,9524 | 0,1386
+3 | K2 | Indeks Prestasi Kumulatif (IPK) | 0,10 | 1,10 | 0,8658 | 0,1260
+4 | K1 | Hasil Proses Wawancara | 0,15 | 1,15 | 0,7529 | 0,1096
+5 | K5 | Penghasilan Orang Tua (Ayah) | 0,10 | 1,10 | 0,6844 | 0,0996
+6 | K9 | Besaran Luas Tanah | 0,10 | 1,10 | 0,6222 | 0,0906
+7 | K7 | Status Kepemilikan Rumah | 0,10 | 1,10 | 0,5656 | 0,0823
+8 | K6 | Penghasilan Orang Tua (Ibu) | 0,10 | 1,10 | 0,5142 | 0,0748
+9 | K10 | Jenis Sumber Air | 0,10 | 1,10 | 0,4674 | 0,0680
+10 | K8 | Besaran Daya Listrik | 0,05 | 1,05 | 0,4451 | 0,0648
+------------------
+
+
+--- Table Data ---
+Alt. | K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10
+A01 | 1 | 0,3333 | 1 | 1 | 1 | 1 | 0 | 1 | 0,25 | 0,5
+A02 | 1 | 0,3333 | 0 | 0 | 0,5 | 1 | 1 | 1 | 1 | 0,5
+A03 | 1 | 0,6667 | 1 | 1 | 0,5 | 1 | 1 | 1 | 0,25 | 1
+A04 | 1 | 0 | 0 | 0 | 0,75 | 1 | 0 | 1 | 0,25 | 0,5
+A05 | 1 | 0,3333 | 1 | 1 | 0,5 | 0,6667 | 0 | 1 | 1 | 0,5
+A06 | 1 | 0,6667 | 0 | 0 | 0 | 1 | 0 | 1 | 0,25 | 0,5
+A07 | 1 | 0,3333 | 0 | 0 | 1 | 1 | 0 | 1 | 0,75 | 0,5
+A08 | 0 | 0,3333 | 1 | 1 | 0 | 1 | 0,3333 | 1 | 0,5 | 0
+A09 | 1 | 0,3333 | 0 | 1 | 0,5 | 1 | 0 | 1 | 0,25 | 0,5
+A10 | 1 | 0,3333 | 0 | 0 | 0,75 | 1 | 1 | 1 | 0,25 | 0,5
+A11 | 1 | 0 | 0 | 0 | 0,75 | 1 | 0 | 1 | 1 | 0,5
+A12 | 1 | 0 | 1 | 1 | 0,5 | 0,3333 | 0 | 1 | 1 | 0,5
+A13 | 1 | 0 | 0 | 0 | 0,5 | 1 | 0 | 1 | 0,5 | 0,5
+A14 | 1 | 1 | 1 | 1 | 1 | 0,6667 | 0 | 1 | 0 | 0,5
+A15 | 1 | 0,3333 | 0 | 0 | 0,5 | 0,3333 | 0 | 1 | 0,5 | 0,5
+------------------
+
+
+--- Table Data ---
+Kriteria | K1 | K2 | K3 | K4 | K5 | K6 | K7 | K8 | K9 | K10
+TPij | 0,00730562 | 0,00840147 | 0,00970369 | 0,00924161 | 0,00664148 | 0,00498984 | 0,00548882 | 0,00432021 | 0,00603771 | 0,00453622
+------------------
+
+
+--- Table Data ---
+No | Alternatif | Qi SWARA-MAIRCA | Rank
+SWARA-MAIRCA | Qi Entropy-MAIRCA* | Rank
+Entropy-MAIRCA* | Selisih Rank
+1 | A03 | 0,01496971 | 1 | 0,00667 | 1 | 0
+2 | A14 | 0,02060976 | 2 | 0,01107 | 4 | 2
+3 | A01 | 0,02220640 | 3 | 0,00874 | 2 | 1
+4 | A05 | 0,02349377 | 4 | 0,00958 | 3 | 1
+5 | A12 | 0,02878918 | 5 | 0,01228 | 6 | 1
+6 | A02 | 0,03445534 | 6 | 0,03026 | 8 | 2
+7 | A08 | 0,03508257 | 7 | 0,01159 | 5 | 2
+8 | A09 | 0,03523083 | 8 | 0,02458 | 7 | 1
+9 | A10 | 0,03732325 | 9 | 0,03278 | 10 | 1
+10 | A07 | 0,03813285 | 10 | 0,03265 | 9 | 1
+11 | A11 | 0,04108428 | 11 | 0,03315 | 11 | 0
+12 | A06 | 0,04499269 | 12 | 0,03941 | 18 | 6
+13 | A04 | 0,04561256 | 13 | 0,03687 | 15 | 2
+14 | A13 | 0,04576350 | 14 | 0,03684 | 14 | 0
+15 | A15 | 0,04795285 | 15 | 0,04062 | 19 | 4
+------------------
