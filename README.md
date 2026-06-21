@@ -1,5 +1,8 @@
 # Office Document Automation (PDF, DOCX, XLSX)
 
+> [!NOTE]
+> **Integrasi Agen AI**: Repositori ini dikonfigurasi secara khusus sebagai *workspace* terintegrasi untuk agen AI. Panduan eksekusi sistem, alur pemrosesan dokumen, serta aturan format keluaran yang harus dipatuhi oleh agen didefinisikan secara terpusat pada berkas [SKILL.md](file:///c:/laragon/www/Mandiri/Agent%20Manipulation%20Docs%28Fitur%20saja%29/SKILL.md).
+
 Repositori ini berisi sekumpulan perkakas dan skrip utilitas untuk melakukan ekstraksi teks dari PDF/Word serta pembuatan dokumen Word dan Excel secara otomatis sesuai dengan template standar industri dan akademik.
 
 ---
