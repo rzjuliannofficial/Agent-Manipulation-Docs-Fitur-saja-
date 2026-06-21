@@ -1,0 +1,119 @@
+P0: 
+P1: SISTEM PENDUKUNG KEPUTUSAN SELEKSI BEASISWA LAZIZMU MENGGUNAKAN METODE PEMBOBOTAN SWARA DAN METODE PERINGKAT MAIRCA
+P2: 
+P3: Nabhan Rizqi Julian Saputro1 , Nur Alfiyanti2, Rani Miftahus3 
+P4: 
+P5: 1,2,3 Program Studi Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Malang
+P6: 1 nabhanrizqijuliansaputro@gmail.com,  2nuralfiyanti05@gmail.com, 3ranimiftahhh.04@gmail.com 
+P7: 
+P8: Abstrak
+P9: Proses seleksi beasiswa LAZIZMU (Lembaga Amil Zakat, Infaq dan Shadaqah Muhammadiyah) di Universitas Muhammadiyah Purworejo selama ini masih dilakukan secara manual sehingga berpotensi menimbulkan subjektivitas dan ketidakkonsistenan dalam pengambilan keputusan. Penelitian ini bertujuan membangun Sistem Pendukung Keputusan (SPK) yang mampu membantu seleksi beasiswa secara objektif dan terstruktur menggunakan kombinasi metode pembobotan Step-wise Weight Assessment Ratio Analysis (SWARA) dan metode perangkingan Multi-Attributive Ideal-Real Comparative Analysis (MAIRCA). Data penelitian terdiri dari 20 alternatif calon penerima beasiswa yang dievaluasi berdasarkan 10 kriteria, meliputi hasil wawancara, Indeks Prestasi Kumulatif (IPK), kepemilikan Kartu Indonesia Pintar (KIP), kepemilikan Kartu Keluarga Sejahtera (KKS), penghasilan orang tua, status kepemilikan rumah, daya listrik, luas tanah, dan jenis sumber air. Metode SWARA digunakan untuk menentukan bobot kriteria berdasarkan rasio kepentingan relatif, dengan hasil K3 (Status KIP) memperoleh bobot tertinggi sebesar 0,1456. Selanjutnya, metode MAIRCA digunakan untuk menghitung nilai gap antara preferensi teoritis dan preferensi nyata setiap alternatif. Hasil perangkingan menunjukkan alternatif A03 memperoleh nilai Qi terkecil sebesar 0,00799 sehingga menempati peringkat pertama. Untuk mengukur konsistensi dan validitas hasil, dilakukan uji korelasi Spearman antara perangkingan SWARA-MAIRCA dengan metode pembanding dari penelitian terdahulu yaitu SAW (rs = 0,9805), WP (rs = 0,9729), dan TOPSIS (rs = 0,9188) yang menunjukkan korelasi positif sangat kuat. Analisis sensitivitas juga dilakukan dengan memvariasikan bobot kriteria K3 sebesar -20%, -10%, +10%, dan +20%, yang menunjukkan stabilitas tinggi di mana alternatif A03 tetap konsisten berada di peringkat pertama.
+P10: Kata kunci: sistem pendukung keputusan, beasiswa, LAZIZMU, SWARA, MAIRCA, korelasi Spearman, analisis sensitivitas
+P11: 
+P12: 1.  Pendahuluan
+P13: Lembaga Amil Zakat, Infaq dan Shadaqah Muhammadiyah (LAZIZMU) merupakan lembaga pengelola dana zakat yang secara aktif menyalurkan beasiswa bagi mahasiswa yang memenuhi kriteria tertentu. Di Universitas Muhammadiyah Purworejo (UMP), proses seleksi beasiswa LAZIZMU melibatkan banyak kriteria dan dilakukan secara manual, sehingga berpotensi menghasilkan keputusan yang tidak konsisten dan kurang transparan (Pasa et al., 2022).
+P14: Berbagai penelitian terdahulu telah menerapkan metode MCDM untuk seleksi beasiswa. Pasa et al. (2023) membandingkan metode SAW, WP, dan TOPSIS pada kasus yang sama dengan 20 alternatif, dengan hasil menunjukkan TOPSIS paling sensitif terhadap perubahan bobot. Ridho et al. (2021) mengombinasikan AHP dan TOPSIS untuk rekomendasi beasiswa SMK dan menghasilkan sistem yang cukup akurat. Namun, metode-metode tersebut belum mengeksplorasi SWARA sebagai pembobot adaptif berbasis penilaian pakar maupun MAIRCA sebagai metode perangkingan berbasis gap preferensi.
+P15: Metode SWARA (Step-wise Weight Assessment Ratio Analysis) ditawarkan sebagai alternatif pembobotan yang lebih efisien karena tidak memerlukan perbandingan berpasangan seperti AHP (Ardiansyah et al., 2025). Metode MAIRCA (Multi-Attributive Ideal-Real Comparative Analysis) bekerja dengan menghitung gap antara preferensi teoritis dan preferensi nyata, sehingga menghasilkan perangkingan yang lebih komprehensif dibandingkan metode berbasis nilai maksimum-minimum semata (Stević et al., 2018).
+P16: Penelitian ini menerapkan kombinasi SWARA-MAIRCA pada studi kasus seleksi beasiswa LAZIZMU menggunakan 20 alternatif dan 10 kriteria yang diadaptasi dari Pasa et al. (2023). Selain itu, dilakukan uji korelasi Spearman untuk mengukur konsistensi hasil perangkingan dibandingkan metode pembanding SAW, WP, dan TOPSIS dari penelitian Pasa et al. (2023). Analisis sensitivitas juga diintegrasikan untuk membuktikan stabilitas dan keandalan keputusan SPK yang dibangun terhadap variasi bobot kriteria utama.
+P17: 2.  Metodologi Penelitian
+P18: 2.1  Data Penelitian
+P19: Data penelitian diadaptasi dari Pasa et al. (2023) yang memuat data seleksi beasiswa LAZIZMU UMP Tahun Akademik 2021/2022 berdasarkan Surat Keputusan Rektor UMP Nomor 616/KEP/II.3.AU/F/2021. Data terdiri dari 20 alternatif mahasiswa (A01–A20) dan 10 kriteria penilaian.
+P20: 2.2  Kriteria Penelitian
+P21: Sepuluh kriteria yang digunakan terdiri dari 4 atribut benefit (semakin besar semakin baik) dan 6 atribut cost (semakin kecil semakin baik), seperti ditunjukkan pada Tabel 1.
+P22: Tabel 1. Kriteria Penelitian
+P23: [Tempatkan Gambar Tabel 1. Kriteria Penelitian di Sini]
+P24: 
+P25: 2.3  Metode SWARA
+P26: SWARA adalah metode pembobotan berbasis penilaian pakar yang menentukan bobot melalui rasio kepentingan relatif antarkriteria secara bertahap (Gustientiedina, 2025). Langkah-langkah perhitungan SWARA adalah sebagai berikut:
+P27: a.  Mengurutkan kriteria dari yang paling penting hingga yang paling tidak penting berdasarkan penilaian pakar.
+P28: b.  Menentukan nilai komparatif Sj (Sj = 0 untuk kriteria pertama).
+P29: c.  Menghitung koefisien Kj menggunakan persamaan:
+P30: Kj = Sj + 1  ……………………………………  (1)
+P31: d.  Menghitung bobot sementara Qj (Q1 = 1):
+P32: Qj = Qj−1 / Kj  ………………………………  (2)
+P33: e.  Menghitung bobot akhir Wj:
+P34: Wj = Qj / ΣQj  …………………………………  (3)
+P35: 2.4  Metode MAIRCA
+P36: MAIRCA menghitung selisih (gap) antara preferensi teoritis dan preferensi nyata setiap alternatif (Stević et al., 2018). Alternatif dengan total gap terkecil (Qi minimum) merupakan alternatif terbaik. Langkah-langkah perhitungan MAIRCA:
+P37: a.  Normalisasi matriks keputusan:
+P38: Benefit: x̄ij = (xij − min xj) / (max xj − min xj)  …(4)
+P39: Cost: x̄ij = (max xj − xij) / (max xj − min xj)  …(5)
+P40: b.  Menghitung preferensi teoritis TPij (m = jumlah alternatif = 20):
+P41: TPij = Wj / m  ……………………………………………  (6)
+P42: c.  Menghitung preferensi nyata PPij:
+P43: PPij = TPij × x̄ij  ……………………………………………  (7)
+P44: d.  Menghitung matriks gap Gij:
+P45: Gij = TPij − PPij  ……………………………………………  (8)
+P46: e.  Menghitung total gap per alternatif Qi:
+P47: Qi = Σⁿj=1 Gij  ……………………………………………………  (9)
+P48: 2.5  Uji Korelasi Spearman
+P49: Uji korelasi Spearman dilakukan untuk mengukur tingkat kesesuaian (konsistensi) antara hasil perangkingan SWARA-MAIRCA (R1) dengan metode-metode pembanding (R2) yaitu SAW, WP, dan TOPSIS. Koefisien korelasi Spearman (rs) bernilai antara −1 hingga +1, di mana nilai mendekati +1 menunjukkan hubungan positif yang sangat kuat (Fauzi et al., 2020). Persamaan koefisien korelasi Spearman adalah:
+P50: rs = 1 − (6 × Σdi²) / (n × (n² − 1))  ………  (10)
+P51: di mana n = jumlah alternatif (n = 20), di = selisih peringkat ke-i antara metode SWARA-MAIRCA dan metode pembanding.
+P52: 3.  Hasil dan Pembahasan
+P53: 3.1  Data Kriteria dan Alternatif
+P54: Penelitian ini menggunakan 20 alternatif calon penerima beasiswa yang dievaluasi berdasarkan 10 kriteria. Matriks data keputusan disajikan pada Tabel 2.
+P55: Tabel 2. Matriks Data Keputusan
+P56: [Tempatkan Gambar Tabel 2. Matriks Data Keputusan di Sini]
+P57: 
+P58: 3.2  Hasil Pembobotan SWARA
+P59: Pembobotan SWARA dilakukan berdasarkan tingkat kepentingan relatif antarkriteria dalam konteks seleksi beasiswa. Status KIP (K3) ditetapkan sebagai prioritas pertama karena merupakan indikator utama kelayakan beasiswa sosial. Sebagai contoh, K4 (Status KKS) berada pada prioritas 2 dengan Sj = 0,05, sehingga diperoleh Kj = 1,05, Qj = 1/1,05 = 0,9524, dan Wj = 0,9524/6,8702 = 0,1386. Hasil lengkap pembobotan SWARA disajikan pada Tabel 3.
+P60: Tabel 3. Hasil Pembobotan SWARA
+P61: [Tempatkan Gambar Tabel 3. Hasil Pembobotan SWARA di Sini]
+P62: 
+P63: Hasil pembobotan menunjukkan K3 (Status KIP) memperoleh bobot tertinggi 0,1456 (14,56%), diikuti K4 (Status KKS) 0,1386 (13,86%), dan K2 (IPK) 0,1260 (12,60%). Sebaliknya, K8 (Daya Listrik) mendapatkan bobot terendah 0,0648 (6,48%). Hal ini mencerminkan bahwa kepemilikan dokumen sosial-ekonomi dan prestasi akademik merupakan faktor paling determinan dalam seleksi beasiswa LAZIZMU.
+P64: 3.3  Normalisasi Matriks Keputusan
+P65: Normalisasi dilakukan menggunakan Persamaan (4) untuk atribut benefit dan Persamaan (5) untuk atribut cost. Sebagai contoh, A01 pada K3 (Benefit): x̄ = (5−1)/(5−1) = 1,0000; A01 pada K7 (Cost): x̄ = (4−4)/(4−1) = 0,0000. Seluruh hasil normalisasi disajikan pada Tabel 4.
+P66: Tabel 4. Matriks Normalisasi
+P67: [Tempatkan Gambar Tabel 4. Matriks Normalisasi di Sini]
+P68: 
+P69: 3.4  Preferensi Teoritis (TP) dan Preferensi Nyata (PP)
+P70: Preferensi teoritis TPij dihitung menggunakan Persamaan (6) dengan membagi bobot Wj oleh jumlah alternatif m = 20. Nilai TPij bersifat konstan untuk semua alternatif pada setiap kriteria. Sebagai contoh, TP(K3) = 0,1456/20 = 0,00728. Tabel 5 menyajikan nilai bobot dan preferensi teoritis seluruh kriteria.
+P71: Tabel 5. Bobot Wj dan Preferensi Teoritis (TPij)
+P72: [Tempatkan Gambar Tabel 5. Bobot Wj dan Preferensi Teoritis (TPij) di Sini]
+P73: 
+P74: Preferensi nyata PPij dihitung menggunakan Persamaan (7). Sebagai contoh, PP(A03, K3) = 0,00728 × 1,0000 = 0,00728 dan PP(A01, K7) = 0,00412 × 0,0000 = 0,00000, menunjukkan A01 tidak memenuhi kondisi ideal pada kriteria K7.
+P75: 3.5  Matriks Gap dan Perangkingan
+P76: Gap dihitung menggunakan Persamaan (8). Nilai Qi merupakan penjumlahan seluruh gap per alternatif (Persamaan 9). Semakin kecil Qi, semakin baik peringkat alternatif. Tabel 6 menyajikan hasil perangkingan SWARA-MAIRCA.
+P77: Tabel 6. Hasil Perangkingan SWARA-MAIRCA
+P78: [Tempatkan Gambar Tabel 6. Hasil Perangkingan SWARA-MAIRCA di Sini]
+P79: 
+P80: Berdasarkan Tabel 6, alternatif A03 menempati peringkat pertama (Qi = 0,00799), diikuti A14 (Qi = 0,01159) dan A01 (Qi = 0,01342). Alternatif A03 terpilih sebagai calon penerima beasiswa terbaik karena memiliki gap terkecil terhadap kondisi ideal di seluruh kriteria.
+P81: 3.6  Analisis Perbandingan Metode
+P82: Hasil perangkingan menggunakan metode usulan SWARA-MAIRCA kemudian dibandingkan dengan hasil dari metode pembanding SAW, WP, dan TOPSIS yang diadaptasi dari penelitian Pasa et al. (2023). Hasil perbandingan peringkat disajikan pada Tabel 7.
+P83: Tabel 7. Perbandingan Peringkat SWARA-MAIRCA vs SAW, WP, dan TOPSIS
+P84: [Tempatkan Gambar Tabel 7. Perbandingan Peringkat SWARA-MAIRCA vs SAW, WP, dan TOPSIS di Sini]
+P85: *Nilai SAW V, WP V, dan TOPSIS V diambil dari penelitian Pasa et al. (2023)
+P86: 
+P87: Berdasarkan Tabel 7, alternatif A03 secara konsisten menempati peringkat pertama (Rank 1) pada seluruh metode pembanding utama (SAW, WP, TOPSIS, dan SWARA-MAIRCA). Hal ini menunjukkan keandalan metode usulan dalam menyaring alternatif terbaik secara objektif. Selanjutnya, dilakukan uji korelasi Spearman untuk mengetahui tingkat kesesuaian hasil perangkingan antarmetode. Hasil perhitungan koefisien korelasi Spearman disajikan pada Tabel 8.
+P88: Tabel 8. Koefisien Korelasi Spearman Antarmetode
+P89: [Tempatkan Gambar Tabel 8. Koefisien Korelasi Spearman Antarmetode di Sini]
+P90: 
+P91: Berdasarkan Tabel 8, diperoleh nilai koefisien korelasi Spearman antara SWARA-MAIRCA dengan SAW sebesar rs = 0,9805; dengan WP sebesar rs = 0,9729; dan dengan TOPSIS sebesar rs = 0,9188. Seluruh koefisien korelasi bernilai > 0,80, yang mengindikasikan korelasi positif yang sangat kuat. Hal ini membuktikan bahwa metode SWARA-MAIRCA yang diusulkan memiliki tingkat validitas dan konsistensi yang sangat tinggi.
+P92: 3.7  Analisis Sensitivitas
+P93: Analisis sensitivitas dilakukan untuk menguji tingkat kestabilan hasil perangkingan terhadap perubahan bobot kriteria. Pengujian dilakukan dengan memvariasikan bobot kriteria Status KIP (K3) yang memiliki bobot terbesar sebesar -20%, -10%, +10%, dan +20%. Hasil pengujian sensitivitas ditunjukkan pada Tabel 9.
+P94: Tabel 9. Hasil Analisis Sensitivitas
+P95: [Tempatkan Gambar Tabel 9. Hasil Analisis Sensitivitas di Sini]
+P96: 
+P97: Berdasarkan Tabel 9, perubahan bobot kriteria K3 dari -20% hingga +20% menunjukkan stabilitas yang sangat tinggi. Alternatif A03 tetap kokoh menempati peringkat pertama pada seluruh skenario perubahan bobot. Persentase perubahan peringkat alternatif lain hanya berkisar 10,0% (hanya 2 dari 20 alternatif yang bertukar posisi, yaitu A01 dan A05). Hal ini menunjukkan bahwa keputusan yang dihasilkan oleh metode SWARA-MAIRCA tidak sensitif terhadap fluktuasi bobot kriteria, sehingga sangat andal untuk diimplementasikan.
+P98: 4.  Kesimpulan dan Saran
+P99: 4.1  Kesimpulan
+P100: Berdasarkan hasil penelitian dan pembahasan, diperoleh kesimpulan sebagai berikut. Pertama, metode SWARA berhasil menentukan bobot kriteria secara objektif dengan K3 (Status KIP) memperoleh bobot tertinggi 14,56% dan K8 (Daya Listrik) terendah 6,48%. Kedua, metode MAIRCA menghasilkan perangkingan dengan A03 sebagai alternatif terbaik (Qi = 0,00799), diikuti A14 (0,01159) dan A01 (0,01342). Ketiga, uji korelasi Spearman membuktikan konsistensi hasil perangkingan dengan koefisien korelasi sangat kuat terhadap SAW (rs = 0,9805), WP (rs = 0,9729), dan TOPSIS (rs = 0,9188). Keempat, analisis sensitivitas mengonfirmasi stabilitas model di mana A03 secara konsisten menempati peringkat pertama pada seluruh variasi bobot kriteria K3.
+P101: 4.2  Saran
+P102: Penelitian selanjutnya disarankan untuk: (1) menguji sensitivitas terhadap kriteria lainnya; (2) membandingkan metode SWARA dengan metode pembobotan objektif seperti Entropy atau CRITIC; dan (3) mengembangkan SPK seleksi beasiswa berbasis web untuk mempermudah operasional lembaga beasiswa LAZIZMU.
+P103: Daftar Pustaka
+P104: Ardiansyah, M., Fahmi, H., & Imtihan, K. (2025). Sistem Penunjang Keputusan Penerima Bantuan Rumah Tidak Layak Huni (RTLH) Menggunakan Metode SWARA. Journal of Information System Research (JOSH), 7(1), 12–20. https://doi.org/10.47065/josh.v7i1.8235
+P105: Diana, D., & Seprina, I. (2019). Sistem Pendukung Keputusan untuk Menentukan Penerima Bantuan Sosial Menerapkan Weighted Product Method. Jurnal Edukasi Dan Penelitian Informatika (JEPIN), 5(3), 370. https://doi.org/10.26418/jp.v5i3.34971
+P106: Fauzi, A. A., Zahro', H. Z., & Prasetya, R. P. (2020). Analisis Perbandingan Metode TOPSIS dan SAW dalam Penentuan Prioritas Perbaikan Jalan di Kabupaten Rembang. JATI (Jurnal Mahasiswa Teknik Informatika), 4(2), 29–36. https://doi.org/10.36040/JATI.V4I2.2676
+P107: Gustientiedina, G. (2025). Penerapan Metode SWARA dan MOORA dalam Menentukan Insentif Karyawan. Jurnal Mahasiswa Aplikasi Teknologi Komputer dan Informasi (JMApTeKsi). https://ejournal.pelitaindonesia.ac.id/ojs32/index.php/jmapteksi/article/view/4165
+P108: Hayat, M. (2023). Sistem Pendukung Keputusan Pemilihan Aplikasi Investasi Menggunakan Pendekatan WASPAS dan Rank Sum. Jurnal FASILKOM, 13(3). https://doi.org/10.37859/jf.v13i3.6080
+P109: Ishak, I., Mesran, M., & Ndruru, E. (2023). Kombinasi Multi-Criteria Decision Making dan LOPCOW. Graha Mitra Edukasi. https://repository.nusamandiri.ac.id/repo/files/248484
+P110: Jayawardani, W. R. K., & Maryam, M. (2022). Sistem Pendukung Keputusan Seleksi Penerima Program Keluarga Harapan dengan Implementasi Metode SAW dan Pembobotan ROC. Emitor: Jurnal Teknik Elektro, 22(2), 99–109. https://doi.org/10.23917/EMITOR.V22I2.18411
+P111: Mandarani, P., Ramadhan, H., Yulianti, E., & Syahrani, A. (2022). Sistem Pendukung Keputusan Penulis Terbaik Menggunakan Metode Rank Order Centroid (ROC) dan EDAS. Journal of Information System Research (JOSH), 3(4), 686–694. https://doi.org/10.47065/josh.v3i4.1845
+P112: Murtina, H., Hidayatun, N., & Susafa'ati, S. (2022). Implementasi Multi Attribute Decision Making Menggunakan Metode Weighted Product dalam Pemilihan Supervisor. Jurnal Teknoinfo, 16(2), 435–442. https://ejurnal.teknokrat.ac.id/index.php/teknoinfo/article/view/2006
+P113: Pasa, I. Y., Prasetya, N. W. A., & Maharrani, R. H. (2022). Penerapan Metode SAW pada Penentuan Penerima Beasiswa Lazizmu. INTEK: Jurnal Informatika dan Teknologi Informasi, 5(1), 81–89. https://doi.org/10.37729/INTEK.V5I1.1971
+P114: Pasa, I. Y., Prasetya, N. W. A., & Maharrani, R. H. (2023). Analisis Perbandingan Metode SAW, WP, dan TOPSIS untuk Optimasi SPK Proses Seleksi Beasiswa Lazizmu. Jurnal INTEK, 6(1), 65–76.
+P115: Ridho, M. R., Hairani, H., Latif, K. A., & Hammad, R. (2021). Kombinasi Metode AHP dan TOPSIS untuk Rekomendasi Penerima Beasiswa SMK Berbasis Sistem Pendukung Keputusan. Jurnal Tekno Kompak, 15(1), 26–39. https://doi.org/10.33365/JTK.V15I1.905
+P116: Sari, W. E., B, M., & Rani, S. (2021). Perbandingan Metode SAW dan TOPSIS pada Sistem Pendukung Keputusan Seleksi Penerima Beasiswa. Jurnal Sisfokom, 10(1), 52–58. https://doi.org/10.32736/sisfokom.v10i1.1027
+P117: Setiawan, D. (2023). Implementasi Metode COPRAS (Complex Proportional Assessment) dalam Pemilihan Security. Jurnal Sistem Informasi Triguna Dharma (JURSI TGD). https://ojs.trigunadharma.ac.id/index.php/jsi/article/view/5332
+P118: Stević, Ž., Pamučar, D., Subotić, M., Antuchevičiene, J., & Zavadskas, E. K. (2018). The Sustainable Supplier Selection Based on the Original MAIRCA and Interval Rough Numbers. Symmetry, 10(8), 305. https://doi.org/10.3390/sym10080305

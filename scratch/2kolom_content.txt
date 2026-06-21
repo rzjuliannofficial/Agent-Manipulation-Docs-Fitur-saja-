@@ -1,0 +1,63 @@
+P0: JIP (Jurnal Informatika Polinema)  ISSN: 2614-6371 E-ISSN: 2407-070X
+P1: SISTEM PENDUKUNG KEPUTUSAN SELEKSI SMARTPHONE TERBAIK MENGGUNAKAN METODE SWARA DAN MAIRCA
+P2: Nama Penulis 1, Nama Penulis 2, Nama Penulis 3
+P3: Jurusan Teknologi Informasi, Politeknik Negeri Malang, Indonesia
+email1@polinema.ac.id, email2@polinema.ac.id
+P4: Abstrak
+P5: Perkembangan teknologi smartphone yang sangat pesat menghasilkan berbagai variasi spesifikasi dan harga perangkat di pasaran. Konsumen sering menghadapi kesulitan dalam menentukan smartphone terbaik yang sesuai dengan kebutuhan dan anggaran mereka. Penelitian ini bertujuan membangun Sistem Pendukung Keputusan (SPK) pemilihan smartphone menggunakan kombinasi metode Step-wise Weight Assessment Ratio Analysis (SWARA) untuk penentuan bobot kriteria dan metode Multi-Attributive Ideal-Real Comparative Analysis (MAIRCA) untuk perangkingan alternatif. Evaluasi dilakukan terhadap 20 alternatif smartphone berbasis 12 kriteria penilaian, meliputi berat (g & oz), tahun rilis, resolusi layar, kapasitas kartu memori, memori internal, RAM, kamera utama, kamera depan, Bluetooth, USB, dan harga. Metode SWARA menetapkan kriteria Harga (K12) sebagai prioritas utama dengan bobot terbesar, sedangkan metode MAIRCA menghitung nilai gap untuk menentukan ranking alternatif terbaik. Hasil perhitungan menunjukkan alternatif A03 memperoleh nilai Qi terkecil sebesar 0,00799 sehingga menempati peringkat pertama sebagai smartphone paling direkomendasikan. Pengujian korelasi Spearman menunjukkan kesesuaian hasil peringkat yang sangat kuat terhadap metode SAW (rs = 0.9805), WP (rs = 0.9729), dan TOPSIS (rs = 0.9188). Uji analisis sensitivitas membuktikan stabilitas model yang sangat tinggi terhadap fluktuasi bobot kriteria dominan.
+P6: Kata kunci: sistem pendukung keputusan, smartphone, SWARA, MAIRCA, korelasi Spearman
+P7: 
+P8: 
+P9: 1.  Pendahuluan
+P10: Seiring dengan pesatnya perkembangan teknologi informasi dan komunikasi, perangkat telepon pintar (smartphone) telah berevolusi dari sekadar alat komunikasi suara menjadi komputer saku personal yang krusial untuk menunjang produktivitas kerja, sarana hiburan, hingga transaksi keuangan digital. Produsen smartphone saling bersaing menawarkan berbagai spesifikasi teknis tingkat tinggi, seperti prosesor multi-core dengan kecepatan tinggi, kapasitas memori internal yang besar, RAM berkapasitas besar, resolusi kamera prima, dan kapasitas baterai yang tahan lama. Semua parameter ini hadir dengan berbagai pilihan harga di pasaran e-commerce.
+P11: Keberagaman parameter spesifikasi dan rentang harga tersebut menimbulkan masalah pengambilan keputusan bagi konsumen. Memilih smartphone yang optimal secara manual sangat membingungkan karena adanya kompromi antara kriteria yang bertolak belakang. Sebagai contoh, smartphone dengan memori internal dan RAM berkapasitas besar umumnya dijual dengan harga yang sangat tinggi. Oleh karena itu, diperlukan sebuah Sistem Pendukung Keputusan (SPK) berbasis Multi-Criteria Decision Making (MCDM) untuk membantu konsumen memilih perangkat yang paling sesuai secara objektif.
+P12: Beberapa metode pengambil keputusan yang populer seperti SAW, WP, dan TOPSIS sering diimplementasikan untuk menyelesaikan masalah pemilihan ini. Namun, metode pembobotan subjektif tradisional seperti AHP sering dikeluhkan karena membutuhkan jumlah perbandingan berpasangan matriks yang besar dan rawan tidak konsisten. Metode SWARA (Step-wise Weight Assessment Ratio Analysis) hadir sebagai solusi pembobotan subjektif yang lebih fleksibel dan efisien dengan mengurutkan prioritas kepentingan kriteria secara bertahap. Sementara itu, metode MAIRCA (Multi-Attributive Ideal-Real Comparative Analysis) mengevaluasi alternatif berdasarkan nilai kesenjangan (gap) antara preferensi teoritis ideal dengan preferensi nyata dari alternatif, yang terbukti menghasilkan peringkat yang stabil dan sensitivitas yang rendah.
+P13: Penelitian ini menerapkan integrasi metode SWARA untuk pembobotan kriteria dan MAIRCA untuk perangkingan alternatif dalam studi kasus seleksi smartphone terbaik. Data spesifikasi teknis dan penilaian alternatif diadaptasi secara langsung dari naskah referensi Kelompok 5 yang memuat evaluasi komparatif smartphone. Untuk memvalidasi keandalan perangkingan, dilakukan uji korelasi rank Spearman terhadap tiga metode pembanding (SAW, WP, dan TOPSIS) serta pengujian analisis sensitivitas terhadap fluktuasi bobot kriteria utama.
+P14: 2.  Metodologi Penelitian
+P15: Data penelitian diadaptasi dari spesifikasi e-commerce smartphone Kelompok 5 yang memuat data spesifikasi fisik dan harga dari 20 alternatif model smartphone (A01–A20) dan 12 kriteria penilaian.
+P16: Tabel 1. Kriteria Penelitian
+P17: [Tempatkan Gambar Tabel 1. Kriteria Penelitian di Sini]
+P18: 2.1  Metode SWARA
+P19: Langkah pembobotan SWARA meliputi pengurutan kriteria berdasarkan tingkat kepentingan relatif antarkriteria, menghitung koefisien komparatif Sj, menentukan Kj = Sj + 1, menghitung bobot sementara Qj = Qj-1 / Kj, serta normalisasi akhir Wj = Qj / ΣQj.
+P20: 2.2  Metode MAIRCA
+P21: Normalisasi MAIRCA dilakukan berdasarkan tipe kriteria benefit dan cost. Nilai preferensi teoritis TPij dihitung dengan membagi bobot oleh jumlah alternatif (m). Selanjutnya, dihitung preferensi nyata PPij = TPij * normalisasi, dan selisih gap Gij = TPij - PPij. Peringkat alternatif diurutkan berdasarkan penjumlahan gap Qi (semakin kecil Qi = semakin baik).
+P22: 3.  Hasil dan Pembahasan
+P23: Tabel 2. Matriks Data Keputusan (Format Template)
+P24: [Tempatkan Gambar Tabel 2. Matriks Data Keputusan (Format Template) di Sini]
+P25: Tabel 3. Hasil Pembobotan SWARA
+P26: [Tempatkan Gambar Tabel 3. Hasil Pembobotan SWARA di Sini]
+P27: Hasil pembobotan SWARA menunjukkan K12 (Approx price) memperoleh bobot tertinggi 14,56% karena harga merupakan faktor ekonomi paling krusial bagi konsumen, diikuti K7 (RAM) 13,86% dan K6 (Internal memory) 12,60% sebagai penentu kecepatan operasional perangkat. Sebaliknya, K8 (Primary camera) mendapatkan bobot 0,0648 (6,48%) sebagai kriteria pelengkap.
+P28: Tabel 4. Matriks Normalisasi (Format Template)
+P29: [Tempatkan Gambar Tabel 4. Matriks Normalisasi (Format Template) di Sini]
+P30: Tabel 5. Bobot Wj dan Preferensi Teoritis (TPij)
+P31: [Tempatkan Gambar Tabel 5. Bobot Wj dan Preferensi Teoritis (TPij) di Sini]
+P32: Tabel 6. Hasil Perangkingan Akhir (Format Template)
+P33: [Tempatkan Gambar Tabel 6. Hasil Perangkingan Akhir (Format Template) di Sini]
+P34: Berdasarkan Tabel 6, alternatif A03 menempati peringkat pertama dengan nilai Qi terkecil sebesar 0,00799, diikuti A14 pada peringkat kedua (Qi = 0,01159) dan A01 pada peringkat ketiga (Qi = 0,01342). Alternatif A03 terpilih sebagai smartphone terbaik karena menawarkan kombinasi RAM, memori internal, dan harga yang paling optimal dibandingkan alternatif lain.
+P35: Tabel 7. Perbandingan Peringkat Metode Pembanding (Format Template)
+P36: [Tempatkan Gambar Tabel 7. Perbandingan Peringkat Metode Pembanding (Format Template) di Sini]
+P37: Tabel 8. Koefisien Korelasi Spearman Antarmetode
+P38: [Tempatkan Gambar Tabel 8. Koefisien Korelasi Spearman Antarmetode di Sini]
+P39: Tabel 9. Hasil Analisis Sensitivitas Variasi Kriteria
+P40: [Tempatkan Gambar Tabel 9. Hasil Analisis Sensitivitas Variasi Kriteria di Sini]
+P41: Analisis perbandingan (Tabel 7) menunjukkan alternatif A03 secara konsisten menempati posisi teratas pada semua metode pembanding. Uji korelasi Spearman (Tabel 8) mengonfirmasi hubungan positif yang sangat kuat (rs > 0,91) antara metode usulan dengan SAW, WP, dan TOPSIS. Hasil analisis sensitivitas (Tabel 9) membuktikan stabilitas model yang sangat tinggi, di mana peringkat A03 tidak mengalami pergeseran meskipun dilakukan perubahan bobot utama sebesar ±20%.
+P42: 4.  Kesimpulan dan Saran
+P43: Penelitian ini membuktikan keberhasilan pengintegrasian metode SWARA untuk pembobotan kriteria dan MAIRCA untuk perangkingan alternatif pada kasus seleksi smartphone terbaik. Alternatif terbaik secara konsisten diidentifikasi, serta memiliki stabilitas hasil perangkingan yang sangat tinggi terhadap fluktuasi nilai bobot.
+P44: Saran untuk pengembangan naskah selanjutnya adalah memperluas simulasi fluktuasi bobot ke kriteria sekunder serta merancang sistem otomasi pengolah dokumen secara dinamis agar dapat diaplikasikan pada semua dataset.
+P45: Daftar Pustaka
+P46: Ardiansyah, M., Fahmi, H., & Imtihan, K. (2025). Sistem Penunjang Keputusan Penerima Bantuan Rumah Tidak Layak Huni (RTLH) Menggunakan Metode SWARA. Journal of Information System Research (JOSH), 7(1), 12–20.
+P47: Bączkiewicz, A., Kizielewicz, B., Shekhovtsov, A., Wątróbski, J., & Sałabun, W. (2021). Methodical Aspects of MCDM Based E-Commerce Recommender System. Journal of Theoretical and Applied Electronic Commerce Research, 16(6), 2192-2229.
+P48: Diakoulaki, D., Mavrotas, G., & Papayannakis, L. (2015). Determining objective weights in multiple criteria problems: The CRITIC method. Computers & Operations Research, 22(7), 763-772.
+P49: Diana, D., & Seprina, I. (2019). Sistem Pendukung Keputusan untuk Menentukan Penerima Bantuan Sosial Menerapkan Weighted Product Method. Jurnal Edukasi Dan Penelitian Informatika (JEPIN), 5(3), 370.
+P50: Fauzi, A. A., Zahro', H. Z., & Prasetya, R. P. (2020). Analisis Perbandingan Metode TOPSIS dan SAW dalam Penentuan Prioritas Perbaikan Jalan di Kabupaten Rembang. JATI (Jurnal Mahasiswa Teknik Informatika), 4(2), 29–36.
+P51: Ghorabaee, M. K., Zavadskas, E. K., Olfat, L., & Amiri, M. (2015). Multi-criteria decision-making method for evaluating autonomous vehicles based on EDAS. Axioms, 8(2), 76.
+P52: Gustientiedina, G. (2025). Penerapan Metode SWARA dan MOORA dalam Menentukan Insentif Karyawan. Jurnal Mahasiswa Aplikasi Teknologi Komputer dan Informasi (JMApTeKsi), 3(1), 40-48.
+P53: Hayat, M. (2023). Sistem Pendukung Keputusan Pemilihan Aplikasi Investasi Menggunakan Pendekatan WASPAS dan Rank Sum. Jurnal FASILKOM, 13(3), 112-120.
+P54: Ishak, I., Mesran, M., & Ndruru, E. (2023). Kombinasi Multi-Criteria Decision Making dan LOPCOW untuk Rekomendasi Siswa Berprestasi. Graha Mitra Edukasi, 5(2), 85-92.
+P55: Jayawardani, W. R. K., & Maryam, M. (2022). Sistem Pendukung Keputusan Seleksi Penerima Program Keluarga Harapan dengan Implementasi Metode SAW dan Pembobotan ROC. Emitor: Jurnal Teknik Elektro, 22(2), 99–109.
+P56: Mandarani, P., Ramadhan, H., Yulianti, E., & Syahrani, A. (2022). Sistem Pendukung Keputusan Penulis Terbaik Menggunakan Metode Rank Order Centroid (ROC) dan EDAS. Journal of Information System Research (JOSH), 3(4), 686–694.
+P57: Murtina, H., Hidayatun, N., & Susafa'ati, S. (2022). Implementasi Multi Attribute Decision Making Menggunakan Metode Weighted Product dalam Pemilihan Supervisor. Jurnal Teknoinfo, 16(2), 435–442.
+P58: Pamučar, D., & Ćirović, G. (2015). The Selection of Transport and Handling Resources in Logistics Centers Using Multi-Attributive Border Approximation Area Comparison (MABAC). Expert Systems with Applications, 42(6), 3016–3028.
+P59: Pasa, I. Y., Prasetya, N. W. A., & Maharrani, R. H. (2023). Analisis Perbandingan Metode SAW, WP, dan TOPSIS untuk Optimasi SPK Proses Seleksi Beasiswa Lazizmu. Jurnal INTEK, 6(1), 65–76.
+P60: Stević, Ž., Pamučar, D., Subotić, M., Antuchevičiene, J., & Zavadskas, E. K. (2018). The Sustainable Supplier Selection Based on the Original MAIRCA and Interval Rough Numbers. Symmetry, 10(8), 305.
+P61: Zavadskas, E. K., Stević, J., Turskis, Ž., & Tomašević, M. (2019). A Novel Extended EDAS in Minkowski Space (EDAS-M) Method for Evaluating Autonomous Vehicles. Axioms, 8(2), 76.

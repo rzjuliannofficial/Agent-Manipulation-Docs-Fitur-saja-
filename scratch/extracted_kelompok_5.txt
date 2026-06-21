@@ -1,0 +1,2237 @@
+--- Page 1 ---
+Article
+Methodical Aspects of MCDM Based E-Commerce
+Recommender System
+Aleksandra B ˛ aczkiewicz1,2
+ , Bartłomiej Kizielewicz3
+ , Andrii Shekhovtsov 3
+ , Jarosław W ˛ atróbski1
+and Wojciech Sałabun3,*
+/gid00030/gid00035/gid00032/gid00030/gid00038/gid00001/gid00033/gid00042/gid00045/gid00001
+/gid00048/gid00043/gid00031/gid00028/gid00047/gid00032/gid00046
+Citation: B ˛ aczkiewicz, A.;
+Kizielewicz, B.; Shekhovtsov, A.;
+W ˛ atróbski, J.; Sałabun, W.
+Methodical Aspects of MCDM Based
+E- Commerce Recommender System.
+J. Theor. Appl. Electron. Commer. Res.
+2021, 16, 2192–2229. https://doi.org/
+10.3390/jtaer16060122
+Academic Editors:
+Shib Sankar Sana, Sweety Sadhukhan
+and Hyunchul Ahn
+Received: 19 July 2021
+Accepted: 30 August 2021
+Published: 2 September 2021
+Publisher’s Note:MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional afﬁl-
+iations.
+Copyright: © 2021 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+1 Institute of Management, University of Szczecin, ul. Cukrowa 8, 71-004 Szczecin, Poland;
+aleksandra.baczkiewicz@phd.usz.edu.pl (A.B.); jaroslaw.watrobski@usz.edu.pl (J.W.)
+2 Doctoral School of University of Szczecin, ul. Mickiewicza 16, 70-383 Szczecin, Poland
+3 Research Team on Intelligent Decision Support Systems, Department of Artiﬁcial Intelligence
+and Applied Mathematics, Faculty of Computer Science and Information Technology,
+West Pomeranian University of Technology in Szczecin, ul. ˙Zołnierska 49, 71-210 Szczecin, Poland;
+bartlomiej-kizielewicz@zut.edu.pl (B.K.); andrii-shekhovtsov@zut.edu.pl (A.S.)
+* Correspondence: wojciech.salabun@zut.edu.pl; Tel.: +48-91-449-5580
+Abstract: The aim of this paper is to present the use of an innovative approach based on MCDM
+methods as the main component of a consumer Decision Support System (DSS) by recommending
+the most suitable products among a given set of alternatives. This system provides a reliable
+recommendation to the consumer in the form of a compromise ranking constructed from the ﬁve
+MCDM methods: the hybrid approach TOPSIS-COMET, COCOSO, EDAS, MAIRCA, and MABAC.
+Each of the methods used contributes signiﬁcantly to the ﬁnal compromise ranking built with the
+Copeland strategy. Chosen MCDM methods were combined with the objective CRITIC weighting
+method, and their performance was presented on the illustrative example of choosing the most
+suitable mobile phone. A sensitivity analysis involving the rw and WS correlation coefﬁcients was
+performed to determine the match between the compromise ranking of the candidates and the
+rankings provided by each MCDM method. Sensitivity analysis demonstrated that all investigated
+compromise candidate rankings show high convergence with the rankings provided by the particular
+MCDM methods. Thus, the performed study proved that the proposed approach shows high
+potential to be successfully used as a central component of DSS for recommending the most suitable
+product. Such DSS could be a universal and future-proof solution for e-commerce sites and websites,
+providing advanced product comparison capabilities in delivering a recommendation to the user as a
+ﬁnal ranking of alternatives.
+Keywords: e-commerce; decision support system; MCDM; consumer multi-criteria decision-making
+process; compromise ranking; TOPSIS-COMET; COCOSO; EDAS; MAIRCA; MABAC
+1. Introduction
+At present, customer expectations of manufactured products are constantly growing.
+High demands of clients often make it difﬁcult for producers to offer a product that
+would satisfy them completely. As a consequence, it is increasingly difﬁcult to maintain
+a stable position in the market. In free-market economies, companies are challenged to
+continuously improve their products and introduce new ones that will meet customer
+requirements and have a strong position in the market [1]. The need to improve service
+standards and innovation in order to keep or raise a proﬁt level in an intensely competitive
+marketplace is particularly relevant to online commerce and service sites. A signiﬁcant
+factor in the effective realization of this goal is introducing customer enhancements that
+will support their decision-making process in choosing the products they purchase. This
+goal could be achieved by providing consumers with the ability to use the Decision Support
+System with advanced decision-making tools, including multi-criteria decision-making
+J. Theor. Appl. Electron. Commer. Res. 2021, 16, 2192–2229. https://doi.org/10.3390/jtaer16060122 https://www.mdpi.com/journal/jtaer
+
+--- Page 2 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2193
+methods [2]. Trading through e-commerce sites is a standard these days. These websites
+also provide price and performance comparison services for products available at various
+stores. These services use heuristics to detect differences between product speciﬁcations.
+Customers confront difﬁculties when trying to identify the most appropriate product
+given their preferences and the multiple selection criteria that the speciﬁcations represent.
+Additionally, changes in salesmans’ policies and product offerings available on websites
+often confuse decision-makers trying to select the most appropriate products. The ﬁeld of
+multi-criteria decision-making (MCDM) explores these problems [3].
+The increasing sophistication of the parameters of products and devices available on
+the market causes that a wide extension characterizes the decision problem related to their
+purchase. It is important to take into account all selection criteria, make compromises, and
+reconcile conﬂicting goals. Consumers facing the complexity of decision-making situations
+need decision support methods and systems. In order to support decision-makers in
+making informed and satisfactory choices, many tools have been created that are both
+generally applicable and domain speciﬁc [4].
+1.1. Nature, Signiﬁcance, and Commonness of the Mobile Phone Selection Problem
+The continuous advancement of technology is causing people to focus their attention
+increasingly on electronic gadgets. As a result, technologies are being progressed a lot
+by researchers all over the world. In recent years, electronic devices, such as mobile
+phones, laptops, and tablets, have become a signiﬁcant part of everyday life [ 5]. One of the
+commonly purchased products today, in which many criteria need to be taken into account
+in the selection, is the mobile phone. Mobile phones, today named smartphones, are mobile
+electronic devices with the advantages of mobile phones and personal computers. Mobile
+phones are used not only for phone calls. With powerful processors embedded and running
+on multiple open platforms, smartphones play the role of multimedia devices, providing
+users with many functions, such as email, web browsing, multimedia entertainment,
+document processing, mobile video communication, global positioning applications, and
+ﬁnancial services. It is now used to organize and entertain everyday life, such as sending
+and receiving text messages, taking pictures, entertainment, browsing the Internet, reading
+business emails, keeping a calendar, and making appointments [6]. It is precisely because
+this device is used for different tasks that the decision-making process of selecting is so
+important and laborious.
+In today’s digital world, the smartphone plays a fundamental role in people’s lives
+because of its mobility, ability and portability [ 7]. Currently, smartphones are used to
+organize almost all our issues, both personal and professional [ 8]. The advancement of
+mobile phones technology and their simplicity of usage has caused them to become an
+inseparable component of the consumer’s life. Thus, owning a mobile phone is now among
+the basic needs and is an integral part of people’s daily lives. There are so many activities
+for which it can be used. The fact that the smartphone has become one of the global trends
+is evidenced by people’s intense buying of mobile phones [9].
+As a result of decreasing charges of the telecommunications services and increasing
+competition in the mobile phones market due to the emergence of new manufacturers
+offering top quality phones with various desirable features at lower prices to attract
+customers, the number of mobile phone users is steadily increasing. Currently, smartphones
+are one of the most widely available and cost-effective solutions that practically everyone
+can afford. Every year new models of these phones, upgraded with additional features,
+enter the market. Moreover, mobile devices are being equipped with increasingly improved
+software and hardware to satisfy the expectations and requirements of the market [10]. The
+described situation in the market causes an increase in the expectations of users.
+An important step performed before buying a new mobile phone is to evaluate
+speciﬁcations, such as features, hardware capabilities, and performance, for a particular
+model. A quick analysis of speciﬁcations and prices is often not enough to accurately
+identify the most suitable model from among the many alternatives [3]. The wide selection
+
+--- Page 3 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2194
+of mobile phones available in different price ranges makes it complicated to choose the
+most beneﬁcial phone. The price of mobile phones, the features and speciﬁcations for types
+of mobile phones are also increasingly varied. Considering only product ratings to select
+the best smartphone carries the risk of unclear and inconsistent interpretation of these
+ratings and does not ensure that the best smartphone is selected. The requirements and
+preferences of mobile phone users differ, so there is no universal and single solution to the
+mobile phone selection problem.
+Choosing the most suitable mobile phone is challenging and requires the consumer
+to compare different models, often with similar conﬁgurations, and consider many differ-
+ent, often opposing principles. Hence, the multi-criteria decision-making strategy looks
+very useful in mobile phone selection. Priority, mobile phone selection criteria, include
+elements [7,11–14], such as quantitative criteria:
+• Product price—gross price of the phone.
+• Random Access Memory (RAM) size—RAM size is a parameter of mobile phones that
+determines the capacity to install various applications on them.
+• Processor (CPU) type—the processor is a powerful built-in device in smartphones
+that provides ﬂexible access to applications. Almost all mobile phones have different
+processors by speed and type. A higher number of cores and higher processor speed
+are the preferred features.
+• Built-in memory size—internal memory is a mobile phone feature that allows storing
+data on it with a deﬁned capacity.
+• The camera quality—the camera in a smartphone is used to take pictures and videos.
+The camera is responsible for resolution image quality.
+• Screen dimension.
+• Battery capacity—duration of a rechargeable battery of a product.
+• Weight—body’s relative mass.
+Qualitative criteria contain:
+• Operating System (OS). Provides user interface and interaction functions. Smart-
+phones run on different operating systems: Android (e.g., Huawei P30 Pro 6, Xiaomi
+Mi 9), Windows Phone, and iOS (all Apple models).
+• Chipset. Manages the data ﬂow between the processor, memory, and peripherals.
+• Apps. Application services to consumers.
+• Durability.
+• User-friendliness.
+• Brand. A brand is associated with a company’s name and its services that distinguish
+it from other companies. The market analysis results show that ease of use of the
+device, access to spare parts and customer support are essential in attracting the
+customer to the product. High-quality service and the level of customer support can
+increase a company’s proﬁt exponentially.
+• Basic and extended in-built function. Basic built-in features are indispensable in all
+mobile phones. However, they are speciﬁc to particular phone models. For example,
+it is already a standard that every smartphone is equipped with a camera and a video
+camcorder. In addition, a smartphone also comes with GPS, a voice recorder, and a
+media player for video and audio ﬁles.
+• Prominence, product reputation.
+• Quality of the screen. There are smartphones on the market that are almost all screen,
+such as the Apple iPhone Xs. Super Retina HD OLED screens allow seeing color
+depth, such as the Apple iPhone Xs. Widespread and trusted by customers are SUPER
+AMOLED screens (an improved version of OLED screens). They are distinguished
+by energy efﬁciency and good contrast. In addition, they are ultra-thin and respond
+much faster to touch. High-end smartphones are often equipped with a protective
+layer of glass to protect against mechanical damage.
+
+--- Page 4 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2195
+The rising variety of products available on the market and the associated increasing
+amount of information can overwhelm consumers and confuse them, resulting in non-
+optimal decision-making. Given the complexity of the multi-criteria problem of choosing
+the best mobile phone model, there is a need to provide a decision support system to help
+minimize customer trouble when selecting a smartphone.
+E-commerce websites are increasingly popular and widely used in the minds of cus-
+tomers. They give the possibility to ﬁnd a product in different stores, compare its price,
+and do virtual shopping. These sites also often provide customer opinions about products.
+The constantly growing number of Internet users and the development of the e-commerce
+market cause these websites to develop very quickly, introducing new solutions and im-
+provements for their users. A system based on MCDM methods offering customers a
+ranking of products selected by them according to the desired criteria and a recommen-
+dation of the best choice for them could be a helpful tool signiﬁcantly supplementing the
+functionalities of e-commerce sites. The proposed system is personalized and allows for
+user interaction in the form of possible pre-selection of alternatives within user-selected
+value ranges, selection of relevant criteria, and a weighting method that can be subjective
+or objective, depending on user preferences.
+Many studies have been reported in the literature using DSSs based on different
+MCDM methods applied to decision-making problems for purchasing mobile phones
+and other devices. However, most of them consider the study of a single method. It is a
+limitation of the studies because particular MCDM methods have various methodological
+assumptions, resulting in different solutions for the same problem. Most studies also
+lack a proposal for a compromise solution that reliably integrates the results provided
+by the different methods studied. A sensitivity analysis is also needed to determine the
+reliability of the obtained solutions. In many works on the multi-criteria mobile phones
+selection problem, the set of alternatives is insufﬁcient because it contains only a few
+models. Moreover, the number of evaluation criteria considered is also insufﬁcient. The
+presented shortcomings are limitations of the research. The authors’ goal was to design a
+DSS in which the research gaps mentioned above are completed. For this purpose, a set
+of alternatives consisting of 1039 mobile phones models was collected, and 12 evaluation
+criteria were identiﬁed. Furthermore, to obtain a reliable solution, the authors have selected
+ﬁve state-of-the-art MCDM methods based on which a compromise ranking is constructed.
+Finally, the study is supplemented by a sensitivity analysis conﬁrming the reliability of
+the solution.
+1.2. Aim of the Study
+This paper aims to present a universal system based on innovative MCDM methods
+of recent years that are characterized by high accuracy, efﬁciency, and delivery of objective
+results while maintaining ease of application, designed for giving to recommend the most
+advantageous product. Furthermore, an attempt was made to select methods in which
+problems, such as the ranking reversal phenomenon and high computational complexity,
+whose usefulness in selecting the most advantageous alternative, have been conﬁrmed in
+the literature.
+In order to generate more relevant rankings, the authors use as a ﬁnal ranking the
+compromise ranking resulting from the evaluation of alternatives by the selected set of
+MCDM methods. It was assumed that the hybrid approach combining COMET with
+TOPSIS, COCOSO, EDAS, MAIRCA, and MABAC, because of the advantages presented
+in the literature review, represent an appropriate set of MCDM methods that will make
+a signiﬁcant contribution to the ﬁnal recommendation for consumer decision support
+in shopping on e-commerce sites. Furthermore, the system could become an engine for
+future Internet services providing the possibility of comparing products and services
+automatically and intuitively and considering many selection criteria. The ﬁnal result of
+such a system would be a complete and understandable ranking of products of interest
+to the customer. MCDM methods are effective tools for solving problems that require
+
+--- Page 5 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2196
+consideration of many often conﬂicting criteria. These types of problems include purchase
+decisions for electronic devices, such as mobile phones. MCDM methods, due to their
+different methodological basis, may produce different results for the same real-world
+problem. Thus, the results provided by different methods should be interpreted carefully.
+For this reason, this paper proposes a framework integrating ﬁve MCDM methods and the
+Copeland method, providing a reliable compromise ranking based on their results.
+To illustrate the application of the proposed system, the authors of this paper per-
+formed a descriptive case study of selecting the most advantageous product using mobile
+phone data collected from various websites. In the following step of this survey, the ﬁnal
+rankings of alternatives are compared using two ranking correlation coefﬁcients: symmet-
+rical rw and asymmetrical WS. In the next step, to present a reliable solution based on
+the applied MCDM methods, a compromise ranking was determined using the Copeland
+ranking strategy. Then, a sensitivity analysis was performed for the compromise rankings
+candidates constructed after excluding one from each applied MCDM method. Finally, the
+correlation coefﬁcients of the rw and WS rankings were used to measure the match between
+the compromise rankings candidates and the rankings provided by each MCDM method.
+The proposed framework can be used as a basis for a DSS supporting detailed pur-
+chasing decisions. The DSS, which is the subject of the study, will enable customers to
+make more knowledgeable decisions when selecting products, devices and services based
+on the current market. Furthermore, the suggested system demonstrates its usefulness as a
+decision support tool for the most suitable mobile phone recommendation.
+The rest of the paper is organized as follows. In Section 2, a literature review from
+which the applicability and usefulness of MCDM methods in decision support systems
+are conﬁrmed is provided. Section 3 introduces the background and main assumptions
+of the methods and techniques used in the study. Section 4 illustrates the case study. The
+outcomes of the performed research are given in Section 5. Discussion of obtained results
+is included in Section 6. Finally, Section 7 provides conclusions and summary.
+2. Literature Review
+2.1. Characteristics and Applicability of Decision Support System
+The early beginning of Computer Decision Support Systems (DSSs) dates back to the
+1970s. Their goal is to improve various ﬁelds of people’s lives by supporting decisions
+with the increasing use of information technology to improve the quality of decisions by
+recommending solutions [15]. Decision Support Systems (DSS) were deﬁned by Little in
+1970 as computer information systems that help people solve different issues in a semi-
+structured or unstructured way involving data and judgment [9,16]. The modeling strategy
+is provided by DSS frameworks by integrating knowledge discovery and automated
+decision-making. In the early 1970s, DSSs were introduced as an innovative kind of tool
+that combines Data Mining (DM) with artiﬁcial decision-making. DSSs are described as an
+interactive computer-based system or subsystem used to support decision-makers in using
+communication techniques, data, documents, cognition, and patterns to identify and solve
+problems, perform decision-making tasks, and make judgments [17].
+Decision support is based on the necessary data collected and processed accordingly.
+Decision support systems can be based on expert knowledge to support decision-making
+in a given focus area effectively. A characteristic element of decision support systems is the
+presence of a mechanism that generates recommendations [18]. Recommender systems
+solve the problem of the large amount of information that e-commerce platforms gener-
+ate. They provide personalized information to improve user satisfaction. Recommender
+systems are used in many ﬁelds, such as e-commerce, health, industry, and e-learning.
+Generating personalized recommendations in RS can be done automatically using Machine
+Learning (ML) models, big data, Artiﬁcial Neural Network (ANN) models, Deep Neural
+Networks (DNN) models, Reinforcement Learning (RL), rules, and multi-criteria decision
+analysis methods (MCDA), and other methods, such as linear regression, decision trees,
+and logic rules [19–22].
+
+--- Page 6 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2197
+More and more advanced algorithms are used to improve the accuracy of RS, such
+as fuzzy sets and genetic algorithms [ 23]. Fuzzy set theory is becoming an increasingly
+popular approach in problems requiring data representation and user interaction, and infor-
+mation extraction from the user. An example is the Operations Research-based Intelligent
+Decision Support System (OR-IDSS) [24]. Systems based on fuzzy rules are soft computing
+techniques introduced based on a fuzzy set theory proposed by Zadeh [25]. Fuzzy sets are
+based on degrees of membership to represent uncertainty. In these techniques, membership
+functions and fuzzy rules are generated, which build the system’s knowledge base, and,
+based on it, prediction is possible. The fuzzy rules are discovered from the data provided
+to the system [26].
+RS are important in e-commerce development by implementing personalized and
+intelligent services. They provide recommendations based on information extracted from
+data and placed in a model that allows interactions and models user preferences. As a result,
+RSs minimize customer search costs and suggest products based on explicit and implicit
+feedback about customer behavior and preferences [27]. Recommendation systems increase
+turnover by offering customized products and services to the client, suggesting additional
+products, helping to improve customer loyalty [ 28]. In e-commerce, recommendation
+accuracy leads to increased sales and customer loyalty.
+Recommender systems depend on consumer feedback and information about their
+shopping behavior. There are recommender systems that use agents to determine user
+interests and preferences based on historical transaction data. However, these systems
+have several problems, such as over-ﬁtting the data of systems based on artiﬁcial neural
+networks and machine learning, and the difﬁculty of extracting from the available data
+that would represent human preferences accurately and objectively. Therefore, developing
+an objective and accurate recommendation system is necessary to provide personalized
+recommendations in e-commerce [27].
+As it can be noticed, there are many DSSs based on different algorithms, but for
+an accurate representation of human preferences, an approach based on Multi-Criteria
+Decision-Making seems to be more important. This approach allows the personalization
+of recommendations in the form of integrating multiple selected criteria and prioritizing
+them. In order to implement multi-criteria decision support systems (MCDSS), these
+systems were supplemented with MCDM tools. The decision-making process requiring
+aggregation of multiple incommensurable and conﬂicting dimensions is complex and
+requires commitment. The technology used in the DSS is supposed to simplify the decision-
+making process for decision-makers by combining their priorities and using data with
+models to handle multi-criteria decision-making problems [29].
+The use of MCDM in DSS increases their efﬁciency [30]. DSSs consist of three main
+components: data integration, Data Mining (DM), and MCDM. In the third module, MCDM
+methods are used to evaluate the currently available alternatives, ﬁnd the most satisfactory
+options, and make appropriate reactions in a timely manner [ 31]. The performance of
+MCDM-based DSS requires a deﬁned ﬁxed set of criteria that presents the decision-maker
+with a clear representation of all available alternatives. The task essentially is to calculate the
+score of each alternative, thereby creating a ranking and selecting the one that maximizes
+that value [32].
+2.2. Overview of Various MCDM Methods Applied to Decision-Making Problems
+Multi-criteria decision-making (MCDM) is the process by which the most suitable so-
+lution is selected from a set of alternatives considering evaluation criteria [33]. Studies that
+consider MCDM methods are widely reported in the operations research (OR) literature.
+MCDM methods are used in solving multi-criteria problems to indicate to decision-makers
+the best alternative from a set of other options [8]. The use of algorithms in MCDM models
+is now a standard in modern approaches to understanding some types of human thinking
+and decision-making process [34]. Alternatives and criteria are the two main parameters
+considered in any multi-criteria problem. MCDM methods aim to provide a ranking of
+
+--- Page 7 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2198
+alternatives taking into account the criteria weights. The TOPSIS technique, which involves
+ranking the results in terms of similarity to the ideal solution, belongs to the methods of
+comparing and prioritizing alternatives [35,36].
+MCDM methods are being developed all the time to be able to cope with the challenges
+that are speciﬁc to their domain. One such phenomenon is the rank reversal (RR) paradox.
+It consists of a change in the ranking of alternatives when an alternative is added or
+removed from their set. It results in a change in the order of priorities of decision-makers
+regarding two alternatives and is against the principle of independence of irrelevant
+alternatives. Research directions to develop methods resistant to the RR phenomenon
+are evident in the development of methods, such as Ranking of Alternatives through
+Functional mapping of criterion sub-intervals into a Single Interval (RAFSI) [ 37], Stable
+Preference Ordering Towards Ideal Solution (SPOTIS) [38], and the Characteristic Objects
+Method (COMET) [39]. Other advantages of the COMET method worth noting are the
+high accuracy and the absence of the requirement for arbitrary weights [40]. In literature,
+there are descriptions of studies in the successful application of this method to choose
+the most advantageous product, for example, electric scooters [41], electric bikes [42], and
+electric-powered cars [43,44].
+Combined Compromise Solution (COCOSO) is another innovative and relevant
+MCDM method [34]. Combined compromise solution (COCOSO) was ﬁrst introduced
+initially by Yazdani et al. in 2019 [45]. This method is among the most recent techniques of
+MCDM. In its performance, the comparability sequence is used in three ways. This method
+is effective in dealing with the ranking or selection of alternatives. Furthermore, they are
+assessed against speciﬁc criteria [46]. It integrates simple additive weighting (SAW), step-
+wise weight assessment ratio analysis (WASPAS), and Exponentially Weighted Product
+(EWP) methods. Combining three different aggregation strategies distinguishes COCOSO
+from other MCDM methods and provides stable and reliable results [47]. The literature
+reports a successful application of the COCOSO method in the selection of manufacturing
+technology [48], personnel selection [49], and sustainable supplier selection [50].
+Today, MCDM approaches are extensively applied to elucidate the problems, namely
+the mobile phone selection problem. However, MCDM problems differ according to the
+solution status and the approaches’ implementation. In recent literature, many research
+papers are available in which the solution of the multi-criteria problem of selecting the best
+mobile phone using MCDM based approach is presented. In the study of Aggarwal et al.,
+the MCDM method called EDAS is used to select the most favorable mobile phone model
+from some previously selected mobile phones available in the Indian market [ 10]. The
+result obtained from the averaged solution, which reduces the risk of expert bias against
+the alternative, is the main advantage that distinguishes EDAS from other MCDM methods.
+Additionally, the result obtained from the average solution already normalizes the data,
+signiﬁcantly reducing the chances of deviation from the best solution. It follows that this
+method gives more reliable and more precise results for real-world multi-criteria problems,
+such as choosing the best mobile phone, than other well-known MCDM methods, such as
+TOPSIS or VIKOR.
+Mishra et al., in 2021, applied an innovative procedure employing the multi-attribute
+boundary approximation area comparison (MABAC) to solve the smartphone selection
+problem [12]. MABAC has an easy computational process, organized procedure, and
+an innovative direction that determines the foundation of real-world decision-making
+problems. Over the past few years, the MABAC approach is used by many scholars
+in different application areas. Furthermore, the outcomes of the analysis of the results
+demonstrate that the introduced method is well-ordered and effective with the existing
+ones. Therefore, MABAC appears to be an attractive explorative way to implement the
+MABAC in mobile phone selection.
+MAIRCA is a technique recently proposed by Pamucar et al. This method is based
+on the deﬁnition of the difference between theoretical and actual results. It means that
+this method is based on the gap between ideal and empirical priorities [ 51]. The main
+
+--- Page 8 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2199
+advantage of this method is related to the dissimilar linear normalization algorithm used.
+The described approach to linear normalization allows this method to achieve more efﬁcient
+results [52]. Stability of the solution, a well-structured analytical framework for ranking
+alternatives, the number of steps independent of the number of criteria, and suitability
+for cases with a large number of alternatives and criteria provide an appropriate ranking
+depending on a predeﬁned dominance threshold [51].
+The MAIRCA method performs calculations given their proximity to ideal solutions,
+so it is the preferred method for evaluating decision alternatives. Furthermore, considering
+the studies in which this method has been applied, this study is expected to contribute to
+the literature as it is a novel method, and surveys using the MAIRCA method for evaluating
+mobile phones have not been evidenced yet. Finally, compared with some other MCDM
+methods, such as ELECTRE, MAIRCA was chosen due to its relative novelty and ease of
+use, as well as its requiring less computing time [53].
+Rankings provided by MCDM methods that require weights depend signiﬁcantly
+on their determined values. Criteria weights have a direct impact on the ﬁnal results of
+MCDM methods. The weights can be established by both objective and subjective methods.
+Weights determined by subjective methods require the active participation of the expert
+and are assigned by the expert based on knowledge and experience. Examples of subjective
+weighting methods include BWM (Best-Worst Method) [ 51], AHP (Analytic Hierarchy
+Process) [5,54]. Objective methods set weights based on the data structure, taking into
+account each evaluation criterion’s actual degree of dominance.
+The evaluation criteria in this study are quantitative measurement data. In such a
+case, the CRITIC method gets all the information included in the criteria of assessment.
+Therefore, CRITIC’s objective weighting methods may demonstrate more realistic results
+due to varying weights to criteria. This method, similar to Mean Weight (MW), Entropy
+method, Standard Deviation (SD), and Statistical Variance procedure, belongs to objective
+methods that calculate weights by solving mathematical equations omitting to take into
+account the decision-maker preferences [55]. The use of subjective methods to determine
+weights raises questions about the reliability of the results obtained. Objective weighting
+techniques are used to overcome this problem. For this purpose, the CRITIC method
+was proposed by Diakoulaki et al. in 1995 [56]. This method takes into consideration the
+intensity of the contrast occurring in the structure of the decision problem. Determination
+of contrasts between criteria is possible after performing fundamental statistical operations,
+such as correlation analysis [57]. During the weighting process, both the standard deviation
+of a criterion and its correlation with other criteria are considered [58]. The CRITIC method
+belongs to the class of correlation techniques. In this method, the intensity of contrast
+and conﬂict in the decision problem structure is considered. In addition, the decision
+matrix is examined to determine the information included in the criteria for assessing the
+alternatives [59]. In the literature, many examples of the use of the CRITIC method for
+weights computation in combination with MCDM methods can be found, both known
+for many years and developed in recent times, employed to obtain the rankings of the
+assessed alternatives in multi-criteria problems, for example, TOPSIS [58], VIKOR [55,60],
+MAUT [61], WASPAS [57,62], AHP [63], EDAS [64], COCOSO [65,66], MULTIMOORA [67],
+and CODAS [60].
+In Table 1, the MCDM approaches used in the problem of selecting the most advanta-
+geous mobile phone model found in the most recent literature are listed. According to the
+recent literature, various MCDM strategies have been implemented to identify the most
+desirable mobile phone. Moreover, hybrid strategies of MCDM methods demonstrate high
+efﬁciency in analyzing real-world problems [8]. It can be noticed that, for better results, a
+combined approach involving more than one method is often used in research. For example,
+in several publications from recent years, a combined MCDM procedure was adopted to
+select the best mobile phone model, where the weights are computed applying the Analytic
+Hierarchy Process (AHP). In the ﬁnal stage, a set of alternatives was assessed employing
+the Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS) MCDM
+
+--- Page 9 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2200
+method to give an appropriate reference to the customer [7,8,68]. Therefore, in the research
+presented in many publications, several MCDM methods are used to analyze in terms of
+comparison and conformity [11,34,69]. Another approach described includes using AHP
+adopted to ﬁnd out the criteria weights. In the next stage, two MCDM methods, named
+COPRAS and ARAS, are applied to obtain the rankings of the evaluated alternatives [5].
+Table 1. MCDM methods used to evaluate mobile phones in recent literature.
+MCDM Method Acronym Year References
+AHP 2016 [70]
+2018 [3]
+AHP , BWM and DEMATEL 2019 [34]
+AHP-COPRAS, AHP-ARAS 2020 [5]
+Fuzzy AHP , Fuzzy ANP 2021 [14]
+Fuzzy AHP and PROMETHEE II 2021 [71]
+Fuzzy ARAS and TOPSIS 2019 [69]
+COCOSO 2019 [34]
+EDAS 2018 [10]
+ELECTRE 2020 [72]
+ELECTRE-III 2018 [6]
+MABAC 2021 [12]
+TOPSIS 2020 [13]
+TOPSIS combined with AHP as weighting method 2020 [7]
+2020 [8]
+2021 [68]
+TOPSIS and MOORA 2020 [11]
+VIKOR 2019 [73]
+WASPAS 2019 [74]
+Only one MCDM method, AHP , was used in Reference [70], which is a subjective
+method. So, there is a lack of comparative analysis with other MCDM methods, which
+could give a different ﬁnal ranking. Besides, only four mobile phones were evaluated in this
+study with ﬁve criteria. The situation is similar in Reference [ 3], which also used only the
+AHP method to evaluate three criteria for mobile phone models. In Reference [69], only ﬁve
+alternatives of mobile phones were evaluated. Many works dedicated to evaluating mobile
+phones using MCDM have used only one method [6,10,12,13,71,72]. In Reference [5], 10 al-
+ternatives were evaluated with four criteria. Two MCDM approaches, AHP-COPRAS and
+AHP-ARAS, were used as methods to evaluate the alternatives, resulting in two rankings
+that were not identical. However, their similarity was not measured using an objective
+correlation coefﬁcient. In addition, no strategy was proposed to present a consensus solu-
+tion considering both rankings. Similar approaches considering no more than two MCDM
+methods for ranking alternatives can be observed in References [11,13,14,69]. In the case of
+the mobile phones evaluation problem, the small set of evaluated alternatives containing
+only 3–5 alternatives is a limitation of the study because it insufﬁciently represents the
+diversity speciﬁc to these devices. The same is true for the criteria, as their small number
+insufﬁciently represents consumer preferences. The use of one or two MCDM methods is
+also a limitation because different MCDM methods may give different solutions to the same
+problem. Thus, selecting an MCDM method to make a reliable decision is a challenge. In
+turn, using multiple MCDM methods may result in different rankings. Thus, a framework
+is needed that integrates the results of different methods and builds a reliable compromise
+ranking based on them. In Reference [75], a set of six MCDM methods, including TOPSIS,
+VIKOR, PROMETHEE II, COPRAS, COMET, and SPOTIS, were used to evaluate electric
+bus alternatives. Based on the rankings obtained using the voting approach, compromise
+rankings were constructed and then compared with the rankings provided by the six
+MCDM methods using correlation coefﬁcients. The compromise ranking was also used
+
+--- Page 10 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2201
+in the battery electric vehicles (BEVs) evaluation problem [47]. It was generated from the
+SECA, MARCOS, ARAS, COCOSO, MAIRCA, and COPRAS rankings by applying the
+Borda technique and Copeland strategy.
+The AHP method uses a scale to determine the importance of each criterion and a
+pairwise comparison matrix to scale the importance of each criterion [54]. The requirement
+to perform only a pairwise comparison for all alternatives simpliﬁes the decision-making
+process. Unfortunately, this method is not rank reversal-free [ 76]. The AHP (Analytic
+Hierarchy Process) method is from the American school, similar to TOPSIS, VIKOR. Meth-
+ods from the American school are based on the utility or value function. These methods
+use two types of relationships between the alternatives being evaluated: indifference and
+preference. However, they do not consider the incomparability of the options. It results
+in undesirable substitution effects (linear compensation) that occur even in their fuzzy
+extensions. The most popular methods from the European School include ELECTRE family
+and PROMETHEE II. Methods from the European school consider relations, the most com-
+mon of which is indifference and weak or strong preference. They have a reduced linear
+compensation effect and are more oriented toward modeling user preferences. Methods
+from European school utilize outranking relations in the preference aggregation process.
+The described relationship is not transitive between pairs of evaluated alternatives. Re-
+searchers from European school point out that American school methods do not consider
+variability or uncertainty of expert judgements [77]. The PROMETHEE II method results
+in numerical values calculated for each evaluated alternative. In contrast, the result of
+the ELECTRE family of methods is not quantitative, so the application of this method is
+limited depending on the results expected by the decision-maker, the need to combine
+different methods, or comparative analysis [78]. The methods mentioned above are not
+resistant to the rank reversal paradox, evidenced by a change in rankings when some
+alternatives are added or removed. The problem of the occurrence of rank reversal paradox
+has been evidenced in studies for TOPSIS [79,80], AHP [76,81], PROMETHEE II [82], and
+ELECTRE [83]. Rank reversal paradox is a problem in the automation of decision-making
+processes [76].
+The COCOSO method, unlike the approaches mentioned above, considers three
+different aggregation strategies, Simple Additive Weighting (SAW), step-wise weight
+assessment ratio analysis (WASPAS), and Exponentially Weighted Product (EWP) methods,
+to obtain a stable and reliable solution [34]. The main advantage of the ARAS method is
+that it has a utility function that enables an alternative to be proportioned to the optimal
+alternative. The COPRAS method helps ﬁnd the similarity between each alternative and
+the optimal alternative by using degrees of utility [5,47]. The WASPAS method is a unique
+combination of the Weighted Sum Model (WSM) and Weighted Product Model (WPM).
+The main objective of the WASPAS method is to achieve the highest estimation accuracy by
+using weighted aggregate function optimization [57].
+The Characteristic Objects METhod (COMET) is an innovative method based on
+fuzzy set theory that successfully addresses the limitations in the previously mentioned
+approaches. The main advantage of this method is its resistance to the rank reversal para-
+dox [84]. This phenomenon consists in changing the ranking order when some alternatives
+are removed from the set under evaluation [76]. The algorithm of the COMET method is
+based on a set of characteristic objects, which are reference points in the problem space. The
+characteristic objects are independent of the evaluated alternatives, so, even if an alterna-
+tive is removed or added, there will never be a swap of places in the resulting ranking [85].
+In contrast to the previously mentioned methods, the algorithm of the COMET method
+has a complexity independent of the number of alternatives evaluated. This method
+provides accurate results, and operating on fuzzy numbers reﬂects adequately realistic
+problems where uncertainty and ﬂuctuation are common. In this approach, the knowledge-
+dependent step for the decision-maker is a pairwise comparison of characteristic objects,
+the number of which depends on the number of criteria considered in the evaluation and
+their characteristic values. The possibility of creating a hierarchical model with an arbitrary
+
+--- Page 11 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2202
+structure in the decomposition process signiﬁcantly reduces the number of comparisons
+required [86]. However, the expert pairwise comparison stage is always the most laborious
+step of this method. In order to eliminate this subjective and time-consuming step, a novel
+hybrid approach named TOPSIS-COMET, combining another MCDA method, TOPSIS,
+with the COMET method, is proposed. TOPSIS is used in this case to evaluate a set of
+characteristic objects instead of a laborious pairwise comparison by an expert to ﬁll in the
+Matrix Expert Judgement (MEJ). The proposed method is still rank reversal-free, just as
+in its classical version because TOPSIS, unlike its traditional application, is used here to
+evaluate characteristic objects instead of alternatives. The described approach was ﬁrst
+presented in Reference [87]. The decision to combine TOPSIS with COMET is justiﬁed by
+the fact that the TOPSIS method has many advantages, such as a simple, understandable,
+and widely used algorithm and returning the result in the form of a vector of numbers [88],
+which plays the role of the SJ vector created in the classical version of the COMET method
+based on MEJ. The modular approach of the COMET method allows for further develop-
+ment and modiﬁcation of the method, which is a signiﬁcant advantage when considering
+this method as a DSS engine. Different MCDM methods may generate divergent solutions
+to the same problem due to their various methodological bases. The differences in results
+do not mean that the solutions are wrong. There is no complex or single method that is
+better than its equivalents. Although all MCDM methods are based on sound theoretical
+foundations, each technique has its advantages and disadvantages. Thus, a model must be
+proposed to achieve the compromise score and, thus, increase its reliability. In the approach
+presented in Reference [47], the results from six different MCDM techniques are aggregated
+using the Borda and Copeland compromise ranking counting method. With this model,
+a consensus result can be achieved, and the reliability of the results is increased.
+Due to the several advantages of the COMET method proved above, the authors of this
+work propose the TOPSIS-COMET hybrid approach as an engine of novelty DSS, which will
+be presented on an illustrative example of the problem of selecting the most advantageous
+mobile phone model. The authors propose an innovative DSS that recommends the
+compromise ranking that considers rankings from several relevant methods. Therefore, as a
+set of additional methods complementary for the innovative TOPSIS-COMET approach, the
+authors of this paper have chosen four MCDA methods: COCOSO, EDAS, MAIRCA, and
+MABAC. Based on the methods used, the Copeland strategy for constructing compromise
+ranking was applied, allowing multiple ranking lists to be combined into one. A sensitivity
+analysis was then performed on the compromise rankings candidates to calculate their
+match to the rankings provided by the methods used in the study. Correlation coefﬁcients
+rw and WS were chosen as measures of matching.
+3. Materials and Methods
+This section introduces the MCDM methods selected based on the performed literature
+review as the main component of a DSS designed to provide customers with recommenda-
+tions in ranking a selected range of products on e-commerce websites. The fundamentals,
+main assumptions and stages of TOPSIS-COMET, COCOSO, EDAS, MAIRCA, and MABAC
+methods are provided here.
+3.1. The TOPSIS-COMET Method
+COMET (Characteristic Objects METhod) method uses the basics of fuzzy logic and
+triangular fuzzy sets [ 89]. The main advantages of the COMET method are its high
+accuracy, lack of requirement for weights, and its complete resistance to rank reversal
+paradox [87]. It happens because the alternatives are evaluated in the COMET method
+using a model identiﬁed based on characteristic objects independent of the set of evaluated
+decision alternatives. Thus, it ensures that there is no comparison of the evaluated decision
+alternatives among themselves, unlike many other multi-criteria decision analysis methods,
+and the result of their evaluation is obtained solely based on the identiﬁed model. It
+
+--- Page 12 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2203
+guarantees that the evaluation values for the alternatives will not change when the same
+decision model is used, so the paradox never occurs [90].
+Step 1. The dimensionality of the problem is deﬁned by the expert by choosing the number
+r of criteria, C1, C2, . . ., Cr. In the next stage, the set of fuzzy numbers for each criterion Ci
+is chosen, i.e., ˜Ci1, ˜Ci2, . . ., ˜Cici. Each fuzzy number deﬁnes the value of the membership for
+a particular linguistic concept for particular crisp values [91,92]. Therefore, it is also useful
+for variables that are not continuous. In this way, the following outcome is achieved (1).
+C1 =
+{ ˜C11, ˜C12, . . . , ˜C1c1
+}
+C2 =
+{ ˜C21, ˜C22, . . . , ˜C2c2
+}
+. . .
+Cr =
+{ ˜Cr1, ˜Cr2, . . . , ˜Crcr
+}
+, (1)
+where C1, C2, . . . ,Cr are numbers of the fuzzy numbers for all criteria.
+Step 2. Characteristic objects are named generated objects that deﬁne reference points in
+n-dimensional space. Their role may be played by real or idealized objects, which do not
+exist [93]. The characteristic objects (CO) are received from the Cartesian product of fuzzy
+numbers cores for each criteria [43]. As the result, the ordered set of all CO is obtained (2):
+CO1 =⟨C( ˜C11), C( ˜C21), . . . ,C( ˜Cr1)⟩
+CO2 =⟨C( ˜C11), C( ˜C21), . . . ,C( ˜Cr2)⟩
+. . .
+COt =⟨C( ˜C1c1 ), C( ˜C2c2 ), . . . ,C( ˜Crcr )⟩
+, (2)
+where t means a number of CO (3):
+t =
+r
+∏
+i=1
+ci. (3)
+Step 3. The Matrix of Expert Judgement (MEJ ) is determined by the expert. It is a result of
+pairwise comparison of the characteristic objects to the knowledge of the expert [94]. The
+MEJ structure is represented by (4):
+MEJ =
+
+
+α11 α12 . . . α1t
+α21 α22 . . . α2t
+. . . . . . . . . . . .
+αt1 αt2 . . . αtt
+
+, (4)
+where αij is a result of comparing COi and COj by the expert. The characteristic object
+which is more preferred gets one point, and the second object which is less preferred is
+given zero points. If the preferences are equal, both objects get half point [44]. It depends
+only on the knowledge of the expert and can be illustrated as (5):
+αij =
+
+
+
+0.0, fexp (COi) < fexp (COj)
+0.5, fexp (COi) = fexp (COj)
+1.0, fexp (COi) > fexp (COj)
+, (5)
+where fexp is an expert mental judgement function. In this study, however, the TOPSIS
+method was used as an expert function. This approach is presented in Reference [87].
+Then, the vertical vector of the Summed Judgements (SJ ) is received as provided by
+Equation (6):
+SJi =
+t
+∑
+j=1
+αij. (6)
+The number of query is equal p = t(t−1)
+2 because, for each element αij, we can observe
+that αji = 1− αij.
+
+--- Page 13 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2204
+In the result, the vector P is obtained, where i-th row includes the accurate value of
+preference for COi.
+In the proposed hybrid TOPSIS-COMET approach, in this step, the characteristic
+objects are not compared pairwise by the expert, and the MEJ matrix is not constructed.
+Instead of these procedures, the set of characteristic objects is evaluated by the TOPSIS
+method, which returns a vertical preference vector as the SJ vector. The following steps are
+identical to the classic version of the COMET method.
+Step 4. Each characteristic object is converted into a fuzzy rule, where the degree of
+membership of each criterion is the premise for activating the inference in the formPi. Each
+characteristic object and preference value is converted into a fuzzy rule in the following
+detailed form (7). In this way, a complete fuzzy rule base is obtained, which approximates
+the mental evaluation function of the expert fexp (COi) [95].
+IF C
+( ˜C1i
+)
+AND C
+( ˜C2i
+)
+AND . . . THEN Pi. (7)
+Step 5. Each one of the alternatives Ai is a set of crisp numbers ari corresponding to criteria
+C1, C2, . . . ,Cr. It can be displayed as follows (8):
+Ai ={a1i, a2i, . . . ,ari}. (8)
+3.2. The COCOSO Method
+Using many methods to explain multi-criteria problems, the outcome ranking pro-
+duced by speciﬁc methods may change signiﬁcantly, corresponding to the change of weight
+distributions of criteria. To improve this limitation, the COCOSO (Combined Compro-
+mise Solution) method, a newly proposed algorithm, was introduced by Yazdani et al.
+The recommended procedure is based on combined, simple additive weighting and ex-
+ponentially weighted product model [ 45]. It can represent a summary of compromise
+solutions [96]. It integrates the SAW [97], WASPAS (Weighted Aggregated Sum Product
+Assessment) [98], and MEW (Multiplicative Exponential Weighting) methods [ 99] with
+aggregation strategies. By this method, decision-makers can get a multi-faceted compro-
+mise solution, which is compatible with the solution received by other MCDM methods,
+such as the VIKOR [100], WASPAS [98], and MOORA (Multi-Objective Optimization on
+the basis of Ratio Analysis) methods [101]. Moreover, the optimal solution screened by the
+COCOSO method is not simply inﬂuenced by the changes of criteria’s weight distribution
+or the deletion/addition of alternatives. These imply that the COCOSO method is a robust
+method, which has advantages in reliability and stability of the decision-making results.
+In addition, the COCOSO method is easy to understand and has wide applicability and,
+thus, has been extended to different circumstances to solve decision-making problems in
+different domain [65,102]. To solve a decision problem with COCOSO, after determining
+the alternatives and the related criteria, the following steps are validated [45]:
+Step 1. Deﬁnition of a decision matrix of dimension n× m, where n is the number of
+alternatives, and m is the number of criteria (9).
+xij =
+
+
+x11 x12 . . . x1m
+x21 x22 . . . x2m
+. . . . . . . . . . . .
+xn1 xn2 . . . xnm
+
+. (9)
+Step 2. Normalization the decision matrix, where, for proﬁt criteria, use the Equation (10),
+and for cost criteria, use the Equation (11). In this study, The Minimum-Maximum normal-
+ization method was used.
+rij = xij− mini xij
+maxi xij− mini xij
+, (10)
+
+--- Page 14 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2205
+rij = maxi xij− xij
+maxi xij− mini xij
+. (11)
+Step 3. Calculation of the weighted sum of the comparison sequence and the total power
+weight of the comparison sequences for each alternative. The values of Si are based on the
+grey relationship generation method (12), and for Pi the values are achieved according to
+the multiplicative WASPAS setting (13).
+Si =
+n
+∑
+j=1
+(wjrij ), (12)
+Pi =
+n
+∑
+j=1
+(rij )wj. (13)
+Step 4. Computation of the relative weights of alternatives using aggregation strategies.
+The formulas determine the strategies (14)–(16), where the ﬁrst strategy expresses the
+average of the sums of WSM and WPM scores (14), the second strategy expresses the
+sum of WSM and WPM scores over the best (15), and the third strategy expresses the
+compromise strategy of WSM and WPM by using the λ value (16). In this study, a λ value
+of 0.5 was used.
+kia = Pi + Si
+∑m
+i=1(Pi + Si) , (14)
+kib = Si
+mini Si
++ Pi
+mini Pi
+, (15)
+kic = λ(Si) + (1− λ)(Pi)
+(λ maxi Si + (1− λ) maxi Pi) ; 0 ⩽ λ ⩽ 1. (16)
+Step 5. Establish the ﬁnal ranking of alternatives based on ki values deﬁned using
+Formula (17). The higher the ki value, the higher the ranking.
+ki = (kiakibkic)
+1
+3 + 1
+3 (kia + kib + kic). (17)
+3.3. The EDAS Method
+EDAS (Evaluation based on Distance from Average Solution) is a newly proposed
+method proposed by Ghorabaee et al. in 2015 [ 103]. Ghorabaee et al. also developed
+a fuzzy extension of this method [ 104]. The EDAS method uses two distance measures
+in the calculation: the positive distance from the mean (PDA) and the other being the
+negative distance from the mean (NDA). Alternatives are evaluated according to higher
+PDA values and lower NDA values. The subsequent stages of the EDAS procedure for
+a decision-making problem with the m criteria and the n alternatives can accurately be
+shown as follows [33]:
+Step 1. Deﬁne a decision matrix of dimension n× m, where n is the number of alternatives,
+and m is the number of criteria (18).
+Xij =
+
+
+x11 x12 . . . x1m
+x21 x22 . . . x2m
+. . . . . . . . . . . .
+xn1 xn2 . . . xnm
+
+. (18)
+Step 2. Calculate the average solution for each criterion according to Formula (19).
+AVj = ∑n
+i=1 Xij
+n . (19)
+
+--- Page 15 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2206
+Step 3. Calculating the positive distance from the mean solution and the negative distance
+from the mean solution for the alternatives. When the criterion is of proﬁt type, the negative
+distance and the positive distance are calculated usingEquations (21) and (20), while, when
+the criterion is of cost type, the distances are calculated using Formulas (23) and (22).
+PDA ij = max
+(
+0,
+(
+Xij− AVj
+))
+AVj
+, (20)
+NDA ij = max
+(
+0,
+(
+AVj− Xij
+))
+AVj
+, (21)
+PDA ij = max
+(
+0,
+(
+AVj− Xij
+))
+AVj
+, (22)
+NDA ij = max
+(
+0,
+(
+Xij− AVj
+))
+AVj
+. (23)
+Step 4. Calculate the weighted sums of PDA and NDA for each decision variant using
+Equations (24) and (25).
+ASPi =
+m
+∑
+j=1
+wjPDA ij, (24)
+SNi =
+m
+∑
+j=1
+wjNDA ij. (25)
+Step 5. Normalize the weighted sums of negative and positive distances using Equations (26)
+and (27).
+NSPi = SPi
+maxi(SPi) , (26)
+NSNi = 1− SNi
+maxi(SNi) . (27)
+Step 6. Calculate the evaluation score (AS) for each alternative using Formula (28). A higher
+point value determines a higher ranking alternative.
+ASi = 1
+2 (NSPi + NSNi). (28)
+3.4. The MAIRCA Method
+The MAIRCA (MultiAttributive Ideal-Real Comparative Analysis) method is a proce-
+dure that is easy to use because it maintains a high degree of stability even when the criteria
+change [105]. The Center for Logistics Research at the University of Defence in Belgrade
+developed MAIRCA in 2014 [52]. The performance of the MAIRCA method requires the
+determination of the gap between the ideal and empirical weights. Then, the sum of the
+gaps for each criterion provides the total gap for each observed alternative. In the ﬁnal
+step, a ﬁnal ranking of alternatives is provided, in which the best-ranked alternative is the
+one with the smallest value of the total gap. The alternative having the smallest total gap
+value has values that are closest to the ideal weights according to the largest number of
+criteria (ideal criteria values). The MAIRCA method is performed in six steps, described as
+follows [106]:
+Step 1. Deﬁne a decision matrix of dimension n× m, where n is the number of alternatives,
+and m is the number of criteria (29).
+
+--- Page 16 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2207
+xij =
+
+
+x11 x12 . . . x1m
+x21 x22 . . . x2m
+. . . . . . . . . . . .
+xn1 xn2 . . . xnm
+
+. (29)
+Step 2. Determine the preference for choosing alternatives using the vector PAi using
+Formula (30).
+PAi = 1
+n ;
+n
+∑
+i=1
+PAi = 1, i = 1, 2, . . . ,n. (30)
+If the decision-maker is neutral in choosing an alternative, the vector PAi should have
+the same values (31).
+PA1 = PA2 = . . . = PAn. (31)
+Step 3. Create a theoretical ranking matrixTp. The elements of this matrix are the multiplied
+priorities of alternatives by the criteria weights. The form of this matrix can be represented
+by Formula (32).
+Tp =
+
+
+tp11 tp12 . . . tp1m
+tp21 tp22 . . . tp2m
+. . . ··· . . . . . .
+tpn1 tpn2 . . . tpnm
+
+ =
+
+
+PA1· w1 PA1· w2 . . . PA1· wm
+PA2· w1 PA2· w2 . . . PAm· wm
+. . . . . . . . . . . .
+PAn· w1 PAn· w2 . . . PAn· wm
+
+. (32)
+When the preferences determined for the alternatives by the decision-maker are
+equal, the theoretical ranking matrix is represented by a theoretical ranking vector using
+Formula (33).
+Tp =
+[
+tp11 tp12 . . . tp1n
+]
+=
+[
+pA1.w1 pA1· w2 . . . pA1· wn
+]
+. (33)
+Step 4. Create the real rating matrix, which is shown by Formula (34).
+Tr =
+
+
+tr11 tr12 . . . tr1m
+tr21 tr22 . . . tr2m
+. . . . . . . . . . . .
+trn1 trn2 . . . trnm
+
+. (34)
+The values of the real rating matrix are determined depending on the criterion of
+proﬁt type or cost type, sequentially, according to Formulas (35) and (36).
+trij = tpij·
+(
+xij− min xj
+max xj− min xj
+)
+, (35)
+trij = tpij·
+(
+xij− max xj
+min xj− max xj
+)
+. (36)
+Step 5. Calculate the total gap matrix (G) by taking the difference between the theoretical
+grade matrix (Tp) and the actual grade matrix (Tr) using Formula (37).
+G = Tp− Tr =
+
+
+tp11− tr11 tp12− tr12 . . . tp1m− tr1m
+tp21− tr21 tp21− tr21 . . . tp2m− tr2m
+. . . . . . . . . . . .
+tpn1− trn1 tpn2− trn2 . . . tpnm− trnm
+
+. (37)
+
+--- Page 17 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2208
+Step 6. Calculate the ﬁnal values of the criterion functions (Qi) for the alternatives using
+the sum of the rows of the gap matrix ( G) using Formula (38). The alternative with the
+lowest value of Qi has the highest ranking.
+Qi =
+m
+∑
+j=1
+gij i = 1, 2, . . . ,n. (38)
+3.5. The MABAC Method
+The MABAC (Multi-Attributive Border Approximation Area Comparison) is a new
+method of multi-criteria decision-making. The MABAC method was worked out just as in
+MAIRCA by the research center at the University of Defence in Belgrade. Pamuˇ car and
+´Cirovi´ c ﬁrst implemented this approach in 2015 [12,107]. It determines the distance mea-
+sures between each possible alternative and the boundary approximation area (BAA) [108].
+The fundamental objective of the MABAC method is to determine the distance of the
+criterion function of each alternative from the approximation region of the boundary. The
+following section presents the implementation process of the MABAC method, which
+consists of 6 stages [107]:
+Step 1. Deﬁne a decision matrix of dimension n× m, where n is the number of alternatives,
+and m is the number of criteria (39).
+xij =
+
+
+x11 x12 . . . x1m
+x21 x22 . . . x2m
+. . . . . . . . . . . .
+xn1 xn2 . . . xnm
+
+. (39)
+Step 2.Normalization of the decision matrix, where, for criteria of type profit,Equation (40)is
+used, and, for criteria of type cost, Equation (41) is used.
+nij = xij− min xi
+max xi− min xi
+, (40)
+nij = xij− max xi
+min xi− max xi
+. (41)
+Step 3. Create a weighted matrix based on the values from the normalized matrix according
+to Formula (42).
+vij = wi·
+(
+nij + 1
+)
+. (42)
+Step 4. Boundary approximation area (G) matrix determination. The Boundary Approxi-
+mation Area (BAA ) for all criteria can be determined using Formula (43).
+gi =
+(
+m
+∏
+j=1
+vij
+)1/m
+. (43)
+Step 5. Distance calculation of alternatives from the boundary approximation area for
+matrix elements (Q) by Equation (44).
+Q =
+
+
+v11− g1 v12− g2 . . . v1n− gn
+v21− g1 v22− g2 . . . v2n− gn
+. . . . . . . . . . . .
+vm1− g1 vm2− g2 . . . vmn− gn
+
+ =
+
+
+q11 q12 . . . q1n
+q21 q22 q2n
+. . . . . . . . . . . .
+qm1 qm2 . . . qmn
+
+. (44)
+The membership of a given alternative Ai to the approximation area (G, G+ or G−) is
+established by (45).
+
+--- Page 18 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2209
+Ai∈
+
+
+
+G+ if qij > 0
+G if qij = 0
+G− if qij < 0
+. (45)
+Step 6. Rank the alternatives according to the sum of the distances of the alternatives from
+the areas of approximation of the borders (46).
+Si =
+n
+∑
+j=1
+qij, j = 1, 2, . . . ,n, i = 1, 2, . . . ,m. (46)
+3.6. The CRITIC Weighting Method
+The CRITIC method (CRiteria Importance Through Intercriteria Correlation) is an
+objective weighting method introduced by Diakoulaki et al. in 1995 [56]. This method is
+used to establish the values of the assessment criteria weights. The CRITIC method gains all
+information included in the evaluation criteria [55]. This method allows the weights to be
+determined by omitting the preferences of the decision-maker. The weights are calculated
+in this procedure using mathematical formulas This method appears to be appropriate for
+determining the criteria weights because it determines them by considering both contrast
+and conﬂict intensity in the structure of the decision problem. The described algorithm
+is founded on an analytical examination of the evaluation matrix aimed at obtaining all
+the information included in the evaluation criteria. Objective weight values are obtained
+through the process of quantifying the internal information of each evaluation criterion.
+In this method, determining criteria weights considers both the standard deviation of
+a criterion and its correlation among other criteria. An initial decision matrix for the
+described procedure has the form given by the equation X = [ xij ]m×n and consists of
+m alternatives and n criteria, where xij is the metric of performance of ith alternative
+with regard to jth criterion. Weights of the jth criterion wj are obtained with using of
+the following notations: cj, means the quantity of information included in jth criterion, σj
+means the standard deviation of thejth criterion, and ρjk indicates the correlation coefﬁcient
+among the jth and kth criteria. Based on the assumptions presented above, the calculation
+stages of the CRITIC method are as follows [109]:
+Step 1. Normalization of the initial decision matrix using Equation (47) for beneﬁt criteria:
+rij =
+xij− xmin
+j
+xmax
+j − xmin
+j
+. (47)
+Step 2. Calculation of the correlation among criteria pairs by using Equation (48):
+ρjk = ∑m
+i=1(rij− rj)(rik− rk)√
+∑m
+i=1(rij− rj)2 ∑m
+i=1(rik− rk)2
+. (48)
+Step 3. Computation of weights of criteria by using Equations (49) and (50)
+cj = σj
+n
+∑
+k=1
+(1− ρjk); (49)
+wj = cj
+∑n
+k=1 ck
+, (50)
+where i = 1, 2, . . . ,m; j, k = 1, 2, . . . ,n.
+3.7. Ranking Similarity Coefﬁcients
+Employing various MCDM methods to solve the identical decisional problem may
+give different rankings. For examining their similarity, several correlation measures are
+used. Two similarity coefﬁcients were applied to compare the outcomes received from
+the various methods and determine how strong they were consistent. For this purpose,
+
+--- Page 19 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2210
+symmetrical weighted Spearman’s rank correlation coefﬁcientrw and asymmetrical rank
+similarity coefﬁcient WS were used.
+Weighted Spearman’s Rank Correlation Coefﬁcient
+For a samples of size N, the rank values Xi and yi is deﬁned as (51). In this approach,
+the positions at the top of both rankings are more signiﬁcant. The relevance weight is
+computed for each comparison.
+rw = 1− 6 ∑N
+i=1(xi− yi)2((N− xi + 1) + (N− yi + 1))
+N4 + N3− N2− N . (51)
+3.8. Rank Similarity Coefﬁcient
+For a sample of size N, the rank values xi and yi is deﬁned as (52) [ 110]. It is an
+asymmetrical measure. The weight of each comparison is determined by the importance
+of the items in the ﬁrst ranking. In turn, the ﬁrst ranking is used as the reference ranking
+during the calculation [111].
+WS = 1−
+N
+∑
+i=1
+2−xi |xi− yi|
+max (|xi− 1|,|xi− N|) . (52)
+3.9. The Copeland Method
+The Copeland method is used to construct a compromise ranking based on the rank-
+ings provided by different approaches. It uses the well-known technique of aggregating
+the rankings of Borda count. The subsequent stages of this strategy are presented in
+Reference [47].
+The stages of the Borda count are as follows:
+Step 1. Evaluation of the alternatives. This technique ﬁrst assigns (n− 1) points to the
+alternative which is most preferred by the decision-maker and zero points for the least
+preferred. This stage is performed for each MCDM method.
+Step 2. Calculation of the Borda score. The Borda score of each alternative is received by
+summing up the scores.
+Step 3. Rank the options. The best alternative has the highest Borda score.
+The steps of the Copeland strategy are as follows:
+Step 1. Calculation of the wins score. First of all, the wins score of each alternative is
+calculated. The win score is calculated as the sum of the ranking order of the alternatives
+according to different methods.
+Step 2. Calculation of the losses score. The wins score of each option are subtracted from
+the majority wins score. In this way, the losses scores of the options are received.
+Step 3. Determination of the ﬁnal scores and ranking. The difference between the wins
+score and the losses score provides the ﬁnal score of each option. Finally, the best option is
+this one, which has the highest overall score.
+A ﬂow chart visualizing the presented DSS designed on the basis of methods presented
+in this section is displayed in Figure 1. The user chooses the criteria relevant in selecting
+the most advantageous alternative from the available dataset. The next step is to determine
+the importance of the criteria using a user-selected weighting technique, either objective
+or subjective. In the example presented here, the objective CRITIC weighting technique
+is used. Then, the decision matrix with alternatives and criteria and the vector of criteria
+importance are taken by a set of MCDM methods to evaluate the alternatives. Finally, based
+on the obtained solutions, a compromise ranking is constructed as a recommendation for
+the user.
+
+--- Page 20 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2211
+Recommendation
+Compromise 
+ranking
+Evaluation of alternatives with MCDM methods
+TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Evaluation of alternatives with MCDM methods
+TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Preferences inductionPreferences induction
+Compromise ranking constructionCompromise ranking construction
+Customer
+Copeland method
+Dataset
+Set of 
+alternatives
+Evaluation 
+criteria
+Dataset
+Set of 
+alternatives
+Evaluation 
+criteria
+Objective 
+CRITIC 
+weighting
+Objective 
+CRITIC 
+weighting
+DSS
+Decision matrixDecision matrix
+Figure 1. The ﬂow chart of the DSS with component based on MCDM methods.
+4. An Illustrative Case Study of a Multi-Criteria Mobile Phones Selection Problem
+with Proposed DSS
+In this study, a Decision Support System founded on MCDM methods is presented on
+the evaluation of selected mobile phone models. This DSS could be applied in the Internet
+services industry, such as e-commerce. The system recommendation is provided as a
+compromise ranking based on the recommendation of each method used. The compromise
+ranking is calculated by aggregating the result rankings of all the MCDM methods used
+according to the Copeland strategy, which involves the Borda method. For the TOPSIS-
+COMET method, minimum and maximum values were used as characteristic values for
+each criterion.
+The system proposed by the authors of this study includes three main stages, which can be
+presented as follows:
+1. In the ﬁrst step, data from various online platforms are analyzed to recognize a list of
+relevant criteria used to assess mobile phones.
+2. The second step includes the calculation of the weights, which represent user pref-
+erences. In this illustrative example, the weights are determined using an objective
+weighting method named CRITIC, introduced in Section 3.6. However, it is also
+possible to customize to the decision-maker’s preference and use a vector of weights
+determined independently, or using another method, also subjective, such as AHP .
+3. Finally, a set of alternatives is evaluated using the MCDM methods, and a recommen-
+dation of the most advantageous product in the form of compromise ranking based
+on the used set of MCDMs is provided to a user.
+Additionally, a comparative analysis of the rankings obtained using all MCDM meth-
+ods considered in this study is presented. It was followed by a sensitivity analysis per-
+formed for compromise rankings candidates calculated from all methods used and for the
+compromise rankings candidates obtained by excluding one each from all MCDM methods
+used. In other words, the compromise ranking candidate Rank 1 was calculated with all
+MCDM methods used in this study, while Rank 2 was created without TOPSIS-COMET,
+Rank 3 without COCOSO, Rank 4 without EDAS, Rank 5 without MAIRCA, and Rank 6
+without MABAC. In the lack of having a reference ranking, the goal is to select the reference
+
+--- Page 21 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2212
+ranking that shows the most signiﬁcant similarity to the rankings provided by the MCDM
+methods included in the study. The next stage of the sensitivity analysis is to calculate the
+correlation coefﬁcients rw and WS between the compromise ranking candidates and the
+rankings provided by each MCDM method. This step determines the match between the
+compromise ranking candidates and the rankings from the MCDM methods. The ﬁnal
+stage is to compute the rw and WS between the compromise ranking candidates.
+In this study, 1039 mobile phone models were selected and evaluated using the
+implemented DSS. Data on selected mobile phones models, including values of selected
+evaluation criteria, were collected from various websites, i.e., online stores posting sales
+offers for various phone models, along with parameters of selected evaluation criteria.
+In Table 2, 12 selected criteria considered in the evaluation of mobile phones, with their
+names, types of proﬁt or cost and units, are listed. The selected criteria represent sample
+parameters of mobile phones. However, the system allows selecting any evaluation criteria
+relevant to the customer, whose values will be expressed in numbers.
+In the example simulation presented in this article, criteria weights were established
+applying the sample objective CRITIC method introduced in Section 3.6. For the TOPSIS-
+COMET method, each considered criterion’s minimum and maximum values were used as
+characteristic values.
+In the next step, the similarity of the received rankings is investigated. For this purpose,
+two ranking correlation coefﬁcients are calculated, symmetrical rw and asymmetrical WS,
+for each pair of rankings obtained applying various MCDM methods. The fundamentals
+of these coefﬁcients are detailed in Section 3.7.
+Table 2. Selected criteria C1–C12, their name, type, and unit.
+Ci Name Type Unit
+C1 Weight Cost Gram [g]
+C2 Weight Cost Ounce [oz]
+C3 Year of production Proﬁt Year
+C4 Display resolution Proﬁt Megapixel [Mpix ]
+C5 Memory card Proﬁt Gigabyte [GB]
+C6 Internal memory Proﬁt Gigabyte [GB]
+C7 Random-access memory (RAM) Proﬁt Megabyte [MB]
+C8 Primary camera Proﬁt Megapixel [Mpix ]
+C9 Secondary camera Proﬁt Megapixel [Mpix ]
+C10 Bluetooth Proﬁt Version
+C11 USB Proﬁt Version
+C12 Approx price Cost Euro [ e ]
+The data for the complete set of alternatives and a set containing 20 models selected
+randomly from it, their normalized values, the preference values obtained for the MCDM
+methods used in the study, and the resulting rankings are available at https://github.com/
+kiziebar/Phones_data (accessed on 15 July 2021).
+5. Results
+5.1. A Small Set Containing 20 Sample Randomly Selected Alternatives from the Complete Set
+The ﬁrst stage of the study presents the practical implication of applying the proposed
+DSS using an example of 20 alternatives randomly selected from the whole set. They
+represent a small set of alternatives. This step aims to simulate a situation in which the user
+selects from a set of alternatives constrained by factors, such as pre-selection of alternatives
+within speciﬁc ranges of criteria values acceptable to the user or are available at the time.
+Weights determined with the CRITIC weighting method are included in Table 3.
+The decision matrix, including the criteria values for the evaluated randomly selected
+alternatives, is contained in Table 4. The decision matrix normalized with using the
+Minimum-Maximum normalization method is contained in Table 5.
+
+--- Page 22 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2213
+Table 3. Criteria weights determined for a small set of alternatives using the CRITIC method.
+C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+0.07703 0.09694 0.06047 0.07337 0.10404 0.05306 0.05944 0.09119 0.08999 0.07846 0.13067 0.08529
+Table 4. Decision matrix for a small set of alternatives.
+Phones C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+KP110 202 7 2015 5 64 8 2048 13 5 4 2 170
+C3-01 Gold Edition 150 5 2014 5 32 4 1024 8 2 4 2 180
+7380 160 5 2016 5 256 32 3072 16 8 4 1 420
+W180 170 6 2016 5 32 16 2048 8 8 4 2 110
+Aquaris M4.5 115 6 2015 4 64 8 1024 8 5 4 2 180
+Zenfone 3 Deluxe 5.5 ZS550KL 151 5 2016 5 256 64 4096 16 8 4 2 440
+M600 310 10 2017 8 256 16 2048 5 2 4 2 100
+Liquid Z410 145 11 2015 4 32 8 1024 5 2 4 2 130
+Liquid Jade Z 110 3 2015 5 32 8 1024 13 5 4 2 200
+nova plus 160 5 2016 5 256 32 3072 16 8 4 1 420
+X3-02 Touch and Type 130 4 2013 4 64 8 1024 8 1 4 2 290
+Zenfone 2 ZE551ML 170 6 2015 5 256 16 2048 13 5 4 2 370
+1110i 143 4 2017 5 256 16 2048 13 5 4 2 150
+P5 Qmax 176 6 2013 5 32 4 1024 8 1 4 2 230
+Fonepad 8 FE380CG 328 11 2014 8 64 8 1024 5 2 4 2 200
+XDA Atom Exec 132 4 2012 4 32 8 1024 8 1 3 2 210
+Idol 4 135 4 2016 5 256 16 2048 13 8 4 2 250
+Rezound 170 6 2011 4 32 16 1024 8 2 3 2 160
+V295 150 5 2014 5 32 8 1024 13 5 4 2 190
+Honor 6A 143 4 2017 5 256 16 2048 13 5 4 2 150
+Table 5. Normalized decision matrix for a small set of alternatives.
+Ai C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+A1 0.3841 0.3636 0.9990 0.6250 0.2500 0.1250 0.5000 0.8125 0.6250 1.0000 1.0000 0.6136
+A2 0.5427 0.5455 0.9985 0.6250 0.1250 0.0625 0.2500 0.5000 0.2500 1.0000 1.0000 0.5909
+A3 0.5122 0.5455 0.9995 0.6250 1.0000 0.5000 0.7500 1.0000 1.0000 1.0000 0.5000 0.0455
+A4 0.4817 0.4545 0.9995 0.6250 0.1250 0.2500 0.5000 0.5000 1.0000 1.0000 1.0000 0.7500
+A5 0.6494 0.4545 0.9990 0.5000 0.2500 0.1250 0.2500 0.5000 0.6250 1.0000 1.0000 0.5909
+A6 0.5396 0.5455 0.9995 0.6250 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 0.0000
+A7 0.0549 0.0909 1.0000 1.0000 1.0000 0.2500 0.5000 0.3125 0.2500 1.0000 1.0000 0.7727
+A8 0.5579 0.0000 0.9990 0.5000 0.1250 0.1250 0.2500 0.3125 0.2500 1.0000 1.0000 0.7045
+A9 0.6646 0.7273 0.9990 0.6250 0.1250 0.1250 0.2500 0.8125 0.6250 1.0000 1.0000 0.5455
+A10 0.5122 0.5455 0.9995 0.6250 1.0000 0.5000 0.7500 1.0000 1.0000 1.0000 0.5000 0.0455
+A11 0.6037 0.6364 0.9980 0.5000 0.2500 0.1250 0.2500 0.5000 0.1250 1.0000 1.0000 0.3409
+A12 0.4817 0.4545 0.9990 0.6250 1.0000 0.2500 0.5000 0.8125 0.6250 1.0000 1.0000 0.1591
+A13 0.5640 0.6364 1.0000 0.6250 1.0000 0.2500 0.5000 0.8125 0.6250 1.0000 1.0000 0.6591
+A14 0.4634 0.4545 0.9980 0.6250 0.1250 0.0625 0.2500 0.5000 0.1250 1.0000 1.0000 0.4773
+A15 0.0000 0.0000 0.9985 1.0000 0.2500 0.1250 0.2500 0.3125 0.2500 1.0000 1.0000 0.5455
+A16 0.5976 0.6364 0.9975 0.5000 0.1250 0.1250 0.2500 0.5000 0.1250 0.7500 1.0000 0.5227
+A17 0.5884 0.6364 0.9995 0.6250 1.0000 0.2500 0.5000 0.8125 1.0000 1.0000 1.0000 0.4318
+A18 0.4817 0.4545 0.9970 0.5000 0.1250 0.2500 0.2500 0.5000 0.2500 0.7500 1.0000 0.6364
+A19 0.5427 0.5455 0.9985 0.6250 0.1250 0.1250 0.2500 0.8125 0.6250 1.0000 1.0000 0.5682
+A20 0.5640 0.6364 1.0000 0.6250 1.0000 0.2500 0.5000 0.8125 0.6250 1.0000 1.0000 0.6591
+Table 6 provides the ﬁnal rankings obtained in the evaluation process of 20 randomly
+selected mobile phones models using ﬁve MCDM methods.
+
+--- Page 23 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2214
+Table 6. Final rankings obtained with MCDM methods for a small set of alternatives.
+Ai TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+A1 10 6 10 11 11
+A2 14 14 14 14 14
+A3 11.5 7.5 5.5 6.5 6.5
+A4 7 9 8 9 9
+A5 13 13 13 13 13
+A6 1 4 1 1 1
+A7 8 10 12 10 10
+A8 18 18 19 17 17
+A9 6 11 9 8 8
+A10 11 7.5 5.5 6.5 6.5
+A11 15 15 16 15 15
+A12 5 5 7 5 5
+A13 3.5 2.5 3.5 3.5 3.5
+A14 16 16 18 16 16
+A15 19 17 20 18 18
+A16 17 19 17 19 19
+A17 2 1 2 2 2
+A18 20 20 15 20 20
+A19 9 12 11 12 12
+A20 3.5 2.5 3.5 3.5 3.5
+A comparative analysis of the results obtained demonstrated that the four MCDM
+methods, including TOPSIS-COMET, EDAS, MAIRCA, and MABAC, identiﬁed alternative
+A6 (Zenfone 3 Deluxe 5.5 ZS550KL) as the rankings leader. This model is characterized by
+very high, attractive and distinctive values of 7 proﬁt criteria, such as C5 (256 GB of the
+memory card), C6 (64 GB of internal memory), C7 (4096 MB of RAM), C8 (Resolution of
+primary camera equal to 16 Mpix ), C9 (Resolution of secondary camera equal to 8 Mpix ),
+C10 (Version 4 of Bluetooth), andC11 (Version 2 of USB), among other evaluated alternatives.
+Very favorable values for most of the relevant evaluation criteria resulted that the large
+majority of MCDA methods used in this study indicated this mobile phone as the best
+alternative despite the highest price among all evaluated models. Only in the ranking
+received by the COCOSO method, the A6 alternative achieved fourth place.
+In the ranking provided by the COCOSO method, alternative A17 (Idol 4) was ranked
+ﬁrst. This mobile phone has very favorable and high values of 5 proﬁt criteria, such as
+C5 (256 GB of the memory card), C8 (resolution of primary camera equal to 13 Mpix ), C9
+(resolution of secondary camera equal to 8 Mpix ), C10 (version 4 of Bluetooth), and C11
+(version 2 of USB), except that the value of criterion C8 is lower in the case of the model
+A17 than for A6, which is the leader of the rankings provided by the other methods used
+in this study. The Idol 4 (A17) has an advantage over the Zenfone 3 Deluxe 5.5 ZS550KL
+(A6) on three cost criteria. The ﬁrst and second are C1 (weight in g) and C2 (weight in oz),
+which is lower for the A17. The third cost criterion whose value is more attractive for A17 is
+C12 (price). It is equal to 250 e for A17, while it is equal to 440 e for A6. Model A17 ranked
+second in the rankings obtained with the other MCDM methods applied in this study.
+There was a tie in the resulting rankings for alternatives A13 (1110i) and A20 (Honor
+6A), which have identical values for all criteria. In the COCOSO rankings, these models
+came in second, while in the other rankings, they came in third. In Figure 2 are visualized
+values of the ranking similarity coefﬁcients rw and WS used to determine the convergence
+of the rankings provided by all MCDM methods used in this study.
+
+--- Page 24 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2215
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032/uni00000028/uni00000027/uni00000024/uni00000036/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000030/uni00000048/uni00000057/uni0000004b/uni00000052/uni00000047/uni00000056
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037
+/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032
+/uni00000028/uni00000027/uni00000024/uni00000036
+/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024
+/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000013/uni00000011/uni0000001c/uni00000017
+/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000013/uni00000011/uni0000001c/uni00000018/uni00000013/uni00000011/uni0000001c/uni00000018
+/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001c/uni0000001b
+/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000013/uni00000011/uni0000001c/uni00000018/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000013/uni00000011/uni0000001c/uni00000018/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000026/uni00000052/uni00000055/uni00000055/uni00000048/uni0000004f/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni0000001d/uni00000003rw
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032/uni00000028/uni00000027/uni00000024/uni00000036/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000030/uni00000048/uni00000057/uni0000004b/uni00000052/uni00000047/uni00000056
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037
+/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032
+/uni00000028/uni00000027/uni00000024/uni00000036
+/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024
+/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001b/uni0000001c/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000013/uni00000011/uni0000001c/uni0000001c
+/uni00000013/uni00000011/uni0000001c/uni00000016/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000016/uni00000013/uni00000011/uni0000001c/uni00000017/uni00000013/uni00000011/uni0000001c/uni00000017
+/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001b/uni0000001c/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000013/uni00000011/uni0000001b/uni0000001c/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000013/uni00000011/uni0000001b/uni0000001c/uni00000013/uni00000011/uni0000001c/uni0000001c/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000026/uni00000052/uni00000055/uni00000055/uni00000048/uni0000004f/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni0000001d/uni00000003WS
+Figure 2. Visualization of rankings correlation coefﬁcients rw and WS for each pair of MCDM method
+for a small set of alternatives.
+For the symmetrical rw coefﬁcient, the highest correlation values were observed
+between the rankings provided by MAIRCA and EDAS and MABAC and EDAS (0.98).
+On the other hand, the lowest correlation values were observed between the COCOSO
+and TOPSIS-COMET rankings and EDAS and TOPSIS-COMET methods (0.90). The matrix
+with rank correlation scores measured by rw is symmetrical because this coefﬁcient gives
+the same result regardless of the order of the two rankings being compared.
+The asymmetric WS correlation coefﬁcient is different because its value is affected
+by order of the rankings being compared. The values of the asymmetrical rank similarity
+coefﬁcient WS are high for most of the compared rankings. Their values are in the range of
+0.98–1.00. The exception is the ranking obtained by the COCOSO method. The calculated
+WS values for COCOSO and the other methods are contained in the range of 0.93–0.94.
+The values of the asymmetrical WS coefﬁcient calculated for the cases of the other MCDM
+methods used in this study and COCOSO are even lower, as they are 0.89. In the correlation
+analysis of the rankings using rw and WS shown in Figure 2, symmetry in the results for
+both coefﬁcients is observed in lower correlation values when comparing the obtained
+rankings with the ranking provided by the COCOSO method. WS values are higher than
+rw in most cases.
+For rw, the best compromise rankings among the rankings determined by MCDM
+methods are the rankings obtained by MAIRCA and MABAC methods because they have
+the highest value of the minimum and average ranking similarity, which are 0.94 and 0.97,
+respectively. For WS, the situation is similar. MAIRCA and MABAC rankings have the
+highest average ranking similarity values of 0.97, accompanied by minimum values of 0.89.
+Compromise Rankings Candidates and Their Sensitivity Analysis for the Little Set
+The six compromise rankings candidates that were generated based on the proposed
+approach are displayed in Table 7. The ﬁrst ranking is a compromise ranking created using
+the Copeland technique based on the rankings provided by all the MCDM methods used
+in this study. Subsequent compromise rankings were also created using the Copeland
+technique but excluding one following MCDM method each. The names of the excluded
+methods are included in the headings of the following columns of Table 7. It can be
+observed that, in the compromise ranking constructed from all the MCDM methods used,
+A6 is the leader. A17 is ranked second, and A20 is ranked third. These alternatives took the
+same positions in the rankings of four of the ﬁve methods used, TOPSIS-COMET, EDAS,
+MAIRCA, and MABAC.
+
+--- Page 25 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2216
+Table 7. Rank values for compromise ranking candidates with consideration of the little set.
+Ai
+Copeland Excluded Method Ranking
+Rank TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+A1 10 10 11 11 10 10
+A2 14 14 14 14 14 14
+A3 7 7 7 7 7 7
+A4 9 8 9 9 8 8
+A5 13 13 13 13 13 13
+A6 1 2 1 2 2 2
+A7 11 11 10 10 11 11
+A8 17 17 17 17 17 17
+A9 8 9 8 8 9 9
+A10 6 6 6 6 6 6
+A11 15 15 15 15 15 15
+A12 5 5 5 5 5 5
+A13 4 4 4 4 4 4
+A14 16 16 16 16 16 16
+A15 19 18 19 18 19 19
+A16 18 19 18 19 18 18
+A17 2 1 2 1 1 1
+A18 20 20 20 20 20 20
+A19 12 12 12 12 12 12
+A20 3 3 3 3 3 3
+Tables 8 and 9 display the values of the correlation coefﬁcients between the candidate
+compromise rankings and the particular MCDM method rankings. The best match to the
+rankings expressed by rw, provided by the methods used in the study, was obtained for
+Rank 3 after eliminating the COCOSO ranking. Therefore, this candidate’s rounded mean
+and minimum match values are 0.97 and 0.94, respectively.
+Table 8. Values of similarity coefﬁcient rw for compromise ranking candidates with consideration of sample smartphones.
+rw
+Method Rank Mean MinTOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Rank 1 0.9334 0.9566 0.9803 0.9970 0.9970 0.9729 0.9334
+Rank 2 0.9279 0.9689 0.9782 0.9928 0.9928 0.9721 0.9279
+Rank 3 0.9366 0.9499 0.9773 0.9985 0.9985 0.9722 0.9366
+Rank 4 0.9330 0.9588 0.9735 0.9961 0.9961 0.9715 0.9330
+Rank 5 0.9287 0.9681 0.9793 0.9924 0.9924 0.9722 0.9287
+Rank 6 0.9287 0.9681 0.9793 0.9924 0.9924 0.9722 0.9287
+Table 9. Values of similarity coefﬁcient WS for compromise ranking candidates with consideration of sample smartphones.
+W S Method Rank Mean MinTOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Rank 1 0.9843 0.8942 0.9882 0.9934 0.9934 0.9707 0.8942
+Rank 2 0.9443 0.9596 0.9485 0.9527 0.9527 0.9515 0.9443
+Rank 3 0.9842 0.8944 0.9880 0.9935 0.9935 0.9707 0.8944
+Rank 4 0.9440 0.9595 0.9478 0.9533 0.9533 0.9516 0.9440
+Rank 5 0.9443 0.9596 0.9485 0.9527 0.9527 0.9515 0.9443
+Rank 6 0.9443 0.9596 0.9485 0.9527 0.9527 0.9515 0.9443
+
+--- Page 26 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2217
+For WS, the best match to all MCDM rankings in the form of the highest average
+value of this coefﬁcient was observed for the compromise ranking created from all rankings
+(Rank 1) and the compromise ranking built excluding COCOSO (Rank 3).
+Tables 10 and 11 display the correlation values between all the compromise rankings
+candidates created. All the calculated correlation values for each ranking combination
+are high and similar to each other. It proves that the choice of methods to construct the
+compromise rankings is not a problem in the presented case.
+Table 10. Correlation matrix for rw values for compromise ranking candidates with consideration of
+sample smartphones.
+rw Rank 1 Rank 2 Rank 3 Rank 4 Rank 5 Rank 6
+Rank 1 1.0000 0.9951 0.9985 0.9953 0.9954 0.9954
+Rank 2 0.9951 1.0000 0.9936 0.9967 0.9996 0.9996
+Rank 3 0.9985 0.9936 1.0000 0.9968 0.9939 0.9939
+Rank 4 0.9953 0.9967 0.9968 1.0000 0.9963 0.9963
+Rank 5 0.9954 0.9996 0.9939 0.9963 1.0000 1.0000
+Rank 6 0.9954 0.9996 0.9939 0.9963 1.0000 1.0000
+Table 11. Correlation matrix for WS values for compromise ranking candidates with consideration
+of sample smartphones.
+W S Rank 1 Rank 2 Rank 3 Rank 4 Rank 5 Rank 6
+Rank 1 1.0000 0.9593 0.9999 0.9596 0.9593 0.9593
+Rank 2 0.9593 1.0000 0.9591 0.9994 1.0000 1.0000
+Rank 3 0.9999 0.9591 1.0000 0.9598 0.9591 0.9591
+Rank 4 0.9596 0.9994 0.9598 1.0000 0.9994 0.9994
+Rank 5 0.9593 1.0000 0.9591 0.9994 1.0000 1.0000
+Rank 6 0.9593 1.0000 0.9591 0.9994 1.0000 1.0000
+5.2. A Complete Set of 1039 Mobile Phones
+The second stage of the study involved evaluating a complete set of alternatives
+containing criteria values for 1093 selected mobile phone models. As in stage one, rankings
+were prepared using the ﬁve MCDM methods used in this study. Then, the values of
+correlation coefﬁcients rw and WS were calculated for the received rankings. Comparative
+similarity analysis of the rankings of the different methods was then undertaken. The next
+step was to determine candidate compromise rankings and perform sensitivity analysis for
+them. Criteria weighting values for the complete set of evaluated alternatives determined
+by the CRITIC method are included in Table 12.
+Table 12. Criteria weights determined for the whole set of alternatives using the CRITIC method.
+C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+0.10300 0.11423 0.11538 0.10305 0.11780 0.06481 0.03916 0.10286 0.03233 0.10192 0.07646 0.02895
+The decision matrix with the criteria values for each alternative is provided inTable 13.
+However, due to the large size of the matrix containing 1039 alternatives, only the ﬁrst
+20 records of this matrix are displayed.
+The decision matrix was normalized using the Minimum-Maximum normalization tech-
+nique. For example, Table 14 displays the 20 head records of the normalized decision matrix.
+
+--- Page 27 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2218
+Table 13. Decision matrix for the whole set of alternatives.
+Phones C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+Iconia Talk S 260 9 2016 7 128 16 2048 13 2 4 2 170
+Liquid Z6 Plus 169 5 2016 5 256 32 3072 13 5 4 2 250
+Liquid X2 166 5 2015 5 32 32 3072 13 13 4 2 230
+Liquid Zest 125 4 2016 5 32 8 1024 8 5 4 2 110
+Predator 8 353 12 2015 8 256 32 2048 5 2 4 2 350
+Liquid Jade Primo 150 5 2015 5 256 32 3072 21 8 4 3 220
+Iconia Tab 10 A3-A30 540 1 2015 10 256 16 2048 5 2 4 2 250
+Iconia Tab A3-A20 508 12 2014 10 256 16 1024 5 2 4 2 190
+Iconia Tab A3-A20FHD 508 12 2014 10 256 32 2048 5 2 4 2 230
+Liquid Jade Z 110 3 2015 5 32 8 1024 13 5 4 2 200
+Liquid Z520 118 4 2015 5 32 8 1024 8 2 4 2 130
+Liquid Z220 120 4 2015 4 32 8 1024 5 2 4 2 90
+Liquid M220 119 4 2015 4 32 4 512 5 2 4 2 80
+Liquid Z410 145 11 2015 4 32 8 1024 5 2 4 2 130
+Liquid Jade S 116 9 2014 5 32 16 2048 13 5 4 2 200
+Liquid Z500 150 5 2014 5 32 4 1024 8 2 4 2 150
+Liquid X1 164 5 2014 5 32 16 2048 13 2 4 2 260
+Liquid Jade 110 3 2014 5 32 8 1024 13 2 4 2 180
+Liquid E700 155 5 2014 5 32 16 2048 8 2 4 2 200
+Liquid E600 155 5 2014 5 32 4 1024 8 2 4 2 200
+··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ···
+Table 14. Normalized decision matrix for the whole set of alternatives.
+Ai C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12
+A1 0.6959 0.4000 0.9995 0.5833 0.2500 0.1250 0.1250 0.5417 0.0005 1.0000 0.6667 0.9721
+A2 0.8023 0.6667 0.9995 0.4167 0.5000 0.2500 0.1875 0.5417 0.0012 1.0000 0.6667 0.9590
+A3 0.8058 0.6667 0.9990 0.4167 0.0625 0.2500 0.1875 0.5417 0.0032 1.0000 0.6667 0.9623
+A4 0.8538 0.7333 0.9995 0.4167 0.0625 0.0625 0.0625 0.3333 0.0012 1.0000 0.6667 0.9820
+A5 0.5871 0.2000 0.9990 0.6667 0.5000 0.2500 0.1250 0.2083 0.0005 1.0000 0.6667 0.9426
+A6 0.8246 0.6667 0.9990 0.4167 0.5000 0.2500 0.1875 0.8750 0.0020 1.0000 1.0000 0.9639
+A7 0.3684 0.9333 0.9990 0.8333 0.5000 0.1250 0.1250 0.2083 0.0005 1.0000 0.6667 0.9590
+A8 0.4058 0.2000 0.9985 0.8333 0.5000 0.1250 0.0625 0.2083 0.0005 1.0000 0.6667 0.9688
+A9 0.4058 0.2000 0.9985 0.8333 0.5000 0.2500 0.1250 0.2083 0.0005 1.0000 0.6667 0.9623
+A10 0.8713 0.8000 0.9990 0.4167 0.0625 0.0625 0.0625 0.5417 0.0012 1.0000 0.6667 0.9672
+A11 0.8620 0.7333 0.9990 0.4167 0.0625 0.0625 0.0625 0.3333 0.0005 1.0000 0.6667 0.9787
+A12 0.8596 0.7333 0.9990 0.3333 0.0625 0.0625 0.0625 0.2083 0.0005 1.0000 0.6667 0.9852
+A13 0.8608 0.7333 0.9990 0.3333 0.0625 0.0312 0.0312 0.2083 0.0005 1.0000 0.6667 0.9869
+A14 0.8304 0.2667 0.9990 0.3333 0.0625 0.0625 0.0625 0.2083 0.0005 1.0000 0.6667 0.9787
+A15 0.8643 0.4000 0.9985 0.4167 0.0625 0.1250 0.1250 0.5417 0.0012 1.0000 0.6667 0.9672
+A16 0.8246 0.6667 0.9985 0.4167 0.0625 0.0312 0.0625 0.3333 0.0005 1.0000 0.6667 0.9754
+A17 0.8082 0.6667 0.9985 0.4167 0.0625 0.1250 0.1250 0.5417 0.0005 1.0000 0.6667 0.9574
+A18 0.8713 0.8000 0.9985 0.4167 0.0625 0.0625 0.0625 0.5417 0.0005 1.0000 0.6667 0.9705
+A19 0.8187 0.6667 0.9985 0.4167 0.0625 0.1250 0.1250 0.3333 0.0005 1.0000 0.6667 0.9672
+A20 0.8187 0.6667 0.9985 0.4167 0.0625 0.0312 0.0625 0.3333 0.0005 1.0000 0.6667 0.9672
+··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ··· ···
+Table 15 contains sample rankings for the complete set of alternatives derived using
+the ﬁve MCDM methods.
+In the rankings provided by TOPSIS-COMET, COCOSO, MAIRCA, and MABAC,
+two alternatives, A120 (Zenfone 3 Deluxe ZS570KL) and A613 (KF510), came as the leaders.
+Both models have the same values for all criteria considered in the evaluation process. In
+addition, they have attractive and distinctive values of criteria C5 (256 GB of the memory
+card), C6 (64 GB of internal memory), C8 (resolution of primary camera equal to 23 Mpix ),
+
+--- Page 28 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2219
+C10 (version 4 of Bluetooth), and C11 (version 3 of USB), among other alternatives available
+in the evaluated set.
+Table 15. Final rankings obtained with MCDM methods for the whole set of alternatives.
+TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Rank Alternatives Rank Alternatives Rank Alternatives Rank Alternatives Rank Alternatives
+1.5 A120, A613 1.5 A120, A613 1.5 A59, A552 1.5 A120, A613 1.5 A120, A613
+3.5 A107, A600 3.5 A591, A98 3.5 A412, A905 3.5 A591, A98 3.5 A591, A98
+5.5 A260, A753 5.5 A107, A600 5.5 A413, A906 5.5 A107, A600 5.5 A107, A600
+7.5 A419, A912 7.5 A305, A798 7.5 A591, A98 7.5 A305, A798 7.5 A305, A798
+9.5 A591, A98 9.5 A912, A419 9.5 A276, A769 9.5 A912, A419 9.5 A912, A419
+11.5 A798, A305 11.5 A412, A905 11 A6 11.5 A412, A905 11.5 A412, A905
+13 A6 13 A6 12.5 A273, A766 13 A6 13 A6
+14.5 A412, A905 14.5 A800, A307 14.5 A329, A822 14.5 A800, A307 14.5 A800, A307
+16.5 A307, A800 16.5 A788, A295 16.5 A772, A279 16.5 A788, A295 16.5 A788, A295
+18.5 A311, A804 18.5 A311, A804 18.5 A339, A832 18.5 A311, A804 18.5 A311, A804
+20.5 A315, A808 20.5 A560, A67 20.5 A804, A311 20.5 A260, A753 20.5 A260, A753
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+The EDAS method identiﬁed alternatives A59 (Pop C3) and A552 (Phab Plus) as
+ranking leaders. Both alternatives have favorable low cost criteria values of C1 (weight in
+g) and C2 (weight in oz). Both phones have a desirable, highest value of gain criterion C9
+(resolution of secondary camera equal to 4033 Mpix ) and a favorable value of C10 (version
+4 of Bluetooth) among all evaluated alternatives. In addition, both mobile phones have
+an extremely low price compared to the other alternatives (80 e ). Figure 3 visualizes the
+values of the rank correlation coefﬁcients for the complete set of mobile phones obtained
+using the MCDM methods used in the study.
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032/uni00000028/uni00000027/uni00000024/uni00000036/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000030/uni00000048/uni00000057/uni0000004b/uni00000052/uni00000047/uni00000056
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037
+/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032
+/uni00000028/uni00000027/uni00000024/uni00000036
+/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024
+/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001c/uni0000001b
+/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000013/uni00000011/uni0000001c/uni00000013
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001c/uni0000001b/uni00000013/uni00000011/uni0000001c/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000026/uni00000052/uni00000055/uni00000055/uni00000048/uni0000004f/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni0000001d/uni00000003rw
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032/uni00000028/uni00000027/uni00000024/uni00000036/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000030/uni00000048/uni00000057/uni0000004b/uni00000052/uni00000047/uni00000056
+/uni00000037/uni00000032/uni00000033/uni00000036/uni0000002c/uni00000036/uni00000010/uni00000026/uni00000032/uni00000030/uni00000028/uni00000037
+/uni00000026/uni00000032/uni00000026/uni00000032/uni00000036/uni00000032
+/uni00000028/uni00000027/uni00000024/uni00000036
+/uni00000030/uni00000024/uni0000002c/uni00000035/uni00000026/uni00000024
+/uni00000030/uni00000024/uni00000025/uni00000024/uni00000026
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001b/uni00000015/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001b/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000013/uni00000011/uni00000018/uni00000013/uni00000013/uni00000011/uni00000017/uni00000015/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni00000018/uni0000001b/uni00000013/uni00000011/uni00000018/uni0000001b
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001b/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013/uni00000013/uni00000011/uni0000001b/uni0000001b/uni00000014/uni00000011/uni00000013/uni00000013/uni00000014/uni00000011/uni00000013/uni00000013
+/uni00000026/uni00000052/uni00000055/uni00000055/uni00000048/uni0000004f/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni0000001d/uni00000003WS
+Figure 3. Visualization of rankings correlation coefﬁcients rw and WS for each pair of MCDM method
+for the whole set of alternatives.
+For the symmetrical correlation coefﬁcient rw, the lowest correlation values were
+observed for rank comparisons obtained by the EDAS method (0.90). However, the cor-
+relation values were much higher for comparisons between the other MCDM methods,
+between 0.98 and 1.00.
+The lowest correlation values (0.42–0.58) noticed in comparisons of the ranking re-
+ceived using the EDAS method with the other rankings were also noted for the asymmet-
+rical Rank Similarity Coefﬁcient WS. However, for the remaining comparisons between
+rankings, the WS value was 1.00, indicating a linear correlation.
+In the correlation study of the MCDM rankings considering the complete set of
+alternatives, it can be clearly observed that, for both rw and WS, the lowest similarity
+values occur for the comparison of EDAS results with other methods.
+
+--- Page 29 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2220
+Compromise Rankings Candidates and Their Sensitivity Analysis for the Whole Set
+Table 16 lists the six rankings that are candidates for the compromise ranking created
+analogously to the small phones dataset. The A591 alternative was indicated as the most
+advantageous mobile phone model by ﬁve compromise ranking candidates. However, it
+received third place only in the compromise ranking candidate constructed without EDAS.
+Table 16. Rank values for compromise ranking candidates with consideration of the whole dataset.
+Ai
+Copeland Excluded Method Ranking
+Rank TOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+A591 1 1 1 3 1 1
+A98 2 2 2 5 2 2
+A905 3 3 3 11 4 4
+A412 4 4 4 12 3 3
+A6 5 5 5 13 5 5
+A804 6 7 6 21 6 6
+A311 7 6 7 20 7 7
+A906 8 8 8 22 8 8
+A413 9 9 9 23 9 9
+A766 10 10 11 29 11 11
+A273 11 11 10 28 10 10
+A613 12 20 18 1 19 19
+A120 13 21 19 2 18 18
+A558 14 12 14 38 14 14
+A65 15 13 15 39 15 15
+A808 16 16 12 36 13 13
+A315 17 17 13 37 12 12
+A305 18 24 26 8 26 26
+A798 19 25 27 7 27 27
+A419 20 31 30 9 30 30
+. . . . . . . . . . . . . . . . . . . . .
+Tables 17 and 18 contain the values of the similarity coefﬁcients between compromise
+ranking candidates and the rankings obtained using the particular MCDM methods.
+Table 17. Values of similarity coefﬁcient rw for candidate compromise rankings with consideration of the whole dataset.
+rw
+Method Rank Mean MinTOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Rank 1 0.992 0.9844 0.9389 0.9946 0.9946 0.9809 0.9389
+Rank 2 0.9874 0.9845 0.9471 0.9912 0.9912 0.9803 0.9471
+Rank 3 0.9915 0.9762 0.9446 0.9936 0.9936 0.9799 0.9446
+Rank 4 0.997 0.9875 0.9044 0.9988 0.9988 0.9773 0.9044
+Rank 5 0.9887 0.9841 0.9463 0.9915 0.9915 0.9804 0.9463
+Rank 6 0.9887 0.9841 0.9463 0.9915 0.9915 0.9804 0.9463
+For the correlation coefficientrw, the best matches to rankings from particular MCDM
+methods were recorded for the candidate rankings, excluding the TOPSIS-COMET (Rank 2),
+MAIRCA (Rank 5), and MABAC (Rank 6) methods. In the mentioned cases, the average
+and minimum match values for the rankings obtained from each MCDM method were 0.98
+and 0.95, respectively. For the WS similarity coefﬁcient value, the best match to rankings
+from particular MCDM methods was demonstrated by as many as ﬁve rankings: Rank 1,
+in which a candidate compromise ranking was created considering all the MCDM methods
+used in the study, Rank 2, Rank 3, Rank 5, and Rank 6. In their case, the average matching
+value for the rankings from each MCDM method is 0.995, and the minimum is 0.991. On
+
+--- Page 30 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2221
+the other hand, the worst matching in terms of lowest average (0.972) and minimum WS
+value (0.864) was recorded for Rank 4, in which EDAS was excluded.
+Table 18. Values of similarity coefﬁcient WS for candidate compromise rankings with consideration of the whole dataset.
+W S Method Rank Mean MinTOPSIS-COMET COCOSO EDAS MAIRCA MABAC
+Rank 1 0.9914 0.9963 0.9949 0.9963 0.9963 0.99504 0.9914
+Rank 2 0.9914 0.9963 0.9949 0.9963 0.9963 0.99504 0.9914
+Rank 3 0.9914 0.9963 0.9949 0.9963 0.9963 0.99504 0.9914
+Rank 4 0.9986 0.9994 0.8637 0.9994 0.9994 0.9721 0.8637
+Rank 5 0.9914 0.9963 0.9949 0.9963 0.9963 0.99504 0.9914
+Rank 6 0.9914 0.9963 0.9949 0.9963 0.9963 0.99504 0.9914
+Tables 19 and 20 contain the correlation values between all the candidate compromise
+rankings constructed. It can be observed that the correlation values between the compro-
+mise rankings are high and similar to each other, which means that all the MCDM methods
+used in this study are suitable for compromise ranking.
+Table 19. Correlation matrix for rw values for candidate compromise rankings with consideration of
+the whole dataset.
+rw Rank 1 Rank 2 Rank 3 Rank 4 Rank 5 Rank 6
+Rank 1 1.0000 0.9994 0.9990 0.9957 0.9996 0.9996
+Rank 2 0.9994 1.0000 0.9983 0.9929 0.9998 0.9998
+Rank 3 0.9990 0.9983 1.0000 0.9931 0.9986 0.9986
+Rank 4 0.9957 0.9929 0.9931 1.0000 0.9933 0.9933
+Rank 5 0.9996 0.9998 0.9986 0.9933 1.0000 1.0000
+Rank 6 0.9996 0.9998 0.9986 0.9933 1.0000 1.0000
+Table 20. Correlation matrix for WS values for candidate compromise rankings with consideration
+of the whole dataset.
+W S Rank 1 Rank 2 Rank 3 Rank 4 Rank 5 Rank 6
+Rank 1 1.0000 1.0000 1.0000 0.9962 0.9998 0.9998
+Rank 2 1.0000 1.0000 1.0000 0.9962 0.9998 0.9998
+Rank 3 1.0000 1.0000 1.0000 0.9962 0.9998 0.9998
+Rank 4 0.9893 0.9825 0.9843 1.0000 0.9841 0.9841
+Rank 5 0.9998 0.9998 0.9998 0.9961 1.0000 1.0000
+Rank 6 0.9998 0.9998 0.9998 0.9961 1.0000 1.0000
+6. Discussion
+An essential aspect of this paper was to develop an approach that would provide a
+ranking recommendation of products with selected criteria in an objective and completely
+automated way, without involving the decision-maker in the evaluation process. In gen-
+eral, subjective estimates of criteria importance are established following the opinions
+of decision-makers. The resulting weights are, thus, subjective inputs in analyses such
+as. There are several methods (e.g., Simple Multi-Attribute Rating Technique (SMART),
+SIMOS, Revised SIMOS, SWING, Analytic Hierarchy Process (AHP), Best-Worst Method
+(BWM), Pairwise Comparison Method, and Delphi method) that establish the weights
+solely following the choices of the decision-makers. When subjective weighting methods
+determine weights, the results of the analysis or the rankings of the evaluated alternatives
+are affected by the level of knowledge and experience of the decision-maker in the ﬁeld
+because then the weights represent the subjective evaluation of the decision-maker [55].
+
+--- Page 31 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2222
+Weights determined subjectively can lead to concerns about the reliability of the results
+obtained [58]. The CRITIC method guarantees that the weights of the criteria determined in
+an entirely objective manner are obtained, eliminating the problem of the subjective view-
+point of the decision-maker. Although the types of criteria are not considered in the CRITIC
+method, MCDM methods separately consider proﬁt and cost criteria in the problem.
+The MCDM methods used in this work are characterized by ease of use, clarity of
+algorithms, and good adaptation to real-world problems [47]. So, they can be easily applied
+to many solutions of real choice problems. They are based on a decision matrix that is
+simple and intuitive to create from most data sets. The number of criteria and alternatives
+is not limited in any way [ 57]. Thus, the proposed approach fulﬁls the requirements of
+objectivity, automatic performance and simplicity of application that a consumer decision
+support DSS should characterize. The designed DSS is effective, as proven by its ability
+to be simple and smoothly applied to both a small (20 alternatives) and many evaluated
+alternatives, such as 1039.
+The rankings obtained using the methods presented in the paper show that, in most
+cases, the recommendation of a particular mobile phone model is determined by distinctive
+functionalities and high-level parameters. This observation is consistent with the fact
+that, today, phones are not only used for calling. Generally, following trends, people will
+also want to choose the most recent models. Therefore, they can also look for models
+with parameters similar to ﬂagship models of famous brands, but with a more affordable
+price [34]. As a result of being equipped with high-resolution cameras, multiple ways of
+communication, music, games and business applications, mobile phones have become an
+indispensable part of people’s lives. However, the comfort of their use and functionality
+depends on the high level of technical parameters [69]. Besides, a mobile phone is bought
+with a view to its long-term use. Therefore, the amount invested in a better model will
+proﬁt from its advantages.
+Investigating the correlation of rankings for the whole set of alternatives and the
+20 alternatives randomly selected from it generated different results. For the complete
+set, the lowest correlation values were observed for the rank comparisons provided by
+the EDAS method. These values were lower for the WS coefﬁcient than rw. For a small
+set of random alternatives, the differences in both correlation coefﬁcients values were
+not as signiﬁcant. Thus, it can be deduced that the WS coefﬁcient is characterized by
+higher volatility concerning the ranking size. This phenomenon can be justiﬁed because
+the highest positions in the rankings are, therefore, more inﬂuenced by their similarity
+than the more distant ones, which is valid in decision problems [ 44]. Thus, the value
+of the WS coefﬁcient is related strictly to the position at which the ranking divergence
+appeared [110]. This occurrence is reasoned because rankings are established to select the
+best possible solution, i.e., the one at the top of the ranking [112]. The WS values decrease
+in correspondence with a progressive decrease in the quality of the rankings as the best
+solution moves away from the top of the rankings. This variability for the rw coefﬁcient is
+not as signiﬁcant. It is evidenced by the lower range of changes in its value for the rankings
+compared in this study. The results derived from the rank correlation study conﬁrm that
+WS coefﬁcient is asymmetrical instead of rw [78].
+Even if all MCDM methods have proven robustness and algorithmic efﬁciency, their
+application may lead to different solutions to the same problem. For this reason, a frame-
+work that integrates the rankings obtained using several MCDM methods into a reliable
+compromise ranking is recommended. Each of the MCDM methods then contributes signif-
+icantly to the ﬁnal compromise ranking. As a result, a DSS recommending a compromise
+solution helps make more considered decisions than relying on the ranking provided by a
+single method [47,75].
+7. Conclusions and Future Research Directions
+This paper aimed to present a developed future-proof MCDM based universal de-
+cision support system for the e-commerce sector and product comparison websites to
+
+--- Page 32 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2223
+recommend the most advantageous product considering multiple selection criteria. A
+unique advantage of the designed system is the complete automation of the assessment
+process, the application of innovative MCDM methods: TOPSIS-COMET, COCOSO, EDAS,
+MAIRCA, and MABAC, whose effectiveness, literature studies conﬁrm adequacy and
+usefulness in the product selection problem, the objectivity of the provided results, the
+possibility of using them to evaluate any products. The rankings provided by the MCDM
+methods used are then integrated by the Copeland strategy, which results in a reliable
+compromise ranking created from the MCDM methods applied. By incorporating MCDM
+methods based on different methodological assumptions into the solution, the proposed
+DSS recommends a solution that is a real compromise and is compatible with all methods
+involved in its determination. A sensitivity analysis based on two measures of match
+compromise rankings candidates, rw and WS, conﬁrms the high match of each candidate
+to the rankings given by each MCDM.
+Results are presented ﬁrst on a sample set of twenty mobile phones randomly selected
+from a set containing 1039 alternatives and then on the whole set. As a result, for a set of
+twenty alternatives, as many as four of the ﬁve MCDM methods used indicated the best
+alternative the same mobile phone model, Zenfone 3 Deluxe 5.5 ZS550KL (A6). One of the
+methods used, COCOSO, identiﬁed another model as the ranking leader. That alternative
+was the Idol 4 (A17), which came in second in the rankings of the other four methods. In
+the compromise ranking created from the results from all the MCDM methods used, A6
+is the leader of the ranking, followed by A17 in second place and A20 (Honor 6A) in third
+place. When evaluating the complete set of alternatives, the leader of the trade-off ranking
+considering solutions from all MCDM methods is A591 (GM730 Eigen), followed by A98
+(Diamond 2 Plus) in second place and A905 (6085) in third place.
+The obtained outcomes demonstrate that selecting the most suitable mobile phone is
+a challenging task. One has to face many alternatives that are characterized by different pa-
+rameters. Therefore, direct comparisons would take too long and might not be meaningful
+due to different value scales and parameter units. However, the performed study proved
+that MCDM methods show potential to be successfully used to solve this problem. With a
+proper selection of criteria, they can provide a reliable ranking.
+For the rankings provided by the methods used in the study, the values of correlation
+coefﬁcients rw and WS are high. However, only for the whole set of evaluated alternatives,
+the ranking obtained by the EDAS method shows low values of correlation with the
+other rankings in terms of the value of asymmetrical WS coefﬁcient. This phenomenon
+results from the properties of the WS coefﬁcient, which is featured by a higher variability,
+depending on the ranking size.
+The ﬁnal recommendation in the form of a compromise ranking created from the
+solutions of the ﬁve MCDM methods solves the problem of inconsistent results caused
+by the different methodological assumptions of each method. The resulting DSS recom-
+mendation helps make more informed purchasing decisions that require consideration of
+multiple criteria.
+The results presented make it easier to choose among the many alternatives available
+in the market. Furthermore, the MCDM methods, despite the presence of inequalities
+among the criterion values, ﬁnally enabled the generation of a reliable ranking. The
+obtained outcomes indicate that a consumer decision support system based on MCDM
+methods could be a valuable and useful option to support online e-commerce and product
+comparison services. It could also help increase the competitiveness and technological
+sophistication of the outlets offering them and differentiate themselves in the market. The
+DSS presented in this paper is a prototype, so the practical beneﬁts for e-commerce sites
+and customers could be investigated after its implementation by measuring the number of
+transactions and questionnaires as a measure of customer satisfaction. Directions for further
+work may include exploring other MCDM methods to select a set of methods that produce
+the most similar results, especially at the top of the rankings. Other directions for additional
+
+--- Page 33 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2224
+research should include exploring other strategies that provide a compromise solution and
+investigating other methods for selecting the best candidate for the compromise solution.
+Author Contributions: Conceptualization, A.B., B.K., A.S., J.W. and W.S.; methodology, A.B., B.K.,
+A.S., J.W. and W.S.; software, A.B., B.K., A.S., J.W. and W.S.; validation, A.B., B.K., A.S., J.W. and W.S.;
+formal analysis, A.B., B.K., A.S., J.W. and W.S.; investigation, A.B., B.K., A.S., J.W. and W.S.; resources,
+A.B., B.K., A.S., J.W. and W.S.; data curation, A.B., B.K., A.S., J.W. and W.S.; writing—original draft
+preparation, A.B., B.K., A.S., J.W. and W.S.; writing—review and editing, A.B., B.K., A.S., J.W. and
+W.S.; supervision, A.B., B.K., A.S., J.W. and W.S.; project administration, A.B., B.K., A.S., J.W. and
+W.S.; funding acquisition, A.B., B.K., A.S., J.W. and W.S. All authors have read and agreed to the
+published version of the manuscript.
+Funding: The work was supported by the National Science Center, Decision number UMO-2018/29
+/B/HS4/02725 (B.K., A.S. and W.S.) and by the project ﬁnanced within the framework of the program
+of the Minister of Science and Higher Education under the name “Regional Excellence Initiative” in
+the years 2019–2022, Project Number 001/RID/2018/19; the amount of ﬁnancing: PLN 10.684.00000
+(A.B. and J.W.).
+Institutional Review Board Statement: Not applicable.
+Informed Consent Statement: Not applicable.
+Data Availability Statement: Not applicable.
+Acknowledgments: The authors would like to thank the editor and the anonymous reviewers, whose
+insightful comments and constructive suggestions helped us to signiﬁcantly improve the quality of
+this paper.
+Conﬂicts of Interest: The authors declare no conﬂict of interest.
+Abbreviations
+The following abbreviations are used in this manuscript:
+AHP Analytic Hierarchy Process
+ANN Artiﬁcial Neural Network
+ARAS Additive Ratio Assessment
+BWM Best-Worst Method
+COCOSO COmbined COmpromise SOlution
+CODAS COmbinative Distance-based ASsessment
+COMET Characteristic Objects METhod
+CPU Central Processing Unit
+CRITIC Criteria Importance Through Inter-criteria Correlation
+DNN Deep Neural Networks
+DSS Decision Support Systems
+EDAS Evaluation based on Distance from Average Solution
+ELECTRE ÉLimination et Choix Traduisant la REalité
+EWP Exponentially Weighted Product
+MABAC Multiattribute Boundary Approximation Area Comparison
+MARICA Multi-Attributive Real- Ideal Comparative Analysis
+MAUT MultiAttribute Utility Theory
+MCDM Multiple Criteria Decision-Making
+ML Machine Learning
+MULTIMOORA full Multiplicative form Multiple Objective Optimization
+on the basis of Ratio Analysis
+OR-IDSS Operations Research-based Intelligent Decision Support System
+OS Operating System
+PROMETHEE Preference Ranking Organization Method for Enrichment Evaluations
+RAM Random Access Memory
+RS Recommender Systems
+
+--- Page 34 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2225
+SAW Simple Additive Weighting
+TOPSIS Technique for Order of Preference by Similarity to Ideal Solution
+VIKOR Vise Kriterijumska Optimizacija I Kompromisno Resenje
+WASPAS step wise Weight assessment ratio analysis
+WS coefﬁcient Weighted Similarity coefﬁcient
+References
+1. Efe, B.; Yerlikaya, M.A.; Efe, Ö.F. Mobile phone selection based on a novel quality function deployment approach. Soft Comput.
+2020, 24, 15447–15461. [CrossRef]
+2. Lei, N.; Moon, S.K. A Decision Support System for market-driven product positioning and design. Decis. Support Syst. 2015,
+69, 82–91. [CrossRef]
+3. Deb, K.; Chatterjee, R.P .; Banerjee, S.; Bag, R.; Das, A. Mobile Phone Ranking by Analytical Hierarchical Process: A Case Study.
+Int. J. Inf. Eng. Electron. Bus. 2018, 11, 52. [CrossRef]
+4. W ˛ atróbski, J.; Jankowski, J.; Ziemba, P .; Karczmarczyk, A.; Zioło, M. Generalised framework for multi-criteria method selection.
+Omega 2019, 86, 107–124. [CrossRef]
+5. Goswami, S.; Mitra, S. Selecting the best mobile model by applying AHP-COPRAS and AHP-ARAS decision making methodology.
+Int. J. Data Netw. Sci. 2020, 4, 27–42. [CrossRef]
+6. Chen, I.F.; Tsaur, R.C.; Chen, P .Y. Selection of Best Smartphone using revised ELECTRE-III method.Int. J. Inf. Technol. Decis. Mak.
+2018, 17, 1915–1936. [CrossRef]
+7. Singh, R.; Avikal, S.; Rashmi, R.; Ram, M. A Kano model, AHP and TOPSIS based approach for selecting the best mobile phone
+under a fuzzy environment. Int. J. Qual. Reliab. Manag. 2020, 37, 837–851. [CrossRef]
+8. Kumar, G.; Parimala, N. An integration of sentiment analysis and MCDM approach for smartphone recommendation. Int. J. Inf.
+Technol. Decis. Mak. 2020, 19, 1037–1063. [CrossRef]
+9. Natasya, W.A.G.; Kusnawi, K. Decision support system design to decide on the latest smartphone using analytical hierarchy
+process. In Proceedings of the 2017 2nd International conferences on Information Technology, Information Systems and Electrical
+Engineering (ICITISEE), Yogyakarta, Indonesia, 1–2 November 2017; pp. 456–461.
+10. Aggarwal, A.; Choudhary, C.; Mehrotra, D. Evaluation of smartphones in Indian market using EDAS. Procedia Comput. Sci. 2018,
+132, 236–243. [CrossRef]
+11. Kumar, S.; Kumar, T.A.; Agrawal, S.; Singh, S.K. Research Methodology: Prioritization of New Smartphones Using TOPSIS and
+MOORA. In Proceedings of the International Conference of Advance Research & Innovation (ICARI), Delhi, India, 19 January 2020.
+12. Mishra, A.R.; Garg, A.K.; Purwar, H.; Rana, P .; Liao, H.; Mardani, A. An extended intuitionistic fuzzy multi-attributive border
+approximation area comparison approach for smartphone selection using discrimination measures. Informatica 2021, 32, 119–143.
+[CrossRef]
+13. Musrini, M.; Umaroh, S.; Al Ariﬁn, A. Desicion support system using topsis method for smartphone selection. In Proceedings of
+the 2nd Faculty of Industrial Technology International Congress International Conference (FoITIC 2020), Bandung, Indonesia,
+28–30 January 2020; pp. 270–276.
+14. Okfalisa, O.; Rusnedy, H.; Iswavigra, D.U.; Pranggono, B.; Haerani, E.; Saktioto, T. Decision support system for smartphone
+recommendation: The comparison of fuzzy AHP and fuzzy ANP in multi-attribute decision making. SINERGI 2021, 25, 101–110.
+[CrossRef]
+15. Sutton, R.T.; Pincock, D.; Baumgart, D.C.; Sadowski, D.C.; Fedorak, R.N.; Kroeker, K.I. An overview of clinical decision support
+systems: Beneﬁts, risks, and strategies for success. NPJ Digit. Med. 2020, 3, 1–10. [CrossRef]
+16. Acosta, M.; Corral, S. Multicriteria decision analysis and participatory decision support systems in forest management. Forests
+2017, 8, 116. [CrossRef]
+17. Alyoubi, B.A. Decision support system and knowledge-based strategic management. Procedia Comput. Sci. 2015, 65, 278–284.
+[CrossRef]
+18. Vertakova, Y.; Mkrtchyan, V .; Leontyev, E. Information provision of decision support systems in conditions of structural changes
+and digitalization of the economy. J. Appl. Eng. Sci. 2019, 17, 74–80.
+19. Cánovas-Segura, B.; Campos, M.; Morales, A.; Juarez, J.M.; Palacios, F. Development of a clinical decision support system for
+antibiotic management in a hospital environment. Prog. Artif. Intell. 2016, 5, 181–197. [CrossRef]
+20. Lahav, O.; Mastronarde, N.; van der Schaar, M. What is interpretable? using machine learning to design interpretable decision-
+support systems. arXiv 2018, arXiv:1811.10799.
+21. Shoja, B.M.; Tabrizi, N. Customer reviews analysis with deep neural networks for e-commerce recommender systems.IEEE Access
+2019, 7, 119121–119130. [CrossRef]
+22. Baryannis, G.; Dani, S.; Validi, S.; Antoniou, G. Decision support systems and artiﬁcial intelligence in supply chain risk
+management. In Revisiting Supply Chain Risk; Springer: Berlin/Heidelberg, Germany, 2019; pp. 53–71.
+23. Jahani, A.; Feghhi, J.; Makhdoum, M.F.; Omid, M. Optimized forest degradation model (OFDM): An environmental decision
+support system for environmental impact assessment using an artiﬁcial neural network. J. Environ. Plan. Manag. 2016, 59, 222–244.
+[CrossRef]
+
+--- Page 35 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2226
+24. Zong, K.; Yuan, Y.; Montenegro-Marin, C.E.; Kadry, S.N. Or-based intelligent decision support system for e-commerce. J. Theor.
+Appl. Electron. Commer. Res. 2021, 16, 1150–1164. [CrossRef]
+25. Goguen, J. LA Zadeh. Fuzzy sets. Information and control, vol. 8 (1965), pp. 338–353.-LA Zadeh. Similarity relations and fuzzy
+orderings. Information sciences, vol. 3 (1971), pp. 177–200. J. Symb. Log. 1973, 38, 656–657. [CrossRef]
+26. Yadegaridehkordi, E.; Nilashi, M.; Shuib, L.; Asadi, S.; Ibrahim, O. Development of a SaaS adoption decision-making model
+using a new hybrid MCDM approach. Int. J. Inf. Technol. Decis. Mak. 2019, 18, 1845–1874. [CrossRef]
+27. Zhang, Y.; Abbas, H.; Sun, Y. Smart e-commerce integration with recommender systems. Electron. Mark. 2019, 29, 219–220.
+[CrossRef]
+28. Alamdari, P .M.; Navimipour, N.J.; Hosseinzadeh, M.; Safaei, A.A.; Darwesh, A. A systematic study on the recommender systems
+in the E-commerce. IEEE Access 2020, 8, 115694–115716. [CrossRef]
+29. Razmak, J.; Aouni, B. Decision Support System and Multi-Criteria Decision Aid: A State of the Art and Perspectives. J. Multi-
+Criteria Decis. Anal. 2015, 22, 101–117. [CrossRef]
+30. B ˛ aczkiewicz, A.; Watrobski, J.; Sałabun, W. Towards MCDA Based Decision Support System Addressing Sustainable Assessment. 2021.
+Available online: https://aisel.aisnet.org/isd2014/proceedings2021/sustainable/6/ (accessed on 1 September 2021).
+31. Kizielewicz, B.; Wi˛ eckowski, J.; Shekhovtsov, A.; W ˛ atróbski, J.; Depczy ´ nski, R.; Sałabun, W. Study Towards The Time-based Mcda
+Ranking Analysis—A Supplier Selection Case Study. In Facta Universitatis, Series: Mechanical Engineering; University of Niš: Niš,
+Serbia, 2021.
+32. Khademolqorani, S.; Hamadani, A.Z. An adjusted decision support system through data mining and multiple criteria decision
+making. Procedia-Soc. Behav. Sci. 2013, 73, 388–395. [CrossRef]
+33. Stanujkic, D.; Zavadskas, E.K.; Ghorabaee, M.K.; Turskis, Z. An extension of the EDAS method based on the use of interval grey
+numbers. Stud. Inform. Control 2017, 26, 5–12. [CrossRef]
+34. Yazdani, M.; Chatterjee, P .; Montero-Simo, M.J.; Araque-Padilla, R.A. An integrated multi-attribute model for evaluation of
+sustainable mobile phone. Sustainability 2019, 11, 3704. [CrossRef]
+35. Behzadian, M.; Otaghsara, S.K.; Yazdani, M.; Ignatius, J. A state-of the-art survey of TOPSIS applications. Expert Syst. Appl. 2012,
+39, 13051–13069. [CrossRef]
+36. Kuo, T. A modiﬁed TOPSIS with a different ranking index. Eur. J. Oper. Res. 2017, 260, 152–160. [CrossRef]
+37. Žižovi´ c, M.; Pamuˇ car, D.; Albijani´ c, M.; Chatterjee, P .; Pribi´ cevi´ c, I. Eliminating rank reversal problem using a new multi-attribute
+model—The RAFSI method. Mathematics 2020, 8, 1015. [CrossRef]
+38. Dezert, J.; Tchamova, A.; Han, D.; Tacnet, J.M. The SPOTIS rank reversal free method for multi-criteria decision-making support.
+In Proceedings of the 2020 IEEE 23rd International Conference on Information Fusion (FUSION), Rustenburg, South Africa, 6–9
+July 2020; pp. 1–8.
+39. Sałabun, W. The Characteristic Objects Method: A New Distance-based Approach to Multicriteria Decision-making Problems.
+J. Multi-Criteria Decis. Anal. 2015, 22, 37–50. [CrossRef]
+40. Kizielewicz, B.; Dobryakova, L. MCDA based approach to sports players’ evaluation under incomplete knowledge. Procedia
+Comput. Sci. 2020, 176, 3524–3535. [CrossRef]
+41. Kizielewicz, B.; Dobryakova, L. How to choose the optimal single-track vehicle to move in the city? Electric scooters study case.
+Procedia Comput. Sci. 2020, 176, 2243–2253. [CrossRef]
+42. Sałabun, W.; Palczewski, K.; W ˛ atróbski, J. Multicriteria approach to sustainable transport evaluation under incomplete knowledge:
+Electric bikes case study. Sustainability 2019, 11, 3314. [CrossRef]
+43. Sałabun, W.; Karczmarczyk, A. Using the comet method in the sustainable city transport problem: An empirical study of the
+electric powered cars. Procedia Comput. Sci. 2018, 126, 2248–2260. [CrossRef]
+44. Shekhovtsov, A.; Kołodziejczyk, J.; Sałabun, W. Fuzzy Model Identiﬁcation Using Monolithic and Structured Approaches in
+Decision Problems with Partially Incomplete Data. Symmetry 2020, 12, 1541. [CrossRef]
+45. Yazdani, M.; Zarate, P .; Zavadskas, E.K.; Turskis, Z. A Combined Compromise Solution (CoCoSo) method for multi-criteria
+decision-making problems. Manag. Decis. 2019, 57, 2501–2519. [CrossRef]
+46. Khan, S.; Haleem, A. Investigation of circular economy practices in the context of emerging economies: A CoCoSo approach.
+Int. J. Sustain. Eng. 2021, 1–11. [CrossRef]
+47. Ecer, F. A consolidated MCDM framework for performance assessment of battery electric vehicles based on ranking strategies.
+Renew. Sustain. Energy Rev. 2021, 143, 110916. [CrossRef]
+48. Yazdani, M.; Chatterjee, P . Intelligent decision making tools in manufacturing technology selection. In Futuristic Composites;
+Springer: Berlin/Heidelberg, Germany, 2018; pp. 113–126.
+49. Wen, Z.; Liao, H.; Mardani, A.; Al-Barakati, A. A hesitant fuzzy linguistic combined compromise solution method for multiple
+criteria decision making. In Proceedings of the International Conference on Management Science and Engineering Management,
+Chisinau, Moldova, 30 July–2 August 2020; Springer: Berlin/Heidelberg, Germany, 2019; pp. 813–821.
+50. Zolfani, S.H.; Chatterjee, P .; Yazdani, M. A structured framework for sustainable supplier selection using a combined BWM-
+CoCoSo model. In Proceedings of the International Scientiﬁc Conference in Business, Management and Economics Engineering,
+Vilnius, Lithuania, 9–10 May 2019; Vilnius Gediminas Technical University: Vilnius, Lithuania, 2019. [CrossRef]
+
+--- Page 36 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2227
+51. Zolfani, S.H.; Ecer, F.; Pamuˇ car, D.; Raslanas, S. Neighborhood selection for a newcomer via a novel BWM-based revised MAIRCA
+integrated model: A case from the Coquimbo-La Serena conurbation, Chile. Int. J. Strateg. Prop. Manag. 2020, 24, 102–118.
+[CrossRef]
+52. Pamuˇ car, D.; Vasin, L.; Lukovac, L. Selection of railway level crossings for investing in security equipment using hybrid
+DEMATEL-MAIRCA model. In Proceedings of the XVI International Scientiﬁc-Expert Conference on Railway, Railcon, Niš,
+Serbia, 9–10 October 2014; pp. 89–92.
+53. Aksoy, E. An Analysis on Turkey’s Merger and Acquisition Activities: MAIRCA Method. Gümü¸ shane Üniversitesi Sos. Bilim.
+Enstitüsü Elektron. Derg. 2021, 12, 1–11.
+54. Sari, F.; Kandemir, ˙I.; Ceylan, D.A.; Gül, A. Using AHP and PROMETHEE multi-criteria decision making methods to deﬁne
+suitable apiary locations. J. Apic. Res. 2020, 59, 546–557. [CrossRef]
+55. Yalcin, N.; Ünlü, U. A multi-criteria performance analysis of Initial Public Offering (IPO) ﬁrms using CRITIC and VIKOR
+methods. Technol. Econ. Dev. Econ. 2018, 24, 534–560. [CrossRef]
+56. Diakoulaki, D.; Mavrotas, G.; Papayannakis, L. Determining objective weights in multiple criteria problems: The CRITIC method.
+Comput. Oper. Res. 1995, 22, 763–770. [CrossRef]
+57. Tu¸ s, A.; Adalı, E.A. The new combination with CRITIC and WASPAS methods for the time and attendance software selection
+problem. Opsearch 2019, 56, 528–538. [CrossRef]
+58. Kazan, H.; Ozdemir, O. Financial performance assessment of large scale conglomerates via TOPSIS and CRITIC methods. Int. J.
+Manag. Sustain. 2014, 3, 203–224.
+59. Madic, M.; Radovanovi´ c, M. Ranking of some most commonly used nontraditional machining processes using ROV and CRITIC
+methods. UPB Sci. Bull. Ser. D 2015, 77, 193–204.
+60. Zandi, I.; Pahlavani, P .; Bigdeli, B. Combining CRITIC Objective Weighting Method with CODAS and VIKOR Methods for
+Selecting Prospect Hospital Sites (Case Study: District 5 of Tehran). Geogr. Urban Space Dev. 2021,
+61. Adalı, E.A.; I¸ sık, A.T. CRITIC and MAUT methods for the contract manufacturer selection problem.Eur. J. Multidiscip. Stud.
+2017, 2, 93–101. [CrossRef]
+62. Keshavarz Ghorabaee, M.; Amiri, M.; Kazimieras Zavadskas, E.; Antucheviˇ cien˙e, J. Assessment of third-party logistics providers
+using a CRITIC–WASPAS approach with interval type-2 fuzzy sets. Transport 2017, 32, 66–78. [CrossRef]
+63. Yang, M.; Zhou, X.; Xie, R.F.; GU, J.H.; Gu, X.J. Application of Analytic Hierarchy Process (AHP) Combined with CRITIC to
+Studying Weighted Coefﬁcient of Multiple Criteria for Optimization of Extraction Technology of Compound Zishenqing Granules.
+Pharm. Care Res. 2009, 1. Available online: https://en.cnki.com.cn/Article_en/CJFDTotal-YXFY200901012.htm. (accessed on 15
+July 2021).
+64. Mishra, A.R.; Rani, P .; Pandey, K. Fermatean fuzzy CRITIC-EDAS approach for the selection of sustainable third-party reverse
+logistics providers using improved generalized score function. J. Ambient. Intell. Humaniz. Comput. 2021, 1–17.
+65. Peng, X.; Zhang, X.; Luo, Z. Pythagorean fuzzy MCDM method based on CoCoSo and CRITIC with score function for 5G industry
+evaluation. Artif. Intell. Rev. 2019, 1–35. [CrossRef]
+66. Peng, X.; Huang, H. Fuzzy decision making method based on CoCoSo with CRITIC for ﬁnancial risk evaluation. Technol. Econ.
+Dev. Econ. 2020, 26, 695–724. [CrossRef]
+67. Baidya, J.; Garg, H.; Saha, A.; Mishra, A.R.; Rani, P .; Dutta, D. Selection of third party reverses logistic providers: An approach of
+BCF-CRITIC-MULTIMOORA using Archimedean power aggregation operators. Complex Intell. Syst. 2021, 1–28.
+68. Goswami, S.S.; Behera, D.K. An Analysis for Selecting Best Smartphone Model by AHP-TOPSIS Decision-Making Methodology.
+Int. J. Serv. Sci. Manag. Eng. Technol. (IJSSMET) 2021, 12, 116–137.
+69. Rani, P .; Mishra, A.R.; Ansari, M.D. Analysis of smartphone selection problem under interval-valued intuitionistic fuzzy ARAS
+and TOPSIS methods. In Proceedings of the 2019 Fifth International Conference on Image Information Processing (ICIIP), Shimla,
+India, 15–17 November 2019; pp. 509–514.
+70. Ansari, N. Smartphone Selection Using Analytic Hierarchy Process. 2016. Available online: http://dspace.sﬁt.co.in:8004/jspui/
+handle/123456789/1449 (accessed on 15 July 2021).
+71. Goswami, S.S.; Behera, D.K. Evaluation of the best smartphone model in the market by integrating fuzzy-AHP and PROMETHEE
+decision-making approach. Decision 2021, 48, 71–96. [CrossRef]
+72. Mishra, A.R.; Singh, R.K.; Motwani, D. Intuitionistic fuzzy divergence measure-based ELECTRE method for performance of
+cellular mobile telephone service providers. Neural Comput. Appl. 2020, 32, 3901–3921. [CrossRef]
+73. Mishra, A.R.; Rani, P . Shapley divergence measures with VIKOR method for multi-attribute decision-making problems.Neural
+Comput. Appl. 2019, 31, 1299–1316. [CrossRef]
+74. Mishra, A.R.; Singh, R.K.; Motwani, D. Multi-criteria assessment of cellular mobile telephone service providers using intuitionistic
+fuzzy WASPAS method with similarity measures. Granul. Comput. 2019, 4, 511–529. [CrossRef]
+75. Shekhovtsov, A.; Wi˛ eckowski, J.; Kizielewicz, B.; Sałabun, W.Towards Reliable Decision-Making in the Green Urban Transport Domain;
+University of Niš: Niš, Serbia, 2020. [CrossRef]
+76. Sałabun, W.; Ziemba, P .; W ˛ atróbski, J. The rank reversals paradox in management decisions: The comparison of the ahp and
+comet methods. In International Conference on Intelligent Decision Technologies ; Springer: Berlin/Heidelberg, Germany, 2016;
+pp. 181–191.
+
+--- Page 37 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2228
+77. Faizi, S.; Rashid, T.; Sałabun, W.; Zafar, S.; W ˛ atróbski, J. Decision making with uncertainty using hesitant fuzzy sets.Int. J.
+Fuzzy Syst. 2018, 20, 93–103. [CrossRef]
+78. Sałabun, W.; W ˛ atróbski, J.; Shekhovtsov, A. Are MCDA methods benchmarkable? A comparative study of TOPSIS, VIKOR,
+COPRAS, and PROMETHEE II methods. Symmetry 2020, 12, 1549. [CrossRef]
+79. García-Cascales, M.S.; Lamata, M.T. On rank reversal and TOPSIS method. Math. Comput. Model. 2012, 56, 123–132. [CrossRef]
+80. Yang, W. Ingenious solution for the rank reversal problem of TOPSIS method. Math. Probl. Eng. 2020, 2020, 9676518. [CrossRef]
+81. Barzilai, J.; Golany, B. AHP rank reversal, normalization and aggregation rules. INFOR Inf. Syst. Oper. Res. 1994, 32, 57–64.
+[CrossRef]
+82. Verly, C.; De Smet, Y. Some results about rank reversal instances in the PROMETHEE methods. Int. J. Multicriteria Decis. Mak. 71
+2013, 3, 325–345. [CrossRef]
+83. Liu, X.; Ma, Y. A method to analyze the rank reversal problem in the ELECTRE II method. Omega 2021, 102, 102317. [CrossRef]
+84. Sałabun, W.; Piegat, A.; W ˛ atróbski, J.; Karczmarczyk, A.; Jankowski, J.The COMET Method: The First MCDA Method Completely
+Resistant to Rank Reversal Paradox; European Working Group “Multiple Criteria Decision Aiding” Printemps 2019, Series 3, No. 39;
+EWG-MCDA: Cracow, Poland, Spring 2019. Available online: http://www.cs.put.poznan.pl/ewgmcda/newsletter/Spr19.pdf
+(accessed on 15 July 2021).
+85. Piegat, A.; Sałabun, W. Identification of a multicriteria decision-making model using the characteristic objects method.Appl. Comput.
+Intell. Soft Comput.2014, 2014, 536492. [CrossRef]
+86. Sałabun, W. Fuzzy Multi-Criteria Decision-Making Method: The Modular Approach in the Characteristic Objects Method.
+Stud. Proc. Pol. Assoc. Knowl. Manag. 2015, 77, 54–64.
+87. Kizielewicz, B.; Shekhovtsov, A.; Sałabun, W. A New Approach to Eliminate Rank Reversal in the MCDA Problems. In Proceedings
+of the International Conference on Computational Science, Cracow, Poland, 16–18 June 2021; Springer: Berlin/Heidelberg,
+Germany, 2021; pp. 338–351.
+88. Jiˇ rí, M. The robustness of TOPSIS results using sensitivity analysis based on weight tuning. InWorld Congress on Medical Physics
+and Biomedical Engineering 2018; Springer: Singapore, 2019; pp. 83–86.
+89. Shekhovtsov, A.; Kizielewicz, B.; Sałabun, W. New Rank-Reversal Free Approach to Handle Interval Data in MCDA Prob-
+lems. In Proceedings of the International Conference on Computational Science, Cracow, Poland, 16–18 June 2021; Springer:
+Berlin/Heidelberg, Germany, 2021; pp. 458–472.
+90. Sałabun, W.; Karczmarczyk, A.; W ˛ atróbski, J.; Jankowski, J. Handling data uncertainty in decision making with COMET.
+In Proceedings of the 2018 IEEE Symposium Series on Computational Intelligence (SSCI), Bangalore, India, 18–21 November
+2018; pp. 1478–1484.
+91. Faizi, S.; Sałabun, W.; Rashid, T.; W ˛ atróbski, J.; Zafar, S. Group decision-making for hesitant fuzzy sets based on characteristic
+objects method. Symmetry 2017, 9, 136. [CrossRef]
+92. Sałabun, W.; Karczmarczyk, A.; W ˛ atróbski, J. Decision-making using the hesitant fuzzy sets COMET method: An empirical study
+of the electric city buses selection. In Proceedings of the 2018 IEEE Symposium Series on Computational Intelligence (SSCI),
+Bangalore, India, 18–21 November 2018; pp. 1485–1492.
+93. Sałabun, W. Reduction in the number of comparisons required to create matrix of expert judgment in the comet method.
+Manag. Prod. Eng. Rev. 2014, 5, 62–69. [CrossRef]
+94. Kizielewicz, B.; Kołodziejczyk, J. Effects of the selection of characteristic values on the accuracy of results in the COMET method.
+Procedia Comput. Sci. 2020, 176, 3581–3590. [CrossRef]
+95. W ˛ atróbski, J.; Sałabun, W.; Karczmarczyk, A.; Wolski, W. Sustainable decision-making using the COMET method: An empirical
+study of the ammonium nitrate transport management. In Proceedings of the 2017 Federated Conference on Computer Science
+and Information Systems (FedCSIS), Prague, Czech Republic, 3–6 September 2017; pp. 949–958.
+96. Lai, H.; Liao, H.; Wen, Z.; Zavadskas, E.K.; Al-Barakati, A. An Improved CoCoSo Method with a Maximum Variance Optimization
+Model for Cloud Service Provider Selection. Eng. Econ. 2020, 31, 411–424. [CrossRef]
+97. Afshari, A.; Mojahed, M.; Yusuff, R.M. Simple additive weighting approach to personnel selection problem. Int. J. Innov.
+Manag. Technol. 2010, 1, 511.
+98. Zavadskas, E.K.; Turskis, Z.; Antucheviciene, J.; Zakarevicius, A. Optimization of weighted aggregated sum product assessment.
+Elektron. Ir Elektrotechnika 2012, 122, 3–6. [CrossRef]
+99. Zanakis, S.H.; Solomon, A.; Wishart, N.; Dublish, S. Multi-attribute decision making: A simulation comparison of select methods.
+Eur. J. Oper. Res. 1998, 107, 507–529. [CrossRef]
+100. Wei, J.; Lin, X. The multiple attribute decision-making VIKOR method and its application. In Proceedings of the 2008 4th
+international conference on wireless communications, networking and mobile computing, Dalian, China, 12–14 October 2008;
+pp. 1–4.
+101. Brauers, W.K.; Zavadskas, E.K. The MOORA method and its application to privatization in a transition economy. Control Cybern.
+2006, 35, 445–469.
+102. Yazdani, M.; Wen, Z.; Liao, H.; Banaitis, A.; Turskis, Z. A grey combined compromise solution (CoCoSo-G) method for supplier
+selection in construction management. J. Civ. Eng. Manag. 2019, 25, 858–874. [CrossRef]
+103. Keshavarz Ghorabaee, M.; Zavadskas, E.K.; Olfat, L.; Turskis, Z. Multi-criteria inventory classiﬁcation using a new method of
+evaluation based on distance from average solution (EDAS). Informatica 2015, 26, 435–451. [CrossRef]
+
+--- Page 38 ---
+J. Theor. Appl. Electron. Commer. Res. 2021, 16 2229
+104. Ghorabaee, M.K.; Zavadskas, E.K.; Amiri, M.; Turskis, Z. Extended EDAS method for fuzzy multi-criteria decision-making: An
+application to supplier selection. Int. J. Comput. Commun. Control 2016, 11, 358–371. [CrossRef]
+105. Pamuˇ car, D.; Mihajlovi´ c, M.; Obradovi´ c, R.; Atanaskovi´ c, P . Novel approach to group multi-criteria decision making based on
+interval rough numbers: Hybrid DEMATEL-ANP-MAIRCA model. Expert Syst. Appl. 2017, 88, 58–80. [CrossRef]
+106. Gigovi´ c, L.; Pamuˇ car, D.; Baji´ c, Z.; Mili´ cevi´ c, M. The combination of expert judgment and GIS-MAIRCA analysis for the selection
+of sites for ammunition depots. Sustainability 2016, 8, 372. [CrossRef]
+107. Pamuˇ car, D.;´Cirovi´ c, G. The selection of transport and handling resources in logistics centers using Multi-Attributive Border
+Approximation area Comparison (MABAC). Expert Syst. Appl. 2015, 42, 3016–3028. [CrossRef]
+108. Wei, G.; Wei, C.; Wu, J.; Wang, H. Supplier selection of medical consumption products with a probabilistic linguistic MABAC
+method. Int. J. Environ. Res. Public Health 2019, 16, 5082. [CrossRef]
+109. Jahan, A.; Mustapha, F.; Sapuan, S.; Ismail, M.Y.; Bahraminasab, M. A framework for weighting of criteria in ranking stage of
+material selection process. Int. J. Adv. Manuf. Technol. 2012, 58, 411–420. [CrossRef]
+110. Sałabun, W.; Urbaniak, K. A new coefﬁcient of rankings similarity in decision-making problems. In Proceedings of the
+International Conference on Computational Science, Amsterdam, The Netherlands, 3–5 June 2020; Springer: Berlin/Heidelberg,
+Germany, 2020; pp. 632–645.
+111. Shekhovtsov, A.; Sałabun, W. A comparative case study of the VIKOR and TOPSIS rankings similarity.Procedia Comput. Sci. 2020,
+176, 3730–3740. [CrossRef]
+112. Shekhovtsov, A.; Kozlov, V .; Nosov, V .; Sałabun, W. Efﬁciency of Methods for Determining the Relevance of Criteria in Sustainable
+Transport Problems: A Comparative Case Study. Sustainability 2020, 12, 7915. [CrossRef]

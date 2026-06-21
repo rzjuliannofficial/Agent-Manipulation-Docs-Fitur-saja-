@@ -188,3 +188,12 @@ Untuk menjaga kualitas visual, struktur informasi, dan efisiensi komunikasi, age
 * **Penamaan File**: Tuliskan nama file target di atas blok kode secara jelas.
 * **Format Perubahan**: Gunakan blok `diff` jika mengubah kode yang sudah ada untuk memperjelas baris yang dihapus (`-`) dan ditambahkan (`+`).
 
+---
+
+## 7. Kebijakan Placeholder (Template Policy)
+* **Placeholder Tabel Data**: Untuk dokumen draf, template, atau jurnal yang digenerate selanjutnya, **SELALU** gunakan format *placeholder dinamis* untuk tabel data/perhitungan besar (seperti alternatif A01-A20 atau matriks perhitungan) alih-alih memasukkan ribuan baris data nyata secara mentah.
+* **Contoh Format Placeholder**: Tuliskan representasi ringkas, misalnya baris data cukup diwakili oleh:
+  * Alternatif pertama (A01), alternatif kedua (A02), baris placeholder `... [Alternatif A03 - A19] ...`, dan alternatif terakhir (A20).
+* **Tujuan**: Untuk menjaga efisiensi ruang dokumen, kebersihan visual draf, dan memastikan dokumen berfungsi optimal sebagai template siap pakai yang mudah dibaca.
+
+
